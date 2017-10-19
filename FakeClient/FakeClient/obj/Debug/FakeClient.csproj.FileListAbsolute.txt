@@ -1,0 +1,10 @@
+C:\Users\Sandbox\Documents\GitHub\Projeto-Eng.-Unificada\FakeClient\FakeClient\bin\Debug\FakeClient.exe.config
+C:\Users\Sandbox\Documents\GitHub\Projeto-Eng.-Unificada\FakeClient\FakeClient\bin\Debug\FakeClient.exe
+C:\Users\Sandbox\Documents\GitHub\Projeto-Eng.-Unificada\FakeClient\FakeClient\bin\Debug\FakeClient.pdb
+C:\Users\Sandbox\Documents\GitHub\Projeto-Eng.-Unificada\FakeClient\FakeClient\obj\Debug\FakeClient.csprojResolveAssemblyReference.cache
+C:\Users\Sandbox\Documents\GitHub\Projeto-Eng.-Unificada\FakeClient\FakeClient\obj\Debug\FakeClient.Properties.Resources.resources
+C:\Users\Sandbox\Documents\GitHub\Projeto-Eng.-Unificada\FakeClient\FakeClient\obj\Debug\FakeClient.csproj.GenerateResource.Cache
+C:\Users\Sandbox\Documents\GitHub\Projeto-Eng.-Unificada\FakeClient\FakeClient\obj\Debug\FakeClient.csproj.CoreCompileInputs.cache
+C:\Users\Sandbox\Documents\GitHub\Projeto-Eng.-Unificada\FakeClient\FakeClient\obj\Debug\FakeClient.exe
+C:\Users\Sandbox\Documents\GitHub\Projeto-Eng.-Unificada\FakeClient\FakeClient\obj\Debug\FakeClient.pdb
+C:\Users\Sandbox\Documents\GitHub\Projeto-Eng.-Unificada\FakeClient\FakeClient\obj\Debug\FakeClient.ClienteFake.resources
