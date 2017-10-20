@@ -4,18 +4,39 @@ using System.Net;
 
 namespace FakeClient.Networking
 {
+    class FailureEventArgs : EventArgs
+    {
+        public object Data { get; set; }
+        public Exception Error { get; set; }
+        public FailureEventArgs(object data, Exception error)
+        {
+            Data = data;
+            Error = error;
+        }
+    }
     class FTP
     {
-        private string host = null;
-        private string user = null;
-        private string pass = null;
+        public string Host { get; set; }
+        public string User { get; set; }
+        public string Pass { get; set; }
+        public object LastQuery = null;
+        public string currentDirectory = "/";
         private FtpWebRequest ftpRequest = null;
         private FtpWebResponse ftpResponse = null;
         private Stream ftpStream = null;
         private int bufferSize = 2048;
+        public event Action<FailureEventArgs> OnDownloadFail;
+        public event Action<FailureEventArgs> OnUploadFail;
+        public event Action<FailureEventArgs> OnDeleteFail;
+        public event Action<FailureEventArgs> OnRenameFail;
+        public event Action<FailureEventArgs> OnCreateDirectoryFail;
+        public event Action<FailureEventArgs> OnGetFileCreatedDateTimeFail;
+        public event Action<FailureEventArgs> OnGetFileSizeFail;
+        public event Action<FailureEventArgs> OnDirectoryListSimpleFail;
+        public event Action<FailureEventArgs> OnDirectoryListDetailedFail;
 
         /* Construct Object */
-        public FTP(string hostIP, string userName, string password) { host = hostIP; user = userName; pass = password; }
+        public FTP(string hostIP, string userName, string password) { Host = hostIP; User = userName; Pass = password; }
 
         /* Download File */
         public void download(string remoteFile, string localFile)
@@ -23,9 +44,9 @@ namespace FakeClient.Networking
             try
             {
                 /* Create an FTP Request */
-                ftpRequest = (FtpWebRequest)FtpWebRequest.Create(host + "/" + remoteFile);
+                ftpRequest = (FtpWebRequest)FtpWebRequest.Create(Host + "/" + remoteFile);
                 /* Log in to the FTP Server with the User Name and Password Provided */
-                ftpRequest.Credentials = new NetworkCredential(user, pass);
+                ftpRequest.Credentials = new NetworkCredential(User, Pass);
                 /* When in doubt, use these options */
                 ftpRequest.UseBinary = true;
                 ftpRequest.UsePassive = true;
@@ -50,14 +71,14 @@ namespace FakeClient.Networking
                         bytesRead = ftpStream.Read(byteBuffer, 0, bufferSize);
                     }
                 }
-                catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+                catch (Exception ex) { if (OnDownloadFail != null) { OnDownloadFail.Invoke(new FailureEventArgs(this, ex)); } }
                 /* Resource Cleanup */
                 localFileStream.Close();
                 ftpStream.Close();
                 ftpResponse.Close();
                 ftpRequest = null;
             }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            catch (Exception ex) { if (OnDownloadFail != null) { OnDownloadFail.Invoke(new FailureEventArgs(this, ex)); } }
             return;
         }
 
@@ -67,9 +88,9 @@ namespace FakeClient.Networking
             try
             {
                 /* Create an FTP Request */
-                ftpRequest = (FtpWebRequest)FtpWebRequest.Create(host + "/" + remoteFile);
+                ftpRequest = (FtpWebRequest)FtpWebRequest.Create(Host + "/" + remoteFile);
                 /* Log in to the FTP Server with the User Name and Password Provided */
-                ftpRequest.Credentials = new NetworkCredential(user, pass);
+                ftpRequest.Credentials = new NetworkCredential(User, Pass);
                 /* When in doubt, use these options */
                 ftpRequest.UseBinary = true;
                 ftpRequest.UsePassive = true;
@@ -92,13 +113,13 @@ namespace FakeClient.Networking
                         bytesSent = localFileStream.Read(byteBuffer, 0, bufferSize);
                     }
                 }
-                catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+                catch (Exception ex) { if (OnUploadFail != null) { OnUploadFail.Invoke(new FailureEventArgs(this, ex)); } }
                 /* Resource Cleanup */
                 localFileStream.Close();
                 ftpStream.Close();
                 ftpRequest = null;
             }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            catch (Exception ex) { if (OnUploadFail != null) { OnUploadFail.Invoke(new FailureEventArgs(this, ex)); } }
             return;
         }
 
@@ -108,9 +129,9 @@ namespace FakeClient.Networking
             try
             {
                 /* Create an FTP Request */
-                ftpRequest = (FtpWebRequest)WebRequest.Create(host + "/" + deleteFile);
+                ftpRequest = (FtpWebRequest)WebRequest.Create(Host + "/" + deleteFile);
                 /* Log in to the FTP Server with the User Name and Password Provided */
-                ftpRequest.Credentials = new NetworkCredential(user, pass);
+                ftpRequest.Credentials = new NetworkCredential(User, Pass);
                 /* When in doubt, use these options */
                 ftpRequest.UseBinary = true;
                 ftpRequest.UsePassive = true;
@@ -123,7 +144,7 @@ namespace FakeClient.Networking
                 ftpResponse.Close();
                 ftpRequest = null;
             }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            catch (Exception ex) { if (OnDeleteFail != null) { OnDeleteFail.Invoke(new FailureEventArgs(this, ex)); } }
             return;
         }
 
@@ -133,9 +154,9 @@ namespace FakeClient.Networking
             try
             {
                 /* Create an FTP Request */
-                ftpRequest = (FtpWebRequest)WebRequest.Create(host + "/" + currentFileNameAndPath);
+                ftpRequest = (FtpWebRequest)WebRequest.Create(Host + "/" + currentFileNameAndPath);
                 /* Log in to the FTP Server with the User Name and Password Provided */
-                ftpRequest.Credentials = new NetworkCredential(user, pass);
+                ftpRequest.Credentials = new NetworkCredential(User, Pass);
                 /* When in doubt, use these options */
                 ftpRequest.UseBinary = true;
                 ftpRequest.UsePassive = true;
@@ -150,7 +171,7 @@ namespace FakeClient.Networking
                 ftpResponse.Close();
                 ftpRequest = null;
             }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            catch (Exception ex) { if (OnRenameFail != null) { OnRenameFail.Invoke(new FailureEventArgs(this, ex)); } }
             return;
         }
 
@@ -160,9 +181,9 @@ namespace FakeClient.Networking
             try
             {
                 /* Create an FTP Request */
-                ftpRequest = (FtpWebRequest)WebRequest.Create(host + "/" + newDirectory);
+                ftpRequest = (FtpWebRequest)WebRequest.Create(Host + "/" + newDirectory);
                 /* Log in to the FTP Server with the User Name and Password Provided */
-                ftpRequest.Credentials = new NetworkCredential(user, pass);
+                ftpRequest.Credentials = new NetworkCredential(User, Pass);
                 /* When in doubt, use these options */
                 ftpRequest.UseBinary = true;
                 ftpRequest.UsePassive = true;
@@ -175,7 +196,7 @@ namespace FakeClient.Networking
                 ftpResponse.Close();
                 ftpRequest = null;
             }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            catch (Exception ex) { if (OnCreateDirectoryFail != null) { OnCreateDirectoryFail.Invoke(new FailureEventArgs(this, ex)); } }
             return;
         }
 
@@ -185,9 +206,9 @@ namespace FakeClient.Networking
             try
             {
                 /* Create an FTP Request */
-                ftpRequest = (FtpWebRequest)FtpWebRequest.Create(host + "/" + fileName);
+                ftpRequest = (FtpWebRequest)FtpWebRequest.Create(Host + "/" + fileName);
                 /* Log in to the FTP Server with the User Name and Password Provided */
-                ftpRequest.Credentials = new NetworkCredential(user, pass);
+                ftpRequest.Credentials = new NetworkCredential(User, Pass);
                 /* When in doubt, use these options */
                 ftpRequest.UseBinary = true;
                 ftpRequest.UsePassive = true;
@@ -204,18 +225,19 @@ namespace FakeClient.Networking
                 string fileInfo = null;
                 /* Read the Full Response Stream */
                 try { fileInfo = ftpReader.ReadToEnd(); }
-                catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+                catch (Exception ex) { if (OnGetFileCreatedDateTimeFail != null) { OnGetFileCreatedDateTimeFail.Invoke(new FailureEventArgs(this, ex)); } }
                 /* Resource Cleanup */
                 ftpReader.Close();
                 ftpStream.Close();
                 ftpResponse.Close();
                 ftpRequest = null;
                 /* Return File Created Date Time */
+                LastQuery = fileInfo;
                 return fileInfo;
             }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            catch (Exception ex) { if (OnGetFileCreatedDateTimeFail != null) { OnGetFileCreatedDateTimeFail.Invoke(new FailureEventArgs(this, ex)); } }
             /* Return an Empty string Array if an Exception Occurs */
-            return "";
+            return null;
         }
 
         /* Get the Size of a File */
@@ -224,9 +246,9 @@ namespace FakeClient.Networking
             try
             {
                 /* Create an FTP Request */
-                ftpRequest = (FtpWebRequest)FtpWebRequest.Create(host + "/" + fileName);
+                ftpRequest = (FtpWebRequest)FtpWebRequest.Create(Host + "/" + fileName);
                 /* Log in to the FTP Server with the User Name and Password Provided */
-                ftpRequest.Credentials = new NetworkCredential(user, pass);
+                ftpRequest.Credentials = new NetworkCredential(User, Pass);
                 /* When in doubt, use these options */
                 ftpRequest.UseBinary = true;
                 ftpRequest.UsePassive = true;
@@ -243,18 +265,19 @@ namespace FakeClient.Networking
                 string fileInfo = null;
                 /* Read the Full Response Stream */
                 try { while (ftpReader.Peek() != -1) { fileInfo = ftpReader.ReadToEnd(); } }
-                catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+                catch (Exception ex) { if (OnGetFileSizeFail != null) { OnGetFileSizeFail.Invoke(new FailureEventArgs(this, ex)); } }
                 /* Resource Cleanup */
                 ftpReader.Close();
                 ftpStream.Close();
                 ftpResponse.Close();
                 ftpRequest = null;
                 /* Return File Size */
+                LastQuery = fileInfo;
                 return fileInfo;
             }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            catch (Exception ex) { if (OnGetFileSizeFail != null) { OnGetFileSizeFail.Invoke(new FailureEventArgs(this, ex)); } }
             /* Return an Empty string Array if an Exception Occurs */
-            return "";
+            return null;
         }
 
         /* List Directory Contents File/Folder Name Only */
@@ -263,9 +286,9 @@ namespace FakeClient.Networking
             try
             {
                 /* Create an FTP Request */
-                ftpRequest = (FtpWebRequest)FtpWebRequest.Create(host + "/" + directory);
+                ftpRequest = (FtpWebRequest)FtpWebRequest.Create(Host + "/" + directory);
                 /* Log in to the FTP Server with the User Name and Password Provided */
-                ftpRequest.Credentials = new NetworkCredential(user, pass);
+                ftpRequest.Credentials = new NetworkCredential(User, Pass);
                 /* When in doubt, use these options */
                 ftpRequest.UseBinary = true;
                 ftpRequest.UsePassive = true;
@@ -282,19 +305,19 @@ namespace FakeClient.Networking
                 string directoryRaw = null;
                 /* Read Each Line of the Response and Append a Pipe to Each Line for Easy Parsing */
                 try { while (ftpReader.Peek() != -1) { directoryRaw += ftpReader.ReadLine() + "|"; } }
-                catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+                catch (Exception ex) { if (OnDirectoryListSimpleFail != null) { OnDirectoryListSimpleFail.Invoke(new FailureEventArgs(this, ex)); } }
                 /* Resource Cleanup */
                 ftpReader.Close();
                 ftpStream.Close();
                 ftpResponse.Close();
                 ftpRequest = null;
                 /* Return the Directory Listing as a string Array by Parsing 'directoryRaw' with the Delimiter you Append (I use | in This Example) */
-                try { string[] directoryList = directoryRaw.Split("|".ToCharArray()); return directoryList; }
-                catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+                try { string[] directoryList = directoryRaw.Split("|".ToCharArray()); LastQuery = directoryList; return directoryList; }
+                catch (Exception ex) { if (OnDirectoryListSimpleFail != null) { OnDirectoryListSimpleFail.Invoke(new FailureEventArgs(this, ex)); } }
             }
             catch (Exception ex) { Console.WriteLine(ex.ToString()); }
             /* Return an Empty string Array if an Exception Occurs */
-            return new string[] { "" };
+            return null;
         }
 
         /* List Directory Contents in Detail (Name, Size, Created, etc.) */
@@ -303,9 +326,9 @@ namespace FakeClient.Networking
             try
             {
                 /* Create an FTP Request */
-                ftpRequest = (FtpWebRequest)FtpWebRequest.Create(host + "/" + directory);
+                ftpRequest = (FtpWebRequest)FtpWebRequest.Create(Host + "/" + directory);
                 /* Log in to the FTP Server with the User Name and Password Provided */
-                ftpRequest.Credentials = new NetworkCredential(user, pass);
+                ftpRequest.Credentials = new NetworkCredential(User, Pass);
                 /* When in doubt, use these options */
                 ftpRequest.UseBinary = true;
                 ftpRequest.UsePassive = true;
@@ -322,19 +345,19 @@ namespace FakeClient.Networking
                 string directoryRaw = null;
                 /* Read Each Line of the Response and Append a Pipe to Each Line for Easy Parsing */
                 try { while (ftpReader.Peek() != -1) { directoryRaw += ftpReader.ReadLine() + "|"; } }
-                catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+                catch (Exception ex) { if (OnDirectoryListDetailedFail != null) { OnDirectoryListDetailedFail.Invoke(new FailureEventArgs(this, ex)); } }
                 /* Resource Cleanup */
                 ftpReader.Close();
                 ftpStream.Close();
                 ftpResponse.Close();
                 ftpRequest = null;
                 /* Return the Directory Listing as a string Array by Parsing 'directoryRaw' with the Delimiter you Append (I use | in This Example) */
-                try { string[] directoryList = directoryRaw.Split("|".ToCharArray()); return directoryList; }
-                catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+                try { string[] directoryList = directoryRaw.Split("|".ToCharArray()); LastQuery = directoryList; return directoryList; }
+                catch (Exception ex) { if (OnDirectoryListDetailedFail != null) { OnDirectoryListDetailedFail.Invoke(new FailureEventArgs(this, ex)); } }
             }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            catch (Exception ex) { if (OnDirectoryListDetailedFail != null) { OnDirectoryListDetailedFail.Invoke(new FailureEventArgs(this, ex)); } }
             /* Return an Empty string Array if an Exception Occurs */
-            return new string[] { "" };
+            return null;
         }
     }
 }
