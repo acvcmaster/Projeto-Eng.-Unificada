@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF519159"
+    android:background="#1E252B"
     android:visibility="visible"
     tools:context="com.example.wiccansharing.LogoDisplay">
 
@@ -13,5 +13,18 @@
 
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
+
+
+    <ImageButton
+        android:id="@+id/Button"
+        android:layout_width="566px"
+        android:layout_height="618px"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/logo"
+        android:layout_marginLeft="100px"
+        android:layout_marginTop="178px"
+        android:gravity="center" />
+
 
 </FrameLayout>
