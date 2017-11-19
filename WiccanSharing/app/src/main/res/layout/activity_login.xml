@@ -17,32 +17,35 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="The Server IP is:"
-        android:gravity="center"
-        android:textColor="#ffffff"
-        android:paddingTop="100px"
         android:fontFamily="sans-serif-light"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        android:gravity="center"
+        android:paddingTop="100px"
+        android:text="@string/server_ip_info"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#ffffff" />
 
     <EditText
         android:id="@+id/IP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="50px"
-        android:ems="10"
         android:backgroundTint="#40aba9"
+        android:digits="0123456789."
+        android:ems="10"
         android:fontFamily="sans-serif-light"
-        android:inputType="number" />
+        android:hint="0.0.0.0"
+        android:inputType="number"
+        android:paddingTop="50px"
+        android:singleLine="true" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Inform your Username:"
-        android:paddingTop="130px"
-        android:gravity="center"
-        android:textColor="#ffffff"
         android:fontFamily="sans-serif-light"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        android:gravity="center"
+        android:paddingTop="130px"
+        android:text="@string/username_info"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#ffffff" />
 
     <EditText
         android:id="@+id/editText"
@@ -59,9 +62,9 @@
         android:id="@+id/SaveUsernameBOX"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#ffffff"
         android:buttonTint="#FFFF"
-        android:text="Save my Username" />
+        android:text="@string/username_chk"
+        android:textColor="#ffffff" />
 
     <ImageButton
         android:id="@+id/Button"
@@ -70,6 +73,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_margin="50px"
-        android:background="@drawable/login"/>
+        android:background="@drawable/login"
+        />
 
 </LinearLayout>

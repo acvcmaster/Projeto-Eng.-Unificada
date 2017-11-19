@@ -108,4 +108,7 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="server_ip_info">Inform the server\'s IP address :</string>
+    <string name="username_info">Inform your username :</string>
+    <string name="username_chk">Save my settings for the next time</string>
 </resources>
