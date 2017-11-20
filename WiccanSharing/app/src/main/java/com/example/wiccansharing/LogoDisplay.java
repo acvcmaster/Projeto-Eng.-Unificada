@@ -1,5 +1,6 @@
 package com.example.wiccansharing;
 
+import android.content.pm.ActivityInfo;
 import android.os.Handler;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,7 @@ public class LogoDisplay extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_logo_display);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
     }
     @Override
     protected void onPostCreate(Bundle savedInstanceState)

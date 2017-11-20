@@ -1,6 +1,7 @@
 package com.example.wiccansharing;
 
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,10 +19,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        //Toast.makeText(getApplicationContext(),
-        //        "Input the IP address of the server and your username to access files.",
-        //        Toast.LENGTH_SHORT).show(); // Ou long
-        // check if a saved username & IP exist
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
         if (configsE(this)) {
             loadConfigs(this);
             TextView IP_TextBox = findViewById(R.id.IP);
