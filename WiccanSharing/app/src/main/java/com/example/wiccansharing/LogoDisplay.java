@@ -25,6 +25,8 @@ public class LogoDisplay extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+    public void onBackPressed() {
+    }
 }
 
 class DelayedTask implements Runnable

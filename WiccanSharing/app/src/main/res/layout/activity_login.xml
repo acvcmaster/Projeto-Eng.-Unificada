@@ -74,6 +74,6 @@
         android:layout_alignParentTop="true"
         android:layout_margin="50px"
         android:background="@drawable/login"
-        />
+        android:onClick="onClickLogin" />
 
 </LinearLayout>

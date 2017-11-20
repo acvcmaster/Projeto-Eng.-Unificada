@@ -3,15 +3,11 @@ package com.example.wiccansharing;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Xml;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.*;
 import android.os.Handler;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.text.Format;
 import java.util.Scanner;
 
 public class Login extends AppCompatActivity {
@@ -20,17 +16,19 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Toast.makeText(getApplicationContext(),
-                "Input the IP address of the server and your username to access files.",
-                Toast.LENGTH_SHORT).show(); // Ou long
-
+        //Toast.makeText(getApplicationContext(),
+        //        "Input the IP address of the server and your username to access files.",
+        //        Toast.LENGTH_SHORT).show(); // Ou long
         // check if a saved username & IP exist
-        if(configsE(this)) {
+        if (configsE(this)) {
             loadConfigs(this);
             TextView IP_TextBox = findViewById(R.id.IP);
-            //IP_TextBox.setText("LOL");
+            TextView user_TextBox = findViewById(R.id.editText);
+            CheckBox checkBox = findViewById(R.id.SaveUsernameBOX);
+            IP_TextBox.setText(IPAddr);
+            user_TextBox.setText(UsrN);
+            checkBox.setChecked(true);
         }
-
     }
 
     boolean doubleBackToExitPressedOnce = false;
@@ -55,14 +53,39 @@ public class Login extends AppCompatActivity {
     }
 
     public void onClickLogin(View view) {
+        Context context = view.getContext();
+        CheckBox checkBox = findViewById(R.id.SaveUsernameBOX);
+        TextView IP_TextBox = findViewById(R.id.IP);
+        TextView user_TextBox = findViewById(R.id.editText);
 
+        // checar por número e ip e usuário válido
+        if (checkBox.isChecked() &&
+                !(IPAddr.equals(IP_TextBox.getText().toString()) &&
+                        UsrN.equals(user_TextBox.getText().toString()))) {
+
+            saveConfigs(context, IP_TextBox.getText()
+                    + "\n" + user_TextBox.getText());
+            Toast.makeText(context, "Login configuration saved.", Toast.LENGTH_SHORT).show();
+            IPAddr = IP_TextBox.getText().toString();
+            UsrN = user_TextBox.getText().toString();
+        }
+        if (!checkBox.isChecked()) {
+            File settings = new File(context.getFilesDir() + "/settings");
+            try {
+                settings.delete();
+            } catch (Exception e) {
+                Toast.makeText(context, "Error. Failed to delete login settings data.", Toast.LENGTH_LONG).show();
+            }
+        }
+        // Lógica de login
     }
 
     private String IPAddr = "";
     private String UsrN = "";
 
     public boolean configsE(Context context) {
-        return true;
+        File settings = new File(context.getFilesDir() + "/settings");
+        return settings.exists();
     }
 
     public void loadConfigs(Context context) {
@@ -78,9 +101,8 @@ public class Login extends AppCompatActivity {
         }
     }
 
-    public void createFile(Context context, String contents) {
+    public void saveConfigs(Context context, String contents) {
         FileOutputStream outputStream;
-
         try {
             outputStream = openFileOutput("settings", Context.MODE_PRIVATE);
             outputStream.write(contents.getBytes());
