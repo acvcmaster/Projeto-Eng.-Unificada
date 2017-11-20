@@ -9,6 +9,8 @@ import android.os.Handler;
 
 import java.io.*;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Login extends AppCompatActivity {
 
@@ -57,17 +59,33 @@ public class Login extends AppCompatActivity {
         CheckBox checkBox = findViewById(R.id.SaveUsernameBOX);
         TextView IP_TextBox = findViewById(R.id.IP);
         TextView user_TextBox = findViewById(R.id.editText);
+        String IIP = IP_TextBox.getText().toString();
+        String IUser = user_TextBox.getText().toString();
 
-        // checar por número e ip e usuário válido
+        IP_TextBox.setError(null);
+        user_TextBox.setError(null);
+
+        boolean error = false;
+        if (!isValidIP(IIP)) {
+            IP_TextBox.setError("Invalid IP address.");
+            error = true;
+        }
+        if (!isValidUser(IUser)) {
+            user_TextBox.setError("Invalid username.");
+            error = true;
+        }
+        if(error)
+            return;
+
         if (checkBox.isChecked() &&
-                !(IPAddr.equals(IP_TextBox.getText().toString()) &&
+                !(IPAddr.equals(IIP) &&
                         UsrN.equals(user_TextBox.getText().toString()))) {
 
-            saveConfigs(context, IP_TextBox.getText()
-                    + "\n" + user_TextBox.getText());
+            saveConfigs(context, IIP
+                    + "\n" + IUser);
             Toast.makeText(context, "Login configuration saved.", Toast.LENGTH_SHORT).show();
-            IPAddr = IP_TextBox.getText().toString();
-            UsrN = user_TextBox.getText().toString();
+            IPAddr = IIP;
+            UsrN = IUser;
         }
         if (!checkBox.isChecked()) {
             File settings = new File(context.getFilesDir() + "/settings");
@@ -83,12 +101,12 @@ public class Login extends AppCompatActivity {
     private String IPAddr = "";
     private String UsrN = "";
 
-    public boolean configsE(Context context) {
+    private boolean configsE(Context context) {
         File settings = new File(context.getFilesDir() + "/settings");
         return settings.exists();
     }
 
-    public void loadConfigs(Context context) {
+    private void loadConfigs(Context context) {
         FileInputStream inputStream;
         try {
             inputStream = openFileInput("settings");
@@ -101,7 +119,7 @@ public class Login extends AppCompatActivity {
         }
     }
 
-    public void saveConfigs(Context context, String contents) {
+    private void saveConfigs(Context context, String contents) {
         FileOutputStream outputStream;
         try {
             outputStream = openFileOutput("settings", Context.MODE_PRIVATE);
@@ -110,6 +128,32 @@ public class Login extends AppCompatActivity {
         } catch (Exception e) {
             Toast.makeText(context, "Unknown error. Could not save login settings.", Toast.LENGTH_LONG).show();
         }
+    }
+
+
+    private static final String IP_Pattern =
+            "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$";
+    private static final String user_Pattern = "^[a-zA-Z0-9]+([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*[a-zA-Z0-9]*$";
+    private static Pattern pattern = null;
+    private static Matcher matcher = null;
+
+    private static boolean isValidIP(String IP) {
+        pattern = Pattern.compile(IP_Pattern);
+        matcher = pattern.matcher(IP);
+        return matcher.matches();
+    }
+    /*
+        User names can consist of lowercase and capitals
+        User names can consist of alphanumeric characters
+        User names can consist of underscore and hyphens and spaces
+        Cannot be two underscores, two hyphens or two spaces in a row
+        Cannot have a underscore, hyphens or space at the start or end
+        Must consist of exactly or less than 20 characters
+    */
+    private boolean isValidUser(String user){
+        pattern = Pattern.compile(user_Pattern);
+        matcher = pattern.matcher(user);
+        return matcher.matches() && user.length() <= 20;
     }
 }
 
