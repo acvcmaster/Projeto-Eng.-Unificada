@@ -1,33 +1,40 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     android:background="#008d8b"
-    tools:context="com.example.wiccansharing.Login">
+    android:gravity="center_horizontal"
+    tools:context="com.example.wiccansharing.Login"
+    tools:layout_editor_absoluteY="81dp">
 
     <!-- Login progress -->
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginStart="36dp"
         android:fontFamily="sans-serif-light"
         android:gravity="center"
         android:paddingTop="100px"
         android:text="@string/server_ip_info"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toTopOf="@+id/IP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/IP"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginStart="18dp"
         android:backgroundTint="#40aba9"
         android:digits="0123456789."
         android:ems="10"
@@ -35,45 +42,88 @@
         android:hint="0.0.0.0"
         android:inputType="number"
         android:paddingTop="50px"
-        android:singleLine="true" />
+        android:singleLine="true"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:layout_marginStart="18dp"
         android:fontFamily="sans-serif-light"
         android:gravity="center"
         android:paddingTop="130px"
         android:text="@string/username_info"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IP" />
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:layout_marginStart="18dp"
+        android:backgroundTint="#40aba9"
         android:ems="10"
         android:hint="Username"
-        android:backgroundTint="#40aba9"
+        android:inputType="textPersonName"
         android:paddingTop="50px"
-        android:inputType="textPersonName" />
+        app:layout_constraintBottom_toTopOf="@+id/SaveUsernameBOX"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
 
     <CheckBox
         android:id="@+id/SaveUsernameBOX"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="23dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginStart="18dp"
         android:buttonTint="#FFFF"
         android:text="@string/username_chk"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toTopOf="@+id/loginProgress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <ImageButton
         android:id="@+id/Button"
-        android:layout_width="153dp"
-        android:layout_height="54dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_margin="50px"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="23dp"
         android:background="@drawable/login"
-        android:onClick="onClickLogin" />
+        android:onClick="onClickLogin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/loginProgress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SaveUsernameBOX" />
 
-</LinearLayout>
+    <ProgressBar
+        android:id="@+id/loginProgress"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
+        android:layout_marginEnd="38dp"
+        android:indeterminate="false"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Button"
+        app:layout_constraintTop_toBottomOf="@+id/SaveUsernameBOX" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="__local_aars__:/home/antonio/Desktop/Projeto-Eng.-Unificada/WiccanSharing/app/commons-net-3.6/commons-net-3.6.jar:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/commons-net-3.6/commons-net-3.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/app/commons-net-3.6/commons-net-3.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -6,4 +6,16 @@
     <string name="server_ip_info">Inform the server\'s IP address :</string>
     <string name="username_info">Inform your username :</string>
     <string name="username_chk">Save my settings for the next time</string>
+    <string name="leave_toast">Press BACK again to exit.</string>
+    <string name="ip_invalid">Invalid IP address.</string>
+    <string name="username_invalid">Invalid username.</string>
+    <string name="login_info_saved">Login configuration saved.</string>
+    <string name="settings_file">settings</string>
+    <string name="login_info_delete_err">Error. Failed to delete login settings data.</string>
+    <string name="login_info_load_err">Unknown error. Could not load login settings.</string>
+    <string name="login_info_save_err">Unknown error. Could not save login settings.</string>
+    <string name="default_ftp_password">default_password</string>
+    <string name="ftp_socket_error">Error while trying to connect to \'%s\'. Please check the address and try again.</string>
+    <string name="login_unknown_error">An unknown error occurred while trying to login.</string>
+    <string name="login_username_invalid">The user name \'%s\' was not found on the server. Check for spelling errors.</string>
 </resources>
