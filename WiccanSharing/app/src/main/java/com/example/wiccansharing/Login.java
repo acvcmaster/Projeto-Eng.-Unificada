@@ -11,12 +11,10 @@ import android.widget.*;
 import android.os.Handler;
 
 import java.io.*;
-import java.text.Format;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 
 public class Login extends AppCompatActivity {
@@ -215,9 +213,10 @@ public class Login extends AppCompatActivity {
             }
             else {
                 // continuar (prox. activity)
-                Intent intent = new Intent(AppContext, fileslist.class);
-                fileslist.ftpClient = ftpClient;
+                Intent intent = new Intent(AppContext, FilesList.class);
+                FilesList.ftpClient = ftpClient;
                 startActivity(intent);
+                finish();
             }
         }
         protected void onCancelled() {

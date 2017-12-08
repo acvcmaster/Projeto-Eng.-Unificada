@@ -18,4 +18,12 @@
     <string name="ftp_socket_error">Error while trying to connect to \'%s\'. Please check the address and try again.</string>
     <string name="login_unknown_error">An unknown error occurred while trying to login.</string>
     <string name="login_username_invalid">The user name \'%s\' was not found on the server. Check for spelling errors.</string>
+    <string name="leave_warning">Going back here will disconnect you from the FTP server. Continue?</string>
+    <string name="leave_confirmation">Are you sure you want to disconnect from the FTP server?</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">No</string>
+    <string name="dialog_ok">OK</string>
+    <string name="disconnect_fail">Could not disconnect from the FTP server. An unknown error occured.</string>
+    <string name="file_worker_fail">Could not fetch file list. The server may have gone off-line. Exiting to login screen.</string>
+    <string name="file_size_format">"Size : %d KB</string>
 </resources>
