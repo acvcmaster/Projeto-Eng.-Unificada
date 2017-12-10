@@ -171,18 +171,18 @@ extends <a href="../../../../../org/apache/commons/net/tftp/TFTPPacket.html" tit
 </tr>
 <tr class="altColor">
 <td class="colOne"><code><strong><a href="../../../../../org/apache/commons/net/tftp/TFTPDataPacket.html#TFTPDataPacket(java.net.InetAddress,%20int,%20int,%20byte[])">TFTPDataPacket</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;destination,
-              int&nbsp;port,
+              int&nbsp;LPort,
               int&nbsp;blockNumber,
               byte[]&nbsp;data)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colOne"><code><strong><a href="../../../../../org/apache/commons/net/tftp/TFTPDataPacket.html#TFTPDataPacket(java.net.InetAddress,%20int,%20int,%20byte[],%20int,%20int)">TFTPDataPacket</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;destination,
-              int&nbsp;port,
+              int&nbsp;LPort,
               int&nbsp;blockNumber,
               byte[]&nbsp;data,
               int&nbsp;offset,
               int&nbsp;length)</code>
-<div class="block">Creates a data packet to be sent to a host at a given port
+<div class="block">Creates a data packet to be sent to a host at a given LPort
  with a given block number.</div>
 </td>
 </tr>
@@ -319,18 +319,18 @@ extends <a href="../../../../../org/apache/commons/net/tftp/TFTPPacket.html" tit
 <li class="blockList">
 <h4>TFTPDataPacket</h4>
 <pre>public&nbsp;TFTPDataPacket(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;destination,
-              int&nbsp;port,
+              int&nbsp;LPort,
               int&nbsp;blockNumber,
               byte[]&nbsp;data,
               int&nbsp;offset,
               int&nbsp;length)</pre>
-<div class="block">Creates a data packet to be sent to a host at a given port
+<div class="block">Creates a data packet to be sent to a host at a given LPort
  with a given block number.  The actual data to be sent is passed as
  an array, an offset, and a length.  The offset is the offset into
  the byte array where the data starts.  The length is the length of
  the data.  If the length is greater than MAX_DATA_LENGTH, it is
  truncated.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>destination</code> - The host to which the packet is going to be sent.</dd><dd><code>port</code> - The port to which the packet is going to be sent.</dd><dd><code>blockNumber</code> - The block number of the data.</dd><dd><code>data</code> - The byte array containing the data.</dd><dd><code>offset</code> - The offset into the array where the data starts.</dd><dd><code>length</code> - The length of the data.</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>destination</code> - The host to which the packet is going to be sent.</dd><dd><code>LPort</code> - The LPort to which the packet is going to be sent.</dd><dd><code>blockNumber</code> - The block number of the data.</dd><dd><code>data</code> - The byte array containing the data.</dd><dd><code>offset</code> - The offset into the array where the data starts.</dd><dd><code>length</code> - The length of the data.</dd></dl>
 </li>
 </ul>
 <a name="TFTPDataPacket(java.net.InetAddress, int, int, byte[])">
@@ -340,7 +340,7 @@ extends <a href="../../../../../org/apache/commons/net/tftp/TFTPPacket.html" tit
 <li class="blockList">
 <h4>TFTPDataPacket</h4>
 <pre>public&nbsp;TFTPDataPacket(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;destination,
-              int&nbsp;port,
+              int&nbsp;LPort,
               int&nbsp;blockNumber,
               byte[]&nbsp;data)</pre>
 </li>

@@ -304,9 +304,9 @@ extends <a href="../../../../../org/apache/commons/net/imap/IMAP.html" title="cl
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/imap/IMAPClient.html#login(java.lang.String,%20java.lang.String)">login</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
-     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password)</code>
-<div class="block">Login to the IMAP server with the given username and password.</div>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/imap/IMAPClient.html#login(java.lang.String,%20java.lang.String)">login</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LUsername,
+     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LPassword)</code>
+<div class="block">Login to the IMAP server with the given LUsername and LPassword.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -495,16 +495,16 @@ extends <a href="../../../../../org/apache/commons/net/imap/IMAP.html" title="cl
 <ul class="blockList">
 <li class="blockList">
 <h4>login</h4>
-<pre>public&nbsp;boolean&nbsp;login(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
-            <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password)
+<pre>public&nbsp;boolean&nbsp;login(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LUsername,
+            <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LPassword)
               throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">Login to the IMAP server with the given username and password.  You
+<div class="block">Login to the IMAP server with the given LUsername and LPassword.  You
  must first connect to the server with
  <a href="../../../../../org/apache/commons/net/SocketClient.html#connect(java.net.InetAddress,%20int)"><code>connect </code></a>
  before attempting to login.  A login attempt is only valid if
  the client is in the NOT_AUTH_STATE.
  After logging in, the client enters the AUTH_STATE.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>username</code> - The account name being logged in to.</dd><dd><code>password</code> - The plain text password of the account.</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>LUsername</code> - The account name being logged in to.</dd><dd><code>LPassword</code> - The plain text LPassword of the account.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>True if the login attempt was successful, false if not.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - If a network I/O error occurs in the process of

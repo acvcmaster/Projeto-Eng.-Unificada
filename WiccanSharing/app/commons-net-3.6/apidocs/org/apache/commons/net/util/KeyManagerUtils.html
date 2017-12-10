@@ -108,8 +108,8 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
  cl.setKeyManager(km);
  cl.connect(...);
  </pre>
- If using the default store type and the key password is the same as the
- store password, these parameters can be omitted. <br>
+ If using the default store type and the key LPassword is the same as the
+ store LPassword, these parameters can be omitted. <br>
  If the desired key is the first or only key in the keystore, the keyAlias parameter
  can be omitted, in which case the code becomes:
  <pre>
@@ -206,7 +206,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
                                          throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/security/GeneralSecurityException.html?is-external=true" title="class or interface in java.security">GeneralSecurityException</a></pre>
 <div class="block">Create a client key manager which returns a particular key.
  Does not handle server keys.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ks</code> - the keystore to use</dd><dd><code>keyAlias</code> - the alias of the key to use, may be <code>null</code> in which case the first key entry alias is used</dd><dd><code>keyPass</code> - the password of the key to use</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ks</code> - the keystore to use</dd><dd><code>keyAlias</code> - the alias of the key to use, may be <code>null</code> in which case the first key entry alias is used</dd><dd><code>keyPass</code> - the LPassword of the key to use</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the customised KeyManager</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/security/GeneralSecurityException.html?is-external=true" title="class or interface in java.security">GeneralSecurityException</a></code> - if there is a problem creating the keystore</dd></dl>
@@ -227,7 +227,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
                                                 <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/security/GeneralSecurityException.html?is-external=true" title="class or interface in java.security">GeneralSecurityException</a></pre>
 <div class="block">Create a client key manager which returns a particular key.
  Does not handle server keys.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>storeType</code> - the type of the keyStore, e.g. "JKS"</dd><dd><code>storePath</code> - the path to the keyStore</dd><dd><code>storePass</code> - the keyStore password</dd><dd><code>keyAlias</code> - the alias of the key to use, may be <code>null</code> in which case the first key entry alias is used</dd><dd><code>keyPass</code> - the password of the key to use</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>storeType</code> - the type of the keyStore, e.g. "JKS"</dd><dd><code>storePath</code> - the path to the keyStore</dd><dd><code>storePass</code> - the keyStore LPassword</dd><dd><code>keyAlias</code> - the alias of the key to use, may be <code>null</code> in which case the first key entry alias is used</dd><dd><code>keyPass</code> - the LPassword of the key to use</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the customised KeyManager</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/security/GeneralSecurityException.html?is-external=true" title="class or interface in java.security">GeneralSecurityException</a></code> - if there is a problem creating the keystore</dd>
@@ -247,8 +247,8 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
                                                 <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/security/GeneralSecurityException.html?is-external=true" title="class or interface in java.security">GeneralSecurityException</a></pre>
 <div class="block">Create a client key manager which returns a particular key.
  Does not handle server keys.
- Uses the default store type and assumes the key password is the same as the store password</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>storePath</code> - the path to the keyStore</dd><dd><code>storePass</code> - the keyStore password</dd><dd><code>keyAlias</code> - the alias of the key to use, may be <code>null</code> in which case the first key entry alias is used</dd>
+ Uses the default store type and assumes the key LPassword is the same as the store LPassword</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>storePath</code> - the path to the keyStore</dd><dd><code>storePass</code> - the keyStore LPassword</dd><dd><code>keyAlias</code> - the alias of the key to use, may be <code>null</code> in which case the first key entry alias is used</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the customised KeyManager</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if there is a problem creating the keystore</dd>
@@ -267,9 +267,9 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
                                                 <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/security/GeneralSecurityException.html?is-external=true" title="class or interface in java.security">GeneralSecurityException</a></pre>
 <div class="block">Create a client key manager which returns a particular key.
  Does not handle server keys.
- Uses the default store type and assumes the key password is the same as the store password.
+ Uses the default store type and assumes the key LPassword is the same as the store LPassword.
  The key alias is found by searching the keystore for the first private key entry</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>storePath</code> - the path to the keyStore</dd><dd><code>storePass</code> - the keyStore password</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>storePath</code> - the path to the keyStore</dd><dd><code>storePass</code> - the keyStore LPassword</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the customised KeyManager</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if there is a problem creating the keystore</dd>

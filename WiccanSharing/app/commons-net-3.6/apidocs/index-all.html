@@ -129,14 +129,14 @@
 <dd>
 <div class="block">A constant indicating the FTP session is expecting all transfers
  to occur between the client (local) and server and that the server
- should connect to the client's data port to initiate a data transfer.</div>
+ should connect to the client's data LPort to initiate a data transfer.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ftp/FTPClient.html#ACTIVE_REMOTE_DATA_CONNECTION_MODE">ACTIVE_REMOTE_DATA_CONNECTION_MODE</a></span> - Static variable in class org.apache.commons.net.ftp.<a href="./org/apache/commons/net/ftp/FTPClient.html" title="class in org.apache.commons.net.ftp">FTPClient</a></dt>
 <dd>
 <div class="block">A constant indicating the FTP session is expecting all transfers
  to occur between two remote servers and that the server
  the client is connected to should connect to the other server's
- data port to initiate a data transfer.</div>
+ data LPort to initiate a data transfer.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ftp/FTPSCommand.html#ADAT">ADAT</a></span> - Static variable in class org.apache.commons.net.ftp.<a href="./org/apache/commons/net/ftp/FTPSCommand.html" title="class in org.apache.commons.net.ftp">FTPSCommand</a></dt>
 <dd>
@@ -403,12 +403,12 @@
 <dt><span class="strong"><a href="./org/apache/commons/net/imap/AuthenticatingIMAPClient.html#auth(org.apache.commons.net.imap.AuthenticatingIMAPClient.AUTH_METHOD,%20java.lang.String,%20java.lang.String)">auth(AuthenticatingIMAPClient.AUTH_METHOD, String, String)</a></span> - Method in class org.apache.commons.net.imap.<a href="./org/apache/commons/net/imap/AuthenticatingIMAPClient.html" title="class in org.apache.commons.net.imap">AuthenticatingIMAPClient</a></dt>
 <dd>
 <div class="block">Authenticate to the IMAP server by sending the AUTHENTICATE command with the
- selected mechanism, using the given username and the given password.</div>
+ selected mechanism, using the given LUsername and the given LPassword.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/pop3/ExtendedPOP3Client.html#auth(org.apache.commons.net.pop3.ExtendedPOP3Client.AUTH_METHOD,%20java.lang.String,%20java.lang.String)">auth(ExtendedPOP3Client.AUTH_METHOD, String, String)</a></span> - Method in class org.apache.commons.net.pop3.<a href="./org/apache/commons/net/pop3/ExtendedPOP3Client.html" title="class in org.apache.commons.net.pop3">ExtendedPOP3Client</a></dt>
 <dd>
 <div class="block">Authenticate to the POP3 server by sending the AUTH command with the
- selected mechanism, using the given username and the given password.</div>
+ selected mechanism, using the given LUsername and the given LPassword.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/pop3/POP3Command.html#AUTH">AUTH</a></span> - Static variable in class org.apache.commons.net.pop3.<a href="./org/apache/commons/net/pop3/POP3Command.html" title="class in org.apache.commons.net.pop3">POP3Command</a></dt>
 <dd>
@@ -417,7 +417,7 @@
 <dt><span class="strong"><a href="./org/apache/commons/net/smtp/AuthenticatingSMTPClient.html#auth(org.apache.commons.net.smtp.AuthenticatingSMTPClient.AUTH_METHOD,%20java.lang.String,%20java.lang.String)">auth(AuthenticatingSMTPClient.AUTH_METHOD, String, String)</a></span> - Method in class org.apache.commons.net.smtp.<a href="./org/apache/commons/net/smtp/AuthenticatingSMTPClient.html" title="class in org.apache.commons.net.smtp">AuthenticatingSMTPClient</a></dt>
 <dd>
 <div class="block">Authenticate to the SMTP server by sending the AUTH command with the
- selected mechanism, using the given username and the given password.</div>
+ selected mechanism, using the given LUsername and the given LPassword.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/smtp/SMTPCommand.html#AUTH">AUTH</a></span> - Static variable in class org.apache.commons.net.smtp.<a href="./org/apache/commons/net/smtp/SMTPCommand.html" title="class in org.apache.commons.net.smtp">SMTPCommand</a></dt>
 <dd>
@@ -426,7 +426,7 @@
 <dt><span class="strong"><a href="./org/apache/commons/net/imap/AuthenticatingIMAPClient.html#authenticate(org.apache.commons.net.imap.AuthenticatingIMAPClient.AUTH_METHOD,%20java.lang.String,%20java.lang.String)">authenticate(AuthenticatingIMAPClient.AUTH_METHOD, String, String)</a></span> - Method in class org.apache.commons.net.imap.<a href="./org/apache/commons/net/imap/AuthenticatingIMAPClient.html" title="class in org.apache.commons.net.imap">AuthenticatingIMAPClient</a></dt>
 <dd>
 <div class="block">Authenticate to the IMAP server by sending the AUTHENTICATE command with the
- selected mechanism, using the given username and the given password.</div>
+ selected mechanism, using the given LUsername and the given LPassword.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/nntp/NNTPClient.html#authenticate(java.lang.String,%20java.lang.String)">authenticate(String, String)</a></span> - Method in class org.apache.commons.net.nntp.<a href="./org/apache/commons/net/nntp/NNTPClient.html" title="class in org.apache.commons.net.nntp">NNTPClient</a></dt>
 <dd>
@@ -721,11 +721,11 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/chargen/CharGenTCPClient.html#CHARGEN_PORT">CHARGEN_PORT</a></span> - Static variable in class org.apache.commons.net.chargen.<a href="./org/apache/commons/net/chargen/CharGenTCPClient.html" title="class in org.apache.commons.net.chargen">CharGenTCPClient</a></dt>
 <dd>
-<div class="block">The character generator port value of 19 according to RFC 864.</div>
+<div class="block">The character generator LPort value of 19 according to RFC 864.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/chargen/CharGenUDPClient.html#CHARGEN_PORT">CHARGEN_PORT</a></span> - Static variable in class org.apache.commons.net.chargen.<a href="./org/apache/commons/net/chargen/CharGenUDPClient.html" title="class in org.apache.commons.net.chargen">CharGenUDPClient</a></dt>
 <dd>
-<div class="block">The character generator port value of 19 according to RFC 864.</div>
+<div class="block">The character generator LPort value of 19 according to RFC 864.</div>
 </dd>
 <dt><a href="./org/apache/commons/net/chargen/CharGenTCPClient.html" title="class in org.apache.commons.net.chargen"><span class="strong">CharGenTCPClient</span></a> - Class in <a href="./org/apache/commons/net/chargen/package-summary.html">org.apache.commons.net.chargen</a></dt>
 <dd>
@@ -905,69 +905,69 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/bsd/RCommandClient.html#connect(java.net.InetAddress,%20int,%20java.net.InetAddress)">connect(InetAddress, int, InetAddress)</a></span> - Method in class org.apache.commons.net.bsd.<a href="./org/apache/commons/net/bsd/RCommandClient.html" title="class in org.apache.commons.net.bsd">RCommandClient</a></dt>
 <dd>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the specified local address using a port in a range
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the specified local address using a LPort in a range
  acceptable to the BSD rshell daemon.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/bsd/RCommandClient.html#connect(java.net.InetAddress,%20int)">connect(InetAddress, int)</a></span> - Method in class org.apache.commons.net.bsd.<a href="./org/apache/commons/net/bsd/RCommandClient.html" title="class in org.apache.commons.net.bsd">RCommandClient</a></dt>
 <dd>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the current host at a port in a range acceptable
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the current host at a LPort in a range acceptable
  to the BSD rshell daemon.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/bsd/RCommandClient.html#connect(java.lang.String,%20int)">connect(String, int)</a></span> - Method in class org.apache.commons.net.bsd.<a href="./org/apache/commons/net/bsd/RCommandClient.html" title="class in org.apache.commons.net.bsd">RCommandClient</a></dt>
 <dd>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the current host at a port in a range acceptable
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the current host at a LPort in a range acceptable
  to the BSD rshell daemon.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/bsd/RCommandClient.html#connect(java.lang.String,%20int,%20java.net.InetAddress)">connect(String, int, InetAddress)</a></span> - Method in class org.apache.commons.net.bsd.<a href="./org/apache/commons/net/bsd/RCommandClient.html" title="class in org.apache.commons.net.bsd">RCommandClient</a></dt>
 <dd>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the specified local address using a port in a range
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the specified local address using a LPort in a range
  acceptable to the BSD rshell daemon.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/bsd/RCommandClient.html#connect(java.net.InetAddress,%20int,%20java.net.InetAddress,%20int)">connect(InetAddress, int, InetAddress, int)</a></span> - Method in class org.apache.commons.net.bsd.<a href="./org/apache/commons/net/bsd/RCommandClient.html" title="class in org.apache.commons.net.bsd">RCommandClient</a></dt>
 <dd>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the specified local address and port.</div>
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the specified local address and LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/bsd/RCommandClient.html#connect(java.lang.String,%20int,%20java.net.InetAddress,%20int)">connect(String, int, InetAddress, int)</a></span> - Method in class org.apache.commons.net.bsd.<a href="./org/apache/commons/net/bsd/RCommandClient.html" title="class in org.apache.commons.net.bsd">RCommandClient</a></dt>
 <dd>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the specified local address and port.</div>
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the specified local address and LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ftp/FTPHTTPClient.html#connect(java.lang.String,%20int)">connect(String, int)</a></span> - Method in class org.apache.commons.net.ftp.<a href="./org/apache/commons/net/ftp/FTPHTTPClient.html" title="class in org.apache.commons.net.ftp">FTPHTTPClient</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/SocketClient.html#connect(java.net.InetAddress,%20int)">connect(InetAddress, int)</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/SocketClient.html" title="class in org.apache.commons.net">SocketClient</a></dt>
 <dd>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the current host at a system assigned port.</div>
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the current host at a system assigned LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/SocketClient.html#connect(java.lang.String,%20int)">connect(String, int)</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/SocketClient.html" title="class in org.apache.commons.net">SocketClient</a></dt>
 <dd>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the current host at a system assigned port.</div>
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the current host at a system assigned LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/SocketClient.html#connect(java.net.InetAddress,%20int,%20java.net.InetAddress,%20int)">connect(InetAddress, int, InetAddress, int)</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/SocketClient.html" title="class in org.apache.commons.net">SocketClient</a></dt>
 <dd>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the specified local address and port.</div>
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the specified local address and LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/SocketClient.html#connect(java.lang.String,%20int,%20java.net.InetAddress,%20int)">connect(String, int, InetAddress, int)</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/SocketClient.html" title="class in org.apache.commons.net">SocketClient</a></dt>
 <dd>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the specified local address and port.</div>
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the specified local address and LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/SocketClient.html#connect(java.net.InetAddress)">connect(InetAddress)</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/SocketClient.html" title="class in org.apache.commons.net">SocketClient</a></dt>
 <dd>
-<div class="block">Opens a Socket connected to a remote host at the current default port
- and originating from the current host at a system assigned port.</div>
+<div class="block">Opens a Socket connected to a remote host at the current default LPort
+ and originating from the current host at a system assigned LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/SocketClient.html#connect(java.lang.String)">connect(String)</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/SocketClient.html" title="class in org.apache.commons.net">SocketClient</a></dt>
 <dd>
 <div class="block">Opens a Socket connected to a remote host at the current default
- port and originating from the current host at a system assigned port.</div>
+ LPort and originating from the current host at a system assigned LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/SocketClient.html#connectTimeout">connectTimeout</a></span> - Variable in class org.apache.commons.net.<a href="./org/apache/commons/net/SocketClient.html" title="class in org.apache.commons.net">SocketClient</a></dt>
 <dd>&nbsp;</dd>
@@ -1079,29 +1079,29 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/DatagramSocketFactory.html#createDatagramSocket()">createDatagramSocket()</a></span> - Method in interface org.apache.commons.net.<a href="./org/apache/commons/net/DatagramSocketFactory.html" title="interface in org.apache.commons.net">DatagramSocketFactory</a></dt>
 <dd>
-<div class="block">Creates a DatagramSocket on the local host at the first available port.</div>
+<div class="block">Creates a DatagramSocket on the local host at the first available LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/DatagramSocketFactory.html#createDatagramSocket(int)">createDatagramSocket(int)</a></span> - Method in interface org.apache.commons.net.<a href="./org/apache/commons/net/DatagramSocketFactory.html" title="interface in org.apache.commons.net">DatagramSocketFactory</a></dt>
 <dd>
-<div class="block">Creates a DatagramSocket on the local host at a specified port.</div>
+<div class="block">Creates a DatagramSocket on the local host at a specified LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/DatagramSocketFactory.html#createDatagramSocket(int,%20java.net.InetAddress)">createDatagramSocket(int, InetAddress)</a></span> - Method in interface org.apache.commons.net.<a href="./org/apache/commons/net/DatagramSocketFactory.html" title="interface in org.apache.commons.net">DatagramSocketFactory</a></dt>
 <dd>
 <div class="block">Creates a DatagramSocket at the specified address on the local host
- at a specified port.</div>
+ at a specified LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/DefaultDatagramSocketFactory.html#createDatagramSocket()">createDatagramSocket()</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/DefaultDatagramSocketFactory.html" title="class in org.apache.commons.net">DefaultDatagramSocketFactory</a></dt>
 <dd>
-<div class="block">Creates a DatagramSocket on the local host at the first available port.</div>
+<div class="block">Creates a DatagramSocket on the local host at the first available LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/DefaultDatagramSocketFactory.html#createDatagramSocket(int)">createDatagramSocket(int)</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/DefaultDatagramSocketFactory.html" title="class in org.apache.commons.net">DefaultDatagramSocketFactory</a></dt>
 <dd>
-<div class="block">Creates a DatagramSocket on the local host at a specified port.</div>
+<div class="block">Creates a DatagramSocket on the local host at a specified LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/DefaultDatagramSocketFactory.html#createDatagramSocket(int,%20java.net.InetAddress)">createDatagramSocket(int, InetAddress)</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/DefaultDatagramSocketFactory.html" title="class in org.apache.commons.net">DefaultDatagramSocketFactory</a></dt>
 <dd>
 <div class="block">Creates a DatagramSocket at the specified address on the local host
- at a specified port.</div>
+ at a specified LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ftp/parser/DefaultFTPFileEntryParserFactory.html#createFileEntryParser(java.lang.String)">createFileEntryParser(String)</a></span> - Method in class org.apache.commons.net.ftp.parser.<a href="./org/apache/commons/net/ftp/parser/DefaultFTPFileEntryParserFactory.html" title="class in org.apache.commons.net.ftp.parser">DefaultFTPFileEntryParserFactory</a></dt>
 <dd>
@@ -1146,16 +1146,16 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/DefaultSocketFactory.html#createServerSocket(int)">createServerSocket(int)</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/DefaultSocketFactory.html" title="class in org.apache.commons.net">DefaultSocketFactory</a></dt>
 <dd>
-<div class="block">Creates a ServerSocket bound to a specified port.</div>
+<div class="block">Creates a ServerSocket bound to a specified LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/DefaultSocketFactory.html#createServerSocket(int,%20int)">createServerSocket(int, int)</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/DefaultSocketFactory.html" title="class in org.apache.commons.net">DefaultSocketFactory</a></dt>
 <dd>
-<div class="block">Creates a ServerSocket bound to a specified port with a given
+<div class="block">Creates a ServerSocket bound to a specified LPort with a given
  maximum queue length for incoming connections.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/DefaultSocketFactory.html#createServerSocket(int,%20int,%20java.net.InetAddress)">createServerSocket(int, int, InetAddress)</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/DefaultSocketFactory.html" title="class in org.apache.commons.net">DefaultSocketFactory</a></dt>
 <dd>
-<div class="block">Creates a ServerSocket bound to a specified port on a given local
+<div class="block">Creates a ServerSocket bound to a specified LPort on a given local
  address with a given maximum queue length for incoming connections.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ftp/FTPSServerSocketFactory.html#createServerSocket()">createServerSocket()</a></span> - Method in class org.apache.commons.net.ftp.<a href="./org/apache/commons/net/ftp/FTPSServerSocketFactory.html" title="class in org.apache.commons.net.ftp">FTPSServerSocketFactory</a></dt>
@@ -1190,21 +1190,21 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/DefaultSocketFactory.html#createSocket(java.lang.String,%20int)">createSocket(String, int)</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/DefaultSocketFactory.html" title="class in org.apache.commons.net">DefaultSocketFactory</a></dt>
 <dd>
-<div class="block">Creates a Socket connected to the given host and port.</div>
+<div class="block">Creates a Socket connected to the given host and LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/DefaultSocketFactory.html#createSocket(java.net.InetAddress,%20int)">createSocket(InetAddress, int)</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/DefaultSocketFactory.html" title="class in org.apache.commons.net">DefaultSocketFactory</a></dt>
 <dd>
-<div class="block">Creates a Socket connected to the given host and port.</div>
+<div class="block">Creates a Socket connected to the given host and LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/DefaultSocketFactory.html#createSocket(java.lang.String,%20int,%20java.net.InetAddress,%20int)">createSocket(String, int, InetAddress, int)</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/DefaultSocketFactory.html" title="class in org.apache.commons.net">DefaultSocketFactory</a></dt>
 <dd>
-<div class="block">Creates a Socket connected to the given host and port and
- originating from the specified local address and port.</div>
+<div class="block">Creates a Socket connected to the given host and LPort and
+ originating from the specified local address and LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/DefaultSocketFactory.html#createSocket(java.net.InetAddress,%20int,%20java.net.InetAddress,%20int)">createSocket(InetAddress, int, InetAddress, int)</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/DefaultSocketFactory.html" title="class in org.apache.commons.net">DefaultSocketFactory</a></dt>
 <dd>
-<div class="block">Creates a Socket connected to the given host and port and
- originating from the specified local address and port.</div>
+<div class="block">Creates a Socket connected to the given host and LPort and
+ originating from the specified local address and LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ftp/FTPSSocketFactory.html#createSocket()">createSocket()</a></span> - Method in class org.apache.commons.net.ftp.<a href="./org/apache/commons/net/ftp/FTPSSocketFactory.html" title="class in org.apache.commons.net.ftp">FTPSSocketFactory</a></dt>
 <dd>&nbsp;</dd>
@@ -1354,7 +1354,7 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ftp/FTP.html#DEFAULT_DATA_PORT">DEFAULT_DATA_PORT</a></span> - Static variable in class org.apache.commons.net.ftp.<a href="./org/apache/commons/net/ftp/FTP.html" title="class in org.apache.commons.net.ftp">FTP</a></dt>
 <dd>
-<div class="block">The default FTP data port (20).</div>
+<div class="block">The default FTP data LPort (20).</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ftp/FTPSClient.html#DEFAULT_FTPS_DATA_PORT">DEFAULT_FTPS_DATA_PORT</a></span> - Static variable in class org.apache.commons.net.ftp.<a href="./org/apache/commons/net/ftp/FTPSClient.html" title="class in org.apache.commons.net.ftp">FTPSClient</a></dt>
 <dd>&nbsp;</dd>
@@ -1366,7 +1366,7 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/imap/IMAPSClient.html#DEFAULT_IMAPS_PORT">DEFAULT_IMAPS_PORT</a></span> - Static variable in class org.apache.commons.net.imap.<a href="./org/apache/commons/net/imap/IMAPSClient.html" title="class in org.apache.commons.net.imap">IMAPSClient</a></dt>
 <dd>
-<div class="block">The default IMAP over SSL port.</div>
+<div class="block">The default IMAP over SSL LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/tftp/TFTPClient.html#DEFAULT_MAX_TIMEOUTS">DEFAULT_MAX_TIMEOUTS</a></span> - Static variable in class org.apache.commons.net.tftp.<a href="./org/apache/commons/net/tftp/TFTPClient.html" title="class in org.apache.commons.net.tftp">TFTPClient</a></dt>
 <dd>
@@ -1375,91 +1375,91 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/bsd/RCommandClient.html#DEFAULT_PORT">DEFAULT_PORT</a></span> - Static variable in class org.apache.commons.net.bsd.<a href="./org/apache/commons/net/bsd/RCommandClient.html" title="class in org.apache.commons.net.bsd">RCommandClient</a></dt>
 <dd>
-<div class="block">The default rshell port.</div>
+<div class="block">The default rshell LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/bsd/RExecClient.html#DEFAULT_PORT">DEFAULT_PORT</a></span> - Static variable in class org.apache.commons.net.bsd.<a href="./org/apache/commons/net/bsd/RExecClient.html" title="class in org.apache.commons.net.bsd">RExecClient</a></dt>
 <dd>
-<div class="block">The default rexec port.</div>
+<div class="block">The default rexec LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/bsd/RLoginClient.html#DEFAULT_PORT">DEFAULT_PORT</a></span> - Static variable in class org.apache.commons.net.bsd.<a href="./org/apache/commons/net/bsd/RLoginClient.html" title="class in org.apache.commons.net.bsd">RLoginClient</a></dt>
 <dd>
-<div class="block">The default rlogin port.</div>
+<div class="block">The default rlogin LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/chargen/CharGenTCPClient.html#DEFAULT_PORT">DEFAULT_PORT</a></span> - Static variable in class org.apache.commons.net.chargen.<a href="./org/apache/commons/net/chargen/CharGenTCPClient.html" title="class in org.apache.commons.net.chargen">CharGenTCPClient</a></dt>
 <dd>
-<div class="block">The default chargen port.</div>
+<div class="block">The default chargen LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/chargen/CharGenUDPClient.html#DEFAULT_PORT">DEFAULT_PORT</a></span> - Static variable in class org.apache.commons.net.chargen.<a href="./org/apache/commons/net/chargen/CharGenUDPClient.html" title="class in org.apache.commons.net.chargen">CharGenUDPClient</a></dt>
 <dd>
-<div class="block">The default chargen port.</div>
+<div class="block">The default chargen LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/daytime/DaytimeTCPClient.html#DEFAULT_PORT">DEFAULT_PORT</a></span> - Static variable in class org.apache.commons.net.daytime.<a href="./org/apache/commons/net/daytime/DaytimeTCPClient.html" title="class in org.apache.commons.net.daytime">DaytimeTCPClient</a></dt>
 <dd>
-<div class="block">The default daytime port.</div>
+<div class="block">The default daytime LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/daytime/DaytimeUDPClient.html#DEFAULT_PORT">DEFAULT_PORT</a></span> - Static variable in class org.apache.commons.net.daytime.<a href="./org/apache/commons/net/daytime/DaytimeUDPClient.html" title="class in org.apache.commons.net.daytime">DaytimeUDPClient</a></dt>
 <dd>
-<div class="block">The default daytime port.</div>
+<div class="block">The default daytime LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/discard/DiscardTCPClient.html#DEFAULT_PORT">DEFAULT_PORT</a></span> - Static variable in class org.apache.commons.net.discard.<a href="./org/apache/commons/net/discard/DiscardTCPClient.html" title="class in org.apache.commons.net.discard">DiscardTCPClient</a></dt>
 <dd>
-<div class="block">The default discard port.</div>
+<div class="block">The default discard LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/discard/DiscardUDPClient.html#DEFAULT_PORT">DEFAULT_PORT</a></span> - Static variable in class org.apache.commons.net.discard.<a href="./org/apache/commons/net/discard/DiscardUDPClient.html" title="class in org.apache.commons.net.discard">DiscardUDPClient</a></dt>
 <dd>
-<div class="block">The default discard port.</div>
+<div class="block">The default discard LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/echo/EchoTCPClient.html#DEFAULT_PORT">DEFAULT_PORT</a></span> - Static variable in class org.apache.commons.net.echo.<a href="./org/apache/commons/net/echo/EchoTCPClient.html" title="class in org.apache.commons.net.echo">EchoTCPClient</a></dt>
 <dd>
-<div class="block">The default echo port.</div>
+<div class="block">The default echo LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/echo/EchoUDPClient.html#DEFAULT_PORT">DEFAULT_PORT</a></span> - Static variable in class org.apache.commons.net.echo.<a href="./org/apache/commons/net/echo/EchoUDPClient.html" title="class in org.apache.commons.net.echo">EchoUDPClient</a></dt>
 <dd>
-<div class="block">The default echo port.</div>
+<div class="block">The default echo LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/finger/FingerClient.html#DEFAULT_PORT">DEFAULT_PORT</a></span> - Static variable in class org.apache.commons.net.finger.<a href="./org/apache/commons/net/finger/FingerClient.html" title="class in org.apache.commons.net.finger">FingerClient</a></dt>
 <dd>
-<div class="block">The default FINGER port.</div>
+<div class="block">The default FINGER LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ftp/FTP.html#DEFAULT_PORT">DEFAULT_PORT</a></span> - Static variable in class org.apache.commons.net.ftp.<a href="./org/apache/commons/net/ftp/FTP.html" title="class in org.apache.commons.net.ftp">FTP</a></dt>
 <dd>
-<div class="block">The default FTP control port (21).</div>
+<div class="block">The default FTP control LPort (21).</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/imap/IMAP.html#DEFAULT_PORT">DEFAULT_PORT</a></span> - Static variable in class org.apache.commons.net.imap.<a href="./org/apache/commons/net/imap/IMAP.html" title="class in org.apache.commons.net.imap">IMAP</a></dt>
 <dd>
-<div class="block">The default IMAP port (RFC 3501).</div>
+<div class="block">The default IMAP LPort (RFC 3501).</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/nntp/NNTP.html#DEFAULT_PORT">DEFAULT_PORT</a></span> - Static variable in class org.apache.commons.net.nntp.<a href="./org/apache/commons/net/nntp/NNTP.html" title="class in org.apache.commons.net.nntp">NNTP</a></dt>
 <dd>
-<div class="block">The default NNTP port.</div>
+<div class="block">The default NNTP LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ntp/NTPUDPClient.html#DEFAULT_PORT">DEFAULT_PORT</a></span> - Static variable in class org.apache.commons.net.ntp.<a href="./org/apache/commons/net/ntp/NTPUDPClient.html" title="class in org.apache.commons.net.ntp">NTPUDPClient</a></dt>
 <dd>
-<div class="block">The default NTP port.</div>
+<div class="block">The default NTP LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/pop3/POP3.html#DEFAULT_PORT">DEFAULT_PORT</a></span> - Static variable in class org.apache.commons.net.pop3.<a href="./org/apache/commons/net/pop3/POP3.html" title="class in org.apache.commons.net.pop3">POP3</a></dt>
 <dd>
-<div class="block">The default POP3 port.</div>
+<div class="block">The default POP3 LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/smtp/SMTP.html#DEFAULT_PORT">DEFAULT_PORT</a></span> - Static variable in class org.apache.commons.net.smtp.<a href="./org/apache/commons/net/smtp/SMTP.html" title="class in org.apache.commons.net.smtp">SMTP</a></dt>
 <dd>
-<div class="block">The default SMTP port (25).</div>
+<div class="block">The default SMTP LPort (25).</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/tftp/TFTP.html#DEFAULT_PORT">DEFAULT_PORT</a></span> - Static variable in class org.apache.commons.net.tftp.<a href="./org/apache/commons/net/tftp/TFTP.html" title="class in org.apache.commons.net.tftp">TFTP</a></dt>
 <dd>
-<div class="block">The default TFTP port according to RFC 783 is 69.</div>
+<div class="block">The default TFTP LPort according to RFC 783 is 69.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/time/TimeTCPClient.html#DEFAULT_PORT">DEFAULT_PORT</a></span> - Static variable in class org.apache.commons.net.time.<a href="./org/apache/commons/net/time/TimeTCPClient.html" title="class in org.apache.commons.net.time">TimeTCPClient</a></dt>
 <dd>
-<div class="block">The default time port.</div>
+<div class="block">The default time LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/time/TimeUDPClient.html#DEFAULT_PORT">DEFAULT_PORT</a></span> - Static variable in class org.apache.commons.net.time.<a href="./org/apache/commons/net/time/TimeUDPClient.html" title="class in org.apache.commons.net.time">TimeUDPClient</a></dt>
 <dd>
-<div class="block">The default time port.</div>
+<div class="block">The default time LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/whois/WhoisClient.html#DEFAULT_PORT">DEFAULT_PORT</a></span> - Static variable in class org.apache.commons.net.whois.<a href="./org/apache/commons/net/whois/WhoisClient.html" title="class in org.apache.commons.net.whois">WhoisClient</a></dt>
 <dd>
-<div class="block">The default whois port.</div>
+<div class="block">The default whois LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/imap/IMAPSClient.html#DEFAULT_PROTOCOL">DEFAULT_PROTOCOL</a></span> - Static variable in class org.apache.commons.net.imap.<a href="./org/apache/commons/net/imap/IMAPSClient.html" title="class in org.apache.commons.net.imap">IMAPSClient</a></dt>
 <dd>
@@ -2715,7 +2715,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/SocketClient.html#getDefaultPort()">getDefaultPort()</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/SocketClient.html" title="class in org.apache.commons.net">SocketClient</a></dt>
 <dd>
-<div class="block">Returns the current value of the default port (stored in
+<div class="block">Returns the current value of the default LPort (stored in
  <a href="./org/apache/commons/net/SocketClient.html#_defaultPort_"><code>_defaultPort_ </code></a>).</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/DatagramSocketClient.html#getDefaultTimeout()">getDefaultTimeout()</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/DatagramSocketClient.html" title="class in org.apache.commons.net">DatagramSocketClient</a></dt>
@@ -2989,12 +2989,12 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/DatagramSocketClient.html#getLocalPort()">getLocalPort()</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/DatagramSocketClient.html" title="class in org.apache.commons.net">DatagramSocketClient</a></dt>
 <dd>
-<div class="block">Returns the port number of the open socket on the local host used
+<div class="block">Returns the LPort number of the open socket on the local host used
  for the connection.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/SocketClient.html#getLocalPort()">getLocalPort()</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/SocketClient.html" title="class in org.apache.commons.net">SocketClient</a></dt>
 <dd>
-<div class="block">Returns the port number of the open socket on the local host used
+<div class="block">Returns the LPort number of the open socket on the local host used
  for the connection.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/util/SubnetUtils.SubnetInfo.html#getLowAddress()">getLowAddress()</a></span> - Method in class org.apache.commons.net.util.<a href="./org/apache/commons/net/util/SubnetUtils.SubnetInfo.html" title="class in org.apache.commons.net.util">SubnetUtils.SubnetInfo</a></dt>
@@ -3129,7 +3129,7 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ftp/FTPClient.html#getPassivePort()">getPassivePort()</a></span> - Method in class org.apache.commons.net.ftp.<a href="./org/apache/commons/net/ftp/FTPClient.html" title="class in org.apache.commons.net.ftp">FTPClient</a></dt>
 <dd>
-<div class="block">If in passive mode, returns the data port of the passive host.</div>
+<div class="block">If in passive mode, returns the data LPort of the passive host.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ntp/NtpV3Impl.html#getPoll()">getPoll()</a></span> - Method in class org.apache.commons.net.ntp.<a href="./org/apache/commons/net/ntp/NtpV3Impl.html" title="class in org.apache.commons.net.ntp">NtpV3Impl</a></dt>
 <dd>
@@ -3141,7 +3141,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/tftp/TFTPPacket.html#getPort()">getPort()</a></span> - Method in class org.apache.commons.net.tftp.<a href="./org/apache/commons/net/tftp/TFTPPacket.html" title="class in org.apache.commons.net.tftp">TFTPPacket</a></dt>
 <dd>
-<div class="block">Returns the port where the packet is going to be sent
+<div class="block">Returns the LPort where the packet is going to be sent
  or where it came from.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/nntp/NewsgroupInfo.html#getPostingPermission()">getPostingPermission()</a></span> - Method in class org.apache.commons.net.nntp.<a href="./org/apache/commons/net/nntp/NewsgroupInfo.html" title="class in org.apache.commons.net.nntp">NewsgroupInfo</a></dt>
@@ -3234,7 +3234,7 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/SocketClient.html#getRemotePort()">getRemotePort()</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/SocketClient.html" title="class in org.apache.commons.net">SocketClient</a></dt>
 <dd>
-<div class="block">Returns the port number of the remote host to which the client is
+<div class="block">Returns the LPort number of the remote host to which the client is
  connected.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ftp/FTP.html#getReply()">getReply()</a></span> - Method in class org.apache.commons.net.ftp.<a href="./org/apache/commons/net/ftp/FTP.html" title="class in org.apache.commons.net.ftp">FTP</a></dt>
@@ -3480,7 +3480,7 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/daytime/DaytimeUDPClient.html#getTime(java.net.InetAddress,%20int)">getTime(InetAddress, int)</a></span> - Method in class org.apache.commons.net.daytime.<a href="./org/apache/commons/net/daytime/DaytimeUDPClient.html" title="class in org.apache.commons.net.daytime">DaytimeUDPClient</a></dt>
 <dd>
-<div class="block">Retrieves the time string from the specified server and port and
+<div class="block">Retrieves the time string from the specified server and LPort and
  returns it.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/daytime/DaytimeUDPClient.html#getTime(java.net.InetAddress)">getTime(InetAddress)</a></span> - Method in class org.apache.commons.net.daytime.<a href="./org/apache/commons/net/daytime/DaytimeUDPClient.html" title="class in org.apache.commons.net.daytime">DaytimeUDPClient</a></dt>
@@ -3494,13 +3494,13 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ntp/NTPUDPClient.html#getTime(java.net.InetAddress,%20int)">getTime(InetAddress, int)</a></span> - Method in class org.apache.commons.net.ntp.<a href="./org/apache/commons/net/ntp/NTPUDPClient.html" title="class in org.apache.commons.net.ntp">NTPUDPClient</a></dt>
 <dd>
-<div class="block">Retrieves the time information from the specified server and port and
+<div class="block">Retrieves the time information from the specified server and LPort and
  returns it.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ntp/NTPUDPClient.html#getTime(java.net.InetAddress)">getTime(InetAddress)</a></span> - Method in class org.apache.commons.net.ntp.<a href="./org/apache/commons/net/ntp/NTPUDPClient.html" title="class in org.apache.commons.net.ntp">NTPUDPClient</a></dt>
 <dd>
 <div class="block">Retrieves the time information from the specified server on the
- default NTP port and returns it.</div>
+ default NTP LPort and returns it.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ntp/TimeStamp.html#getTime()">getTime()</a></span> - Method in class org.apache.commons.net.ntp.<a href="./org/apache/commons/net/ntp/TimeStamp.html" title="class in org.apache.commons.net.ntp">TimeStamp</a></dt>
 <dd>
@@ -3516,7 +3516,7 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/time/TimeUDPClient.html#getTime(java.net.InetAddress,%20int)">getTime(InetAddress, int)</a></span> - Method in class org.apache.commons.net.time.<a href="./org/apache/commons/net/time/TimeUDPClient.html" title="class in org.apache.commons.net.time">TimeUDPClient</a></dt>
 <dd>
-<div class="block">Retrieves the time from the specified server and port and
+<div class="block">Retrieves the time from the specified server and LPort and
  returns it.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/time/TimeUDPClient.html#getTime(java.net.InetAddress)">getTime(InetAddress)</a></span> - Method in class org.apache.commons.net.time.<a href="./org/apache/commons/net/time/TimeUDPClient.html" title="class in org.apache.commons.net.time">TimeUDPClient</a></dt>
@@ -4342,24 +4342,24 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ftp/FTPClient.html#login(java.lang.String,%20java.lang.String)">login(String, String)</a></span> - Method in class org.apache.commons.net.ftp.<a href="./org/apache/commons/net/ftp/FTPClient.html" title="class in org.apache.commons.net.ftp">FTPClient</a></dt>
 <dd>
-<div class="block">Login to the FTP server using the provided username and password.</div>
+<div class="block">Login to the FTP server using the provided LUsername and LPassword.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ftp/FTPClient.html#login(java.lang.String,%20java.lang.String,%20java.lang.String)">login(String, String, String)</a></span> - Method in class org.apache.commons.net.ftp.<a href="./org/apache/commons/net/ftp/FTPClient.html" title="class in org.apache.commons.net.ftp">FTPClient</a></dt>
 <dd>
-<div class="block">Login to the FTP server using the provided username, password,
+<div class="block">Login to the FTP server using the provided LUsername, LPassword,
  and account.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/imap/IMAPClient.html#login(java.lang.String,%20java.lang.String)">login(String, String)</a></span> - Method in class org.apache.commons.net.imap.<a href="./org/apache/commons/net/imap/IMAPClient.html" title="class in org.apache.commons.net.imap">IMAPClient</a></dt>
 <dd>
-<div class="block">Login to the IMAP server with the given username and password.</div>
+<div class="block">Login to the IMAP server with the given LUsername and LPassword.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/pop3/POP3Client.html#login(java.lang.String,%20java.lang.String)">login(String, String)</a></span> - Method in class org.apache.commons.net.pop3.<a href="./org/apache/commons/net/pop3/POP3Client.html" title="class in org.apache.commons.net.pop3">POP3Client</a></dt>
 <dd>
-<div class="block">Login to the POP3 server with the given username and password.</div>
+<div class="block">Login to the POP3 server with the given LUsername and LPassword.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/pop3/POP3Client.html#login(java.lang.String,%20java.lang.String,%20java.lang.String)">login(String, String, String)</a></span> - Method in class org.apache.commons.net.pop3.<a href="./org/apache/commons/net/pop3/POP3Client.html" title="class in org.apache.commons.net.pop3">POP3Client</a></dt>
 <dd>
-<div class="block">Login to the POP3 server with the given username and authentication
+<div class="block">Login to the POP3 server with the given LUsername and authentication
  information.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/smtp/SMTPClient.html#login(java.lang.String)">login(String)</a></span> - Method in class org.apache.commons.net.smtp.<a href="./org/apache/commons/net/smtp/SMTPClient.html" title="class in org.apache.commons.net.smtp">SMTPClient</a></dt>
@@ -4493,7 +4493,7 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/bsd/RCommandClient.html#MAX_CLIENT_PORT">MAX_CLIENT_PORT</a></span> - Static variable in class org.apache.commons.net.bsd.<a href="./org/apache/commons/net/bsd/RCommandClient.html" title="class in org.apache.commons.net.bsd">RCommandClient</a></dt>
 <dd>
-<div class="block">The largest port number an rcmd client may use.</div>
+<div class="block">The largest LPort number an rcmd client may use.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/telnet/TelnetCommand.html#MAX_COMMAND_VALUE">MAX_COMMAND_VALUE</a></span> - Static variable in class org.apache.commons.net.telnet.<a href="./org/apache/commons/net/telnet/TelnetCommand.html" title="class in org.apache.commons.net.telnet">TelnetCommand</a></dt>
 <dd>
@@ -4537,7 +4537,7 @@
 &nbsp;</dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/bsd/RCommandClient.html#MIN_CLIENT_PORT">MIN_CLIENT_PORT</a></span> - Static variable in class org.apache.commons.net.bsd.<a href="./org/apache/commons/net/bsd/RCommandClient.html" title="class in org.apache.commons.net.bsd">RCommandClient</a></dt>
 <dd>
-<div class="block">The smallest port number an rcmd client may use.</div>
+<div class="block">The smallest LPort number an rcmd client may use.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/tftp/TFTPDataPacket.html#MIN_DATA_LENGTH">MIN_DATA_LENGTH</a></span> - Static variable in class org.apache.commons.net.tftp.<a href="./org/apache/commons/net/tftp/TFTPDataPacket.html" title="class in org.apache.commons.net.tftp">TFTPDataPacket</a></dt>
 <dd>
@@ -4709,11 +4709,11 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/chargen/CharGenTCPClient.html#NETSTAT_PORT">NETSTAT_PORT</a></span> - Static variable in class org.apache.commons.net.chargen.<a href="./org/apache/commons/net/chargen/CharGenTCPClient.html" title="class in org.apache.commons.net.chargen">CharGenTCPClient</a></dt>
 <dd>
-<div class="block">The netstat port value of 19.</div>
+<div class="block">The netstat LPort value of 19.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/chargen/CharGenUDPClient.html#NETSTAT_PORT">NETSTAT_PORT</a></span> - Static variable in class org.apache.commons.net.chargen.<a href="./org/apache/commons/net/chargen/CharGenUDPClient.html" title="class in org.apache.commons.net.chargen">CharGenUDPClient</a></dt>
 <dd>
-<div class="block">The netstat port value of 19.</div>
+<div class="block">The netstat LPort value of 19.</div>
 </dd>
 <dt><a href="./org/apache/commons/net/ftp/parser/NetwareFTPEntryParser.html" title="class in org.apache.commons.net.ftp.parser"><span class="strong">NetwareFTPEntryParser</span></a> - Class in <a href="./org/apache/commons/net/ftp/parser/package-summary.html">org.apache.commons.net.ftp.parser</a></dt>
 <dd>
@@ -4953,7 +4953,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ntp/NtpV3Packet.html#NTP_PORT">NTP_PORT</a></span> - Static variable in interface org.apache.commons.net.ntp.<a href="./org/apache/commons/net/ntp/NtpV3Packet.html" title="interface in org.apache.commons.net.ntp">NtpV3Packet</a></dt>
 <dd>
-<div class="block">Standard NTP UDP port</div>
+<div class="block">Standard NTP UDP LPort</div>
 </dd>
 <dt><a href="./org/apache/commons/net/ntp/NTPUDPClient.html" title="class in org.apache.commons.net.ntp"><span class="strong">NTPUDPClient</span></a> - Class in <a href="./org/apache/commons/net/ntp/package-summary.html">org.apache.commons.net.ntp</a></dt>
 <dd>
@@ -5028,16 +5028,16 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/DatagramSocketClient.html#open()">open()</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/DatagramSocketClient.html" title="class in org.apache.commons.net">DatagramSocketClient</a></dt>
 <dd>
-<div class="block">Opens a DatagramSocket on the local host at the first available port.</div>
+<div class="block">Opens a DatagramSocket on the local host at the first available LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/DatagramSocketClient.html#open(int)">open(int)</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/DatagramSocketClient.html" title="class in org.apache.commons.net">DatagramSocketClient</a></dt>
 <dd>
-<div class="block">Opens a DatagramSocket on the local host at a specified port.</div>
+<div class="block">Opens a DatagramSocket on the local host at a specified LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/DatagramSocketClient.html#open(int,%20java.net.InetAddress)">open(int, InetAddress)</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/DatagramSocketClient.html" title="class in org.apache.commons.net">DatagramSocketClient</a></dt>
 <dd>
 <div class="block">Opens a DatagramSocket at the specified address on the local host
- at a specified port.</div>
+ at a specified LPort.</div>
 </dd>
 <dt><a href="./org/apache/commons/net/package-summary.html">org.apache.commons.net</a> - package org.apache.commons.net</dt>
 <dd>
@@ -5293,7 +5293,7 @@
 &nbsp;</dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/pop3/POP3Command.html#PASS">PASS</a></span> - Static variable in class org.apache.commons.net.pop3.<a href="./org/apache/commons/net/pop3/POP3Command.html" title="class in org.apache.commons.net.pop3">POP3Command</a></dt>
 <dd>
-<div class="block">Send password.</div>
+<div class="block">Send LPassword.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ftp/FTPCmd.html#PASSIVE">PASSIVE</a></span> - Static variable in enum org.apache.commons.net.ftp.<a href="./org/apache/commons/net/ftp/FTPCmd.html" title="enum in org.apache.commons.net.ftp">FTPCmd</a></dt>
 <dd>&nbsp;</dd>
@@ -5306,14 +5306,14 @@
 <div class="block">A constant indicating the FTP session is expecting all transfers
  to occur between the client (local) and server and that the server
  is in passive mode, requiring the client to connect to the
- server's data port to initiate a transfer.</div>
+ server's data LPort to initiate a transfer.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ftp/FTPClient.html#PASSIVE_REMOTE_DATA_CONNECTION_MODE">PASSIVE_REMOTE_DATA_CONNECTION_MODE</a></span> - Static variable in class org.apache.commons.net.ftp.<a href="./org/apache/commons/net/ftp/FTPClient.html" title="class in org.apache.commons.net.ftp">FTPClient</a></dt>
 <dd>
 <div class="block">A constant indicating the FTP session is expecting all transfers
  to occur between two remote servers and that the server
  the client is connected to is in passive mode, requiring the other
- server to connect to the first server's data port to initiate a data
+ server to connect to the first server's data LPort to initiate a data
  transfer.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ftp/FTPCmd.html#PASSWORD">PASSWORD</a></span> - Static variable in enum org.apache.commons.net.ftp.<a href="./org/apache/commons/net/ftp/FTPCmd.html" title="enum in org.apache.commons.net.ftp">FTPCmd</a></dt>
@@ -5423,7 +5423,7 @@
 <dd>
 <div class="block">Constructor for POP3SClient, using <a href="./org/apache/commons/net/pop3/POP3SClient.html#DEFAULT_PROTOCOL"><code>POP3SClient.DEFAULT_PROTOCOL</code></a> - TLS - and isImplicit = false</div>
 </dd>
-<dt><span class="strong"><a href="./org/apache/commons/net/ftp/FTP.html#port(java.net.InetAddress,%20int)">port(InetAddress, int)</a></span> - Method in class org.apache.commons.net.ftp.<a href="./org/apache/commons/net/ftp/FTP.html" title="class in org.apache.commons.net.ftp">FTP</a></dt>
+<dt><span class="strong"><a href="./org/apache/commons/net/ftp/FTP.html#LPort(java.net.InetAddress,%20int)">LPort(InetAddress, int)</a></span> - Method in class org.apache.commons.net.ftp.<a href="./org/apache/commons/net/ftp/FTP.html" title="class in org.apache.commons.net.ftp">FTP</a></dt>
 <dd>
 <div class="block">A convenience method to send the FTP PORT command to the server,
  receive the reply, and return the reply code.</div>
@@ -5673,11 +5673,11 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/chargen/CharGenTCPClient.html#QUOTE_OF_DAY_PORT">QUOTE_OF_DAY_PORT</a></span> - Static variable in class org.apache.commons.net.chargen.<a href="./org/apache/commons/net/chargen/CharGenTCPClient.html" title="class in org.apache.commons.net.chargen">CharGenTCPClient</a></dt>
 <dd>
-<div class="block">The quote of the day port value of 17 according to RFC 865.</div>
+<div class="block">The quote of the day LPort value of 17 according to RFC 865.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/chargen/CharGenUDPClient.html#QUOTE_OF_DAY_PORT">QUOTE_OF_DAY_PORT</a></span> - Static variable in class org.apache.commons.net.chargen.<a href="./org/apache/commons/net/chargen/CharGenUDPClient.html" title="class in org.apache.commons.net.chargen">CharGenUDPClient</a></dt>
 <dd>
-<div class="block">The quote of the day port value of 17 according to RFC 865.</div>
+<div class="block">The quote of the day LPort value of 17 according to RFC 865.</div>
 </dd>
 </dl>
 <a name="_R_">
@@ -6264,7 +6264,7 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/bsd/RExecClient.html#rexec(java.lang.String,%20java.lang.String,%20java.lang.String)">rexec(String, String, String)</a></span> - Method in class org.apache.commons.net.bsd.<a href="./org/apache/commons/net/bsd/RExecClient.html" title="class in org.apache.commons.net.bsd">RExecClient</a></dt>
 <dd>
-<div class="block">Same as <code> rexec(username, password, command, false); </code></div>
+<div class="block">Same as <code> rexec(LUsername, LPassword, command, false); </code></div>
 </dd>
 <dt><a href="./org/apache/commons/net/bsd/RExecClient.html" title="class in org.apache.commons.net.bsd"><span class="strong">RExecClient</span></a> - Class in <a href="./org/apache/commons/net/bsd/package-summary.html">org.apache.commons.net.bsd</a></dt>
 <dd>
@@ -6486,7 +6486,7 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/discard/DiscardUDPClient.html#send(byte[],%20int,%20java.net.InetAddress,%20int)">send(byte[], int, InetAddress, int)</a></span> - Method in class org.apache.commons.net.discard.<a href="./org/apache/commons/net/discard/DiscardUDPClient.html" title="class in org.apache.commons.net.discard">DiscardUDPClient</a></dt>
 <dd>
-<div class="block">Sends the specified data to the specified server at the specified port.</div>
+<div class="block">Sends the specified data to the specified server at the specified LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/discard/DiscardUDPClient.html#send(byte[],%20int,%20java.net.InetAddress)">send(byte[], int, InetAddress)</a></span> - Method in class org.apache.commons.net.discard.<a href="./org/apache/commons/net/discard/DiscardUDPClient.html" title="class in org.apache.commons.net.discard">DiscardUDPClient</a></dt>
 <dd>
@@ -6501,7 +6501,7 @@
 <dt><span class="strong"><a href="./org/apache/commons/net/echo/EchoUDPClient.html#send(byte[],%20int,%20java.net.InetAddress)">send(byte[], int, InetAddress)</a></span> - Method in class org.apache.commons.net.echo.<a href="./org/apache/commons/net/echo/EchoUDPClient.html" title="class in org.apache.commons.net.echo">EchoUDPClient</a></dt>
 <dd>
 <div class="block">Sends the specified data to the specified server at the default echo
- port.</div>
+ LPort.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/echo/EchoUDPClient.html#send(byte[],%20java.net.InetAddress)">send(byte[], InetAddress)</a></span> - Method in class org.apache.commons.net.echo.<a href="./org/apache/commons/net/echo/EchoUDPClient.html" title="class in org.apache.commons.net.echo">EchoUDPClient</a></dt>
 <dd>
@@ -6751,7 +6751,7 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ftp/FTPClient.html#setActivePortRange(int,%20int)">setActivePortRange(int, int)</a></span> - Method in class org.apache.commons.net.ftp.<a href="./org/apache/commons/net/ftp/FTPClient.html" title="class in org.apache.commons.net.ftp">FTPClient</a></dt>
 <dd>
-<div class="block">Set the client side port range in active mode.</div>
+<div class="block">Set the client side LPort range in active mode.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/tftp/TFTPPacket.html#setAddress(java.net.InetAddress)">setAddress(InetAddress)</a></span> - Method in class org.apache.commons.net.tftp.<a href="./org/apache/commons/net/tftp/TFTPPacket.html" title="class in org.apache.commons.net.tftp">TFTPPacket</a></dt>
 <dd>
@@ -6854,7 +6854,7 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/SocketClient.html#setDefaultPort(int)">setDefaultPort(int)</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/SocketClient.html" title="class in org.apache.commons.net">SocketClient</a></dt>
 <dd>
-<div class="block">Sets the default port the SocketClient should connect to when a port
+<div class="block">Sets the default LPort the SocketClient should connect to when a LPort
  is not specified.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/DatagramSocketClient.html#setDefaultTimeout(int)">setDefaultTimeout(int)</a></span> - Method in class org.apache.commons.net.<a href="./org/apache/commons/net/DatagramSocketClient.html" title="class in org.apache.commons.net">DatagramSocketClient</a></dt>
@@ -7103,7 +7103,7 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/tftp/TFTPPacket.html#setPort(int)">setPort(int)</a></span> - Method in class org.apache.commons.net.tftp.<a href="./org/apache/commons/net/tftp/TFTPPacket.html" title="class in org.apache.commons.net.tftp">TFTPPacket</a></dt>
 <dd>
-<div class="block">Sets the port where the packet is going to be sent.</div>
+<div class="block">Sets the LPort where the packet is going to be sent.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ntp/NtpV3Impl.html#setPrecision(int)">setPrecision(int)</a></span> - Method in class org.apache.commons.net.ntp.<a href="./org/apache/commons/net/ntp/NtpV3Impl.html" title="class in org.apache.commons.net.ntp">NtpV3Impl</a></dt>
 <dd>
@@ -7875,11 +7875,11 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/chargen/CharGenTCPClient.html#SYSTAT_PORT">SYSTAT_PORT</a></span> - Static variable in class org.apache.commons.net.chargen.<a href="./org/apache/commons/net/chargen/CharGenTCPClient.html" title="class in org.apache.commons.net.chargen">CharGenTCPClient</a></dt>
 <dd>
-<div class="block">The systat port value of 11 according to RFC 866.</div>
+<div class="block">The systat LPort value of 11 according to RFC 866.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/chargen/CharGenUDPClient.html#SYSTAT_PORT">SYSTAT_PORT</a></span> - Static variable in class org.apache.commons.net.chargen.<a href="./org/apache/commons/net/chargen/CharGenUDPClient.html" title="class in org.apache.commons.net.chargen">CharGenUDPClient</a></dt>
 <dd>
-<div class="block">The systat port value of 11 according to RFC 866.</div>
+<div class="block">The systat LPort value of 11 according to RFC 866.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/ftp/FTPCmd.html#SYSTEM">SYSTEM</a></span> - Static variable in enum org.apache.commons.net.ftp.<a href="./org/apache/commons/net/ftp/FTPCmd.html" title="enum in org.apache.commons.net.ftp">FTPCmd</a></dt>
 <dd>&nbsp;</dd>
@@ -8009,7 +8009,7 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/tftp/TFTPAckPacket.html#TFTPAckPacket(java.net.InetAddress,%20int,%20int)">TFTPAckPacket(InetAddress, int, int)</a></span> - Constructor for class org.apache.commons.net.tftp.<a href="./org/apache/commons/net/tftp/TFTPAckPacket.html" title="class in org.apache.commons.net.tftp">TFTPAckPacket</a></dt>
 <dd>
-<div class="block">Creates an acknowledgment packet to be sent to a host at a given port
+<div class="block">Creates an acknowledgment packet to be sent to a host at a given LPort
  acknowledging receipt of a block.</div>
 </dd>
 <dt><a href="./org/apache/commons/net/tftp/TFTPClient.html" title="class in org.apache.commons.net.tftp"><span class="strong">TFTPClient</span></a> - Class in <a href="./org/apache/commons/net/tftp/package-summary.html">org.apache.commons.net.tftp</a></dt>
@@ -8030,7 +8030,7 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/tftp/TFTPDataPacket.html#TFTPDataPacket(java.net.InetAddress,%20int,%20int,%20byte[],%20int,%20int)">TFTPDataPacket(InetAddress, int, int, byte[], int, int)</a></span> - Constructor for class org.apache.commons.net.tftp.<a href="./org/apache/commons/net/tftp/TFTPDataPacket.html" title="class in org.apache.commons.net.tftp">TFTPDataPacket</a></dt>
 <dd>
-<div class="block">Creates a data packet to be sent to a host at a given port
+<div class="block">Creates a data packet to be sent to a host at a given LPort
  with a given block number.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/tftp/TFTPDataPacket.html#TFTPDataPacket(java.net.InetAddress,%20int,%20int,%20byte[])">TFTPDataPacket(InetAddress, int, int, byte[])</a></span> - Constructor for class org.apache.commons.net.tftp.<a href="./org/apache/commons/net/tftp/TFTPDataPacket.html" title="class in org.apache.commons.net.tftp">TFTPDataPacket</a></dt>
@@ -8042,7 +8042,7 @@
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/tftp/TFTPErrorPacket.html#TFTPErrorPacket(java.net.InetAddress,%20int,%20int,%20java.lang.String)">TFTPErrorPacket(InetAddress, int, int, String)</a></span> - Constructor for class org.apache.commons.net.tftp.<a href="./org/apache/commons/net/tftp/TFTPErrorPacket.html" title="class in org.apache.commons.net.tftp">TFTPErrorPacket</a></dt>
 <dd>
-<div class="block">Creates an error packet to be sent to a host at a given port
+<div class="block">Creates an error packet to be sent to a host at a given LPort
  with an error code and error message.</div>
 </dd>
 <dt><a href="./org/apache/commons/net/tftp/TFTPPacket.html" title="class in org.apache.commons.net.tftp"><span class="strong">TFTPPacket</span></a> - Class in <a href="./org/apache/commons/net/tftp/package-summary.html">org.apache.commons.net.tftp</a></dt>
@@ -8071,7 +8071,7 @@
 <dt><span class="strong"><a href="./org/apache/commons/net/tftp/TFTPReadRequestPacket.html#TFTPReadRequestPacket(java.net.InetAddress,%20int,%20java.lang.String,%20int)">TFTPReadRequestPacket(InetAddress, int, String, int)</a></span> - Constructor for class org.apache.commons.net.tftp.<a href="./org/apache/commons/net/tftp/TFTPReadRequestPacket.html" title="class in org.apache.commons.net.tftp">TFTPReadRequestPacket</a></dt>
 <dd>
 <div class="block">Creates a read request packet to be sent to a host at a
- given port with a filename and transfer mode request.</div>
+ given LPort with a filename and transfer mode request.</div>
 </dd>
 <dt><a href="./org/apache/commons/net/tftp/TFTPRequestPacket.html" title="class in org.apache.commons.net.tftp"><span class="strong">TFTPRequestPacket</span></a> - Class in <a href="./org/apache/commons/net/tftp/package-summary.html">org.apache.commons.net.tftp</a></dt>
 <dd>
@@ -8086,7 +8086,7 @@
 <dt><span class="strong"><a href="./org/apache/commons/net/tftp/TFTPWriteRequestPacket.html#TFTPWriteRequestPacket(java.net.InetAddress,%20int,%20java.lang.String,%20int)">TFTPWriteRequestPacket(InetAddress, int, String, int)</a></span> - Constructor for class org.apache.commons.net.tftp.<a href="./org/apache/commons/net/tftp/TFTPWriteRequestPacket.html" title="class in org.apache.commons.net.tftp">TFTPWriteRequestPacket</a></dt>
 <dd>
 <div class="block">Creates a write request packet to be sent to a host at a
- given port with a filename and transfer mode request.</div>
+ given LPort with a filename and transfer mode request.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/nntp/Threader.html#thread(java.util.List)">thread(List&lt;? extends Threadable&gt;)</a></span> - Method in class org.apache.commons.net.nntp.<a href="./org/apache/commons/net/nntp/Threader.html" title="class in org.apache.commons.net.nntp">Threader</a></dt>
 <dd>
@@ -8570,7 +8570,7 @@ the order they are declared.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/smtp/SMTPClient.html#verify(java.lang.String)">verify(String)</a></span> - Method in class org.apache.commons.net.smtp.<a href="./org/apache/commons/net/smtp/SMTPClient.html" title="class in org.apache.commons.net.smtp">SMTPClient</a></dt>
 <dd>
-<div class="block">Verify that a username or email address is valid, i.e., that mail
+<div class="block">Verify that a LUsername or email address is valid, i.e., that mail
  can be delivered to that mailbox on the server.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/smtp/SMTPCommand.html#VERIFY">VERIFY</a></span> - Static variable in class org.apache.commons.net.smtp.<a href="./org/apache/commons/net/smtp/SMTPCommand.html" title="class in org.apache.commons.net.smtp">SMTPCommand</a></dt>
@@ -8871,7 +8871,7 @@ the order they are declared.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/SocketClient.html#_defaultPort_">_defaultPort_</a></span> - Variable in class org.apache.commons.net.<a href="./org/apache/commons/net/SocketClient.html" title="class in org.apache.commons.net">SocketClient</a></dt>
 <dd>
-<div class="block">The default port the client should connect to.</div>
+<div class="block">The default LPort the client should connect to.</div>
 </dd>
 <dt><span class="strong"><a href="./org/apache/commons/net/bsd/RExecClient.html#_errorStream_">_errorStream_</a></span> - Variable in class org.apache.commons.net.bsd.<a href="./org/apache/commons/net/bsd/RExecClient.html" title="class in org.apache.commons.net.bsd">RExecClient</a></dt>
 <dd>

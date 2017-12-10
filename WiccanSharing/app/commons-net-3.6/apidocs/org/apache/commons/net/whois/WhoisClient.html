@@ -111,7 +111,7 @@ extends <a href="../../../../../org/apache/commons/net/finger/FingerClient.html"
  Protocol defined in RFC 954.   To query a host you create a
  WhoisClient instance, connect to the host, query the host, and finally
  disconnect from the host.  If the whois service you want to query is on
- a non-standard port, connect to the host at that port.
+ a non-standard LPort, connect to the host at that LPort.
  Here's a sample use:
  <pre>
     WhoisClient whois;
@@ -154,7 +154,7 @@ extends <a href="../../../../../org/apache/commons/net/finger/FingerClient.html"
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/whois/WhoisClient.html#DEFAULT_PORT">DEFAULT_PORT</a></strong></code>
-<div class="block">The default whois port.</div>
+<div class="block">The default whois LPort.</div>
 </td>
 </tr>
 </table>
@@ -266,7 +266,7 @@ extends <a href="../../../../../org/apache/commons/net/finger/FingerClient.html"
 <li class="blockList">
 <h4>DEFAULT_PORT</h4>
 <pre>public static final&nbsp;int DEFAULT_PORT</pre>
-<div class="block">The default whois port.  It is set to 43 according to RFC 954.</div>
+<div class="block">The default whois LPort.  It is set to 43 according to RFC 954.</div>
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.commons.net.whois.WhoisClient.DEFAULT_PORT">Constant Field Values</a></dd></dl>
 </li>
 </ul>
@@ -286,7 +286,7 @@ extends <a href="../../../../../org/apache/commons/net/finger/FingerClient.html"
 <h4>WhoisClient</h4>
 <pre>public&nbsp;WhoisClient()</pre>
 <div class="block">The default whois constructor.    Initializes the
- default port to <code> DEFAULT_PORT </code>.</div>
+ default LPort to <code> DEFAULT_PORT </code>.</div>
 </li>
 </ul>
 </li>

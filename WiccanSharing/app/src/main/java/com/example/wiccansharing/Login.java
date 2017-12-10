@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -35,9 +33,14 @@ public class Login extends AppCompatActivity {
             loadConfigs(this);
             TextView IP_TextBox = findViewById(R.id.IP);
             TextView user_TextBox = findViewById(R.id.editText);
+            TextView port_TextBox = findViewById(R.id.editText4);
+            ;
+            TextView password_TextBox = findViewById(R.id.editText2);
             CheckBox checkBox = findViewById(R.id.SaveUsernameBOX);
             IP_TextBox.setText(IPAddr);
             user_TextBox.setText(UsrN);
+            port_TextBox.setText(PortN);
+            password_TextBox.setText(Password);
             checkBox.setChecked(true);
         }
     }
@@ -67,8 +70,14 @@ public class Login extends AppCompatActivity {
         CheckBox checkBox = findViewById(R.id.SaveUsernameBOX);
         TextView IP_TextBox = findViewById(R.id.IP);
         TextView user_TextBox = findViewById(R.id.editText);
+        TextView port_TextBox = findViewById(R.id.editText4);
+        ;
+        TextView password_TextBox = findViewById(R.id.editText2);
+        ;
         String IIP = IP_TextBox.getText().toString();
         String IUser = user_TextBox.getText().toString();
+        String IPort = port_TextBox.getText().toString();
+        String IPassword = password_TextBox.getText().toString();
 
         IP_TextBox.setError(null);
         user_TextBox.setError(null);
@@ -82,18 +91,29 @@ public class Login extends AppCompatActivity {
             user_TextBox.setError(getString(R.string.username_invalid));
             error = true;
         }
+        if (!isValidPort(IPort)) {
+            port_TextBox.setError(getString(R.string.port_invalid));
+            error = true;
+        }
+        if (!isValidPassword(IPassword)) {
+            password_TextBox.setError(getString(R.string.password_invalid));
+            error = true;
+        }
         if (error)
             return;
 
         if (checkBox.isChecked() &&
                 !(IPAddr.equals(IIP) &&
-                        UsrN.equals(user_TextBox.getText().toString()))) {
+                        UsrN.equals(IUser) && PortN.equals(IPort)
+                        && Password.equals(IPassword))) {
 
             saveConfigs(context, IIP
-                    + "\n" + IUser);
+                    + "\n" + IUser + "\n" + IPort + "\n" + IPassword);
             Toast.makeText(context, getString(R.string.login_info_saved), Toast.LENGTH_SHORT).show();
             IPAddr = IIP;
             UsrN = IUser;
+            PortN = IPort;
+            Password = IPassword;
         }
         if (!checkBox.isChecked()) {
             File settings = new File(context.getFilesDir() + "/" + getString(R.string.settings_file));
@@ -105,7 +125,7 @@ public class Login extends AppCompatActivity {
         }
         // Lógica de login
         BackgroundConnectTask attemptConnection = new BackgroundConnectTask(this,
-                IPAddr, UsrN, getString(R.string.default_ftp_password), 2121);
+                IPAddr, UsrN, Password, Integer.parseInt(PortN));
         attemptConnection.execute();
     }
 
@@ -135,6 +155,8 @@ public class Login extends AppCompatActivity {
             Scanner scanner = new Scanner(inputStream);
             IPAddr = scanner.nextLine();
             UsrN = scanner.nextLine();
+            PortN = scanner.nextLine();
+            Password = scanner.nextLine();
             inputStream.close();
         } catch (Exception e) {
             Toast.makeText(context, getString(R.string.login_info_load_err), Toast.LENGTH_LONG).show();
@@ -154,18 +176,18 @@ public class Login extends AppCompatActivity {
 
     public class BackgroundConnectTask extends AsyncTask<Void, Void, Boolean> {
 
-        private final String Hostname;
-        private final int Port;
-        private final String Username;
-        private final String Password;
+        private final String LHostname;
+        private final int LPort;
+        private final String LUsername;
+        private final String LPassword;
         private final Context AppContext;
 
-        BackgroundConnectTask(Context context, String host, String username, String password, int port) {
+        BackgroundConnectTask(Context context, String host, String LUsername, String LPassword, int LPort) {
             AppContext = context;
-            Hostname = host;
-            Username = username;
-            Password = password;
-            Port = port;
+            LHostname = host;
+            this.LUsername = LUsername;
+            this.LPassword = LPassword;
+            this.LPort = LPort;
         }
 
         @Override
@@ -175,10 +197,9 @@ public class Login extends AppCompatActivity {
                 try {
                     Thread.sleep(400);
                     ftpClient = new FTPClient();
-                    ftpClient.connect(Hostname, Port);
+                    ftpClient.connect(LHostname, LPort);
                     ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
-                    //ftpClient.enterLocalPassiveMode();
-                    return true;
+                    return ftpClient.isConnected();
                 } catch (Exception e) {
                     i++;
                 }
@@ -196,10 +217,10 @@ public class Login extends AppCompatActivity {
         protected void onPostExecute(final Boolean exit_status) {
             // mostrar toast ou continuar
             if (!exit_status) {
-                Toast.makeText(AppContext, String.format(getString(R.string.ftp_socket_error), IPAddr), Toast.LENGTH_LONG).show();
+                Toast.makeText(AppContext, String.format(getString(R.string.ftp_socket_error), LHostname, LPort), Toast.LENGTH_LONG).show();
                 showProgress(false);
             } else {
-                BackgroundLoginTask attemptLogin = new BackgroundLoginTask(AppContext, Username, Password);
+                BackgroundLoginTask attemptLogin = new BackgroundLoginTask(AppContext, LUsername, LPassword);
                 attemptLogin.execute();
             }
         }
@@ -234,7 +255,7 @@ public class Login extends AppCompatActivity {
         protected void onPostExecute(final Boolean exit_status) {
             showProgress(false);
             if (!exit_status) {
-                Toast.makeText(AppContext, String.format(getString(R.string.login_username_invalid), IPAddr), Toast.LENGTH_LONG).show();
+                Toast.makeText(AppContext, getString(R.string.login_username_invalid), Toast.LENGTH_LONG).show();
             } else {
                 // continuar (prox. activity)
                 Intent intent = new Intent(AppContext, FilesList.class);
@@ -259,6 +280,8 @@ public class Login extends AppCompatActivity {
     private final int MAX_LOGIN_ATTEMPTS = 5;
     private String IPAddr = "";
     private String UsrN = "";
+    private String PortN = "";
+    private String Password = "";
 
     private static boolean isValidIP(String IP) {
         pattern = Pattern.compile(IP_Pattern);
@@ -278,6 +301,19 @@ public class Login extends AppCompatActivity {
         pattern = Pattern.compile(user_Pattern);
         matcher = pattern.matcher(user);
         return matcher.matches() && user.length() <= 20;
+    }
+
+    private static boolean isValidPort(String port) {
+        try {
+            Integer.parseInt(port);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    private static boolean isValidPassword(String password) {
+        return password.length() > 0;
     }
 
     private void showProgress(Boolean visible) {

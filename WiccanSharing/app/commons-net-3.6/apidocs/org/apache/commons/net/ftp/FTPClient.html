@@ -204,14 +204,14 @@ implements <a href="../../../../../org/apache/commons/net/ftp/Configurable.html"
  Because the handling of sockets on different platforms can differ
  significantly, the FTPClient automatically issues a new PORT (or EPRT) command
  prior to every transfer requiring that the server connect to the client's
- data port.  This ensures identical problem-free behavior on Windows, Unix,
+ data LPort.  This ensures identical problem-free behavior on Windows, Unix,
  and Macintosh platforms.  Additionally, it relieves programmers from
  having to issue the PORT (or EPRT) command themselves and dealing with platform
  dependent issues.
  <p>
  Additionally, for security purposes, all data connections to the
  client are verified to ensure that they originated from the intended
- party (host and port).  If a data connection is initiated by an unexpected
+ party (host and LPort).  If a data connection is initiated by an unexpected
  party, the command will close the socket and throw an IOException.  You
  may disable this behavior with
  <a href="../../../../../org/apache/commons/net/ftp/FTPClient.html#setRemoteVerificationEnabled(boolean)"><code>setRemoteVerificationEnabled()</code></a>.
@@ -260,7 +260,7 @@ implements <a href="../../../../../org/apache/commons/net/ftp/Configurable.html"
  <pre>
     FTPClient f = new FTPClient();
     f.connect(server);
-    f.login(username, password);
+    f.login(LUsername, LPassword);
     FTPFile[] files = f.listFiles(directory);
  </pre>
  <p>
@@ -270,7 +270,7 @@ implements <a href="../../../../../org/apache/commons/net/ftp/Configurable.html"
  <pre>
     FTPClient f = new FTPClient();
     f.connect(server);
-    f.login(username, password);
+    f.login(LUsername, LPassword);
     FTPListParseEngine engine =
        f.initiateListParsing("com.whatever.YourOwnParser", directory);
 
@@ -285,7 +285,7 @@ implements <a href="../../../../../org/apache/commons/net/ftp/Configurable.html"
  <pre>
     FTPClient f = new FTPClient();
     f.connect(server);
-    f.login(username, password);
+    f.login(LUsername, LPassword);
     FTPListParseEngine engine = f.initiateListParsing(directory);
 
     while (engine.hasNext()) {
@@ -399,7 +399,7 @@ implements <a href="../../../../../org/apache/commons/net/ftp/Configurable.html"
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/ftp/FTPClient.html#ACTIVE_LOCAL_DATA_CONNECTION_MODE">ACTIVE_LOCAL_DATA_CONNECTION_MODE</a></strong></code>
 <div class="block">A constant indicating the FTP session is expecting all transfers
  to occur between the client (local) and server and that the server
- should connect to the client's data port to initiate a data transfer.</div>
+ should connect to the client's data LPort to initiate a data transfer.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -408,7 +408,7 @@ implements <a href="../../../../../org/apache/commons/net/ftp/Configurable.html"
 <div class="block">A constant indicating the FTP session is expecting all transfers
  to occur between two remote servers and that the server
  the client is connected to should connect to the other server's
- data port to initiate a data transfer.</div>
+ data LPort to initiate a data transfer.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -431,7 +431,7 @@ implements <a href="../../../../../org/apache/commons/net/ftp/Configurable.html"
 <div class="block">A constant indicating the FTP session is expecting all transfers
  to occur between the client (local) and server and that the server
  is in passive mode, requiring the client to connect to the
- server's data port to initiate a transfer.</div>
+ server's data LPort to initiate a transfer.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -440,7 +440,7 @@ implements <a href="../../../../../org/apache/commons/net/ftp/Configurable.html"
 <div class="block">A constant indicating the FTP session is expecting all transfers
  to occur between two remote servers and that the server
  the client is connected to is in passive mode, requiring the other
- server to connect to the first server's data port to initiate a data
+ server to connect to the first server's data LPort to initiate a data
  transfer.</div>
 </td>
 </tr>
@@ -673,7 +673,7 @@ implements <a href="../../../../../org/apache/commons/net/ftp/Configurable.html"
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/ftp/FTPClient.html#enterRemoteActiveMode(java.net.InetAddress,%20int)">enterRemoteActiveMode</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host,
-                     int&nbsp;port)</code>
+                     int&nbsp;LPort)</code>
 <div class="block">Set the current data connection mode to
  <code> ACTIVE_REMOTE_DATA_CONNECTION </code>.</div>
 </td>
@@ -771,7 +771,7 @@ implements <a href="../../../../../org/apache/commons/net/ftp/Configurable.html"
 <tr class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/ftp/FTPClient.html#getPassivePort()">getPassivePort</a></strong>()</code>
-<div class="block">If in passive mode, returns the data port of the passive host.</div>
+<div class="block">If in passive mode, returns the data LPort of the passive host.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -935,17 +935,17 @@ implements <a href="../../../../../org/apache/commons/net/ftp/Configurable.html"
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/ftp/FTPClient.html#login(java.lang.String,%20java.lang.String)">login</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
-     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password)</code>
-<div class="block">Login to the FTP server using the provided username and password.</div>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/ftp/FTPClient.html#login(java.lang.String,%20java.lang.String)">login</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LUsername,
+     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LPassword)</code>
+<div class="block">Login to the FTP server using the provided LUsername and LPassword.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/ftp/FTPClient.html#login(java.lang.String,%20java.lang.String,%20java.lang.String)">login</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
-     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password,
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/ftp/FTPClient.html#login(java.lang.String,%20java.lang.String,%20java.lang.String)">login</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LUsername,
+     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LPassword,
      <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;account)</code>
-<div class="block">Login to the FTP server using the provided username, password,
+<div class="block">Login to the FTP server using the provided LUsername, LPassword,
  and account.</div>
 </td>
 </tr>
@@ -1094,7 +1094,7 @@ implements <a href="../../../../../org/apache/commons/net/ftp/Configurable.html"
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/ftp/FTPClient.html#setActivePortRange(int,%20int)">setActivePortRange</a></strong>(int&nbsp;minPort,
                   int&nbsp;maxPort)</code>
-<div class="block">Set the client side port range in active mode.</div>
+<div class="block">Set the client side LPort range in active mode.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -1301,7 +1301,7 @@ implements <a href="../../../../../org/apache/commons/net/ftp/Configurable.html"
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;org.apache.commons.net.ftp.<a href="../../../../../org/apache/commons/net/ftp/FTP.html" title="class in org.apache.commons.net.ftp">FTP</a></h3>
-<code><a href="../../../../../org/apache/commons/net/ftp/FTP.html#__getReplyNoReport()">__getReplyNoReport</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#__noop()">__noop</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#abor()">abor</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#acct(java.lang.String)">acct</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#allo(int)">allo</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#allo(int,%20int)">allo</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#appe(java.lang.String)">appe</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#cdup()">cdup</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#cwd(java.lang.String)">cwd</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#dele(java.lang.String)">dele</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#eprt(java.net.InetAddress,%20int)">eprt</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#epsv()">epsv</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#feat()">feat</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#getCommandSupport()">getCommandSupport</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#getControlEncoding()">getControlEncoding</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#getReply()">getReply</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#getReplyCode()">getReplyCode</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#getReplyString()">getReplyString</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#getReplyStrings()">getReplyStrings</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#help()">help</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#help(java.lang.String)">help</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#isStrictMultilineParsing()">isStrictMultilineParsing</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#isStrictReplyParsing()">isStrictReplyParsing</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#list()">list</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#list(java.lang.String)">list</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#mdtm(java.lang.String)">mdtm</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#mfmt(java.lang.String,%20java.lang.String)">mfmt</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#mkd(java.lang.String)">mkd</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#mlsd()">mlsd</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#mlsd(java.lang.String)">mlsd</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#mlst()">mlst</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#mlst(java.lang.String)">mlst</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#mode(int)">mode</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#nlst()">nlst</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#nlst(java.lang.String)">nlst</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#noop()">noop</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#pass(java.lang.String)">pass</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#pasv()">pasv</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#port(java.net.InetAddress,%20int)">port</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#pwd()">pwd</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#quit()">quit</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#rein()">rein</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#rest(java.lang.String)">rest</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#retr(java.lang.String)">retr</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#rmd(java.lang.String)">rmd</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#rnfr(java.lang.String)">rnfr</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#rnto(java.lang.String)">rnto</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#sendCommand(org.apache.commons.net.ftp.FTPCmd)">sendCommand</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#sendCommand(org.apache.commons.net.ftp.FTPCmd,%20java.lang.String)">sendCommand</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#sendCommand(int)">sendCommand</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#sendCommand(int,%20java.lang.String)">sendCommand</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#sendCommand(java.lang.String)">sendCommand</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#sendCommand(java.lang.String,%20java.lang.String)">sendCommand</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#setControlEncoding(java.lang.String)">setControlEncoding</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#setStrictMultilineParsing(boolean)">setStrictMultilineParsing</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#setStrictReplyParsing(boolean)">setStrictReplyParsing</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#site(java.lang.String)">site</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#smnt(java.lang.String)">smnt</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#stat()">stat</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#stat(java.lang.String)">stat</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#stor(java.lang.String)">stor</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#stou()">stou</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#stou(java.lang.String)">stou</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#stru(int)">stru</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#syst()">syst</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#type(int)">type</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#type(int,%20int)">type</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#user(java.lang.String)">user</a></code></li>
+<code><a href="../../../../../org/apache/commons/net/ftp/FTP.html#__getReplyNoReport()">__getReplyNoReport</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#__noop()">__noop</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#abor()">abor</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#acct(java.lang.String)">acct</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#allo(int)">allo</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#allo(int,%20int)">allo</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#appe(java.lang.String)">appe</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#cdup()">cdup</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#cwd(java.lang.String)">cwd</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#dele(java.lang.String)">dele</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#eprt(java.net.InetAddress,%20int)">eprt</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#epsv()">epsv</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#feat()">feat</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#getCommandSupport()">getCommandSupport</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#getControlEncoding()">getControlEncoding</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#getReply()">getReply</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#getReplyCode()">getReplyCode</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#getReplyString()">getReplyString</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#getReplyStrings()">getReplyStrings</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#help()">help</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#help(java.lang.String)">help</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#isStrictMultilineParsing()">isStrictMultilineParsing</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#isStrictReplyParsing()">isStrictReplyParsing</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#list()">list</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#list(java.lang.String)">list</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#mdtm(java.lang.String)">mdtm</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#mfmt(java.lang.String,%20java.lang.String)">mfmt</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#mkd(java.lang.String)">mkd</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#mlsd()">mlsd</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#mlsd(java.lang.String)">mlsd</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#mlst()">mlst</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#mlst(java.lang.String)">mlst</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#mode(int)">mode</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#nlst()">nlst</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#nlst(java.lang.String)">nlst</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#noop()">noop</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#pass(java.lang.String)">pass</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#pasv()">pasv</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#LPort(java.net.InetAddress,%20int)">LPort</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#pwd()">pwd</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#quit()">quit</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#rein()">rein</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#rest(java.lang.String)">rest</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#retr(java.lang.String)">retr</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#rmd(java.lang.String)">rmd</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#rnfr(java.lang.String)">rnfr</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#rnto(java.lang.String)">rnto</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#sendCommand(org.apache.commons.net.ftp.FTPCmd)">sendCommand</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#sendCommand(org.apache.commons.net.ftp.FTPCmd,%20java.lang.String)">sendCommand</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#sendCommand(int)">sendCommand</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#sendCommand(int,%20java.lang.String)">sendCommand</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#sendCommand(java.lang.String)">sendCommand</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#sendCommand(java.lang.String,%20java.lang.String)">sendCommand</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#setControlEncoding(java.lang.String)">setControlEncoding</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#setStrictMultilineParsing(boolean)">setStrictMultilineParsing</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#setStrictReplyParsing(boolean)">setStrictReplyParsing</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#site(java.lang.String)">site</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#smnt(java.lang.String)">smnt</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#stat()">stat</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#stat(java.lang.String)">stat</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#stor(java.lang.String)">stor</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#stou()">stou</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#stou(java.lang.String)">stou</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#stru(int)">stru</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#syst()">syst</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#type(int)">type</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#type(int,%20int)">type</a>, <a href="../../../../../org/apache/commons/net/ftp/FTP.html#user(java.lang.String)">user</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_org.apache.commons.net.SocketClient">
@@ -1390,7 +1390,7 @@ implements <a href="../../../../../org/apache/commons/net/ftp/Configurable.html"
 <pre>public static final&nbsp;int ACTIVE_LOCAL_DATA_CONNECTION_MODE</pre>
 <div class="block">A constant indicating the FTP session is expecting all transfers
  to occur between the client (local) and server and that the server
- should connect to the client's data port to initiate a data transfer.
+ should connect to the client's data LPort to initiate a data transfer.
  This is the default data connection mode when and FTPClient instance
  is created.</div>
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.commons.net.ftp.FTPClient.ACTIVE_LOCAL_DATA_CONNECTION_MODE">Constant Field Values</a></dd></dl>
@@ -1406,7 +1406,7 @@ implements <a href="../../../../../org/apache/commons/net/ftp/Configurable.html"
 <div class="block">A constant indicating the FTP session is expecting all transfers
  to occur between two remote servers and that the server
  the client is connected to should connect to the other server's
- data port to initiate a data transfer.</div>
+ data LPort to initiate a data transfer.</div>
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.commons.net.ftp.FTPClient.ACTIVE_REMOTE_DATA_CONNECTION_MODE">Constant Field Values</a></dd></dl>
 </li>
 </ul>
@@ -1420,7 +1420,7 @@ implements <a href="../../../../../org/apache/commons/net/ftp/Configurable.html"
 <div class="block">A constant indicating the FTP session is expecting all transfers
  to occur between the client (local) and server and that the server
  is in passive mode, requiring the client to connect to the
- server's data port to initiate a transfer.</div>
+ server's data LPort to initiate a transfer.</div>
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.commons.net.ftp.FTPClient.PASSIVE_LOCAL_DATA_CONNECTION_MODE">Constant Field Values</a></dd></dl>
 </li>
 </ul>
@@ -1434,7 +1434,7 @@ implements <a href="../../../../../org/apache/commons/net/ftp/Configurable.html"
 <div class="block">A constant indicating the FTP session is expecting all transfers
  to occur between two remote servers and that the server
  the client is connected to is in passive mode, requiring the other
- server to connect to the first server's data port to initiate a data
+ server to connect to the first server's data LPort to initiate a data
  transfer.</div>
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.commons.net.ftp.FTPClient.PASSIVE_REMOTE_DATA_CONNECTION_MODE">Constant Field Values</a></dd></dl>
 </li>
@@ -1739,11 +1739,11 @@ protected&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/ne
 <ul class="blockList">
 <li class="blockList">
 <h4>login</h4>
-<pre>public&nbsp;boolean&nbsp;login(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
-            <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password)
+<pre>public&nbsp;boolean&nbsp;login(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LUsername,
+            <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LPassword)
               throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">Login to the FTP server using the provided username and password.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>username</code> - The username to login under.</dd><dd><code>password</code> - The password to use.</dd>
+<div class="block">Login to the FTP server using the provided LUsername and LPassword.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>LUsername</code> - The LUsername to login under.</dd><dd><code>LPassword</code> - The LPassword to use.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>True if successfully completed, false if not.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../../../org/apache/commons/net/ftp/FTPConnectionClosedException.html" title="class in org.apache.commons.net.ftp">FTPConnectionClosedException</a></code> - If the FTP server prematurely closes the connection as a result
@@ -1760,14 +1760,14 @@ protected&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/ne
 <ul class="blockList">
 <li class="blockList">
 <h4>login</h4>
-<pre>public&nbsp;boolean&nbsp;login(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
-            <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password,
+<pre>public&nbsp;boolean&nbsp;login(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LUsername,
+            <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LPassword,
             <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;account)
               throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">Login to the FTP server using the provided username, password,
+<div class="block">Login to the FTP server using the provided LUsername, LPassword,
  and account.  If no account is required by the server, only
- the username and password, the account information is not used.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>username</code> - The username to login under.</dd><dd><code>password</code> - The password to use.</dd><dd><code>account</code> - The account to use.</dd>
+ the LUsername and LPassword, the account information is not used.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>LUsername</code> - The LUsername to login under.</dd><dd><code>LPassword</code> - The LPassword to use.</dd><dd><code>account</code> - The account to use.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>True if successfully completed, false if not.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../../../org/apache/commons/net/ftp/FTPConnectionClosedException.html" title="class in org.apache.commons.net.ftp">FTPConnectionClosedException</a></code> - If the FTP server prematurely closes the connection as a result
@@ -1888,7 +1888,7 @@ protected&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/ne
  <code>ACTIVE_LOCAL_DATA_CONNECTION_MODE</code>.  No communication
  with the FTP server is conducted, but this causes all future data
  transfers to require the FTP server to connect to the client's
- data port.  Additionally, to accommodate differences between socket
+ data LPort.  Additionally, to accommodate differences between socket
  implementations on different platforms, this method causes the
  client to issue a PORT command before every data transfer.</div>
 </li>
@@ -1905,7 +1905,7 @@ protected&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/ne
  method only for data transfers between the client and server.
  This method causes a PASV (or EPSV) command to be issued to the server
  before the opening of every data connection, telling the server to
- open a data port to which the client will connect to conduct
+ open a data LPort to which the client will connect to conduct
  data transfers.  The FTPClient will stay in
  <code> PASSIVE_LOCAL_DATA_CONNECTION_MODE </code> until the
  mode is changed by calling some other method such as
@@ -1922,12 +1922,12 @@ protected&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/ne
 <li class="blockList">
 <h4>enterRemoteActiveMode</h4>
 <pre>public&nbsp;boolean&nbsp;enterRemoteActiveMode(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host,
-                            int&nbsp;port)
+                            int&nbsp;LPort)
                               throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block">Set the current data connection mode to
  <code> ACTIVE_REMOTE_DATA_CONNECTION </code>.  Use this method only
  for server to server data transfers.  This method issues a PORT
- command to the server, indicating the other server and port to which
+ command to the server, indicating the other server and LPort to which
  it should connect for data transfers.  You must call this method
  before EVERY server to server transfer attempt.  The FTPClient will
  NOT automatically continue to issue PORT commands.  You also
@@ -1935,7 +1935,7 @@ protected&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/ne
  <a href="../../../../../org/apache/commons/net/ftp/FTPClient.html#enterLocalActiveMode()"><code>enterLocalActiveMode() </code></a> if you
  wish to return to the normal data connection mode.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>host</code> - The passive mode server accepting connections for data
-             transfers.</dd><dd><code>port</code> - The passive mode server's data port.</dd>
+             transfers.</dd><dd><code>LPort</code> - The passive mode server's data LPort.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>True if successfully completed, false if not.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../../../org/apache/commons/net/ftp/FTPConnectionClosedException.html" title="class in org.apache.commons.net.ftp">FTPConnectionClosedException</a></code> - If the FTP server prematurely closes the connection as a result
@@ -1958,7 +1958,7 @@ protected&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/ne
  <code> PASSIVE_REMOTE_DATA_CONNECTION_MODE </code>.  Use this
  method only for server to server data transfers.
  This method issues a PASV command to the server, telling it to
- open a data port to which the active server will connect to conduct
+ open a data LPort to which the active server will connect to conduct
  data transfers.  You must call this method
  before EVERY server to server transfer attempt.  The FTPClient will
  NOT automatically continue to issue PASV commands.  You also
@@ -2000,14 +2000,14 @@ protected&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/ne
 <li class="blockList">
 <h4>getPassivePort</h4>
 <pre>public&nbsp;int&nbsp;getPassivePort()</pre>
-<div class="block">If in passive mode, returns the data port of the passive host.
+<div class="block">If in passive mode, returns the data LPort of the passive host.
  This method only returns a valid value AFTER a
  data connection has been opened after a call to
  <a href="../../../../../org/apache/commons/net/ftp/FTPClient.html#enterLocalPassiveMode()"><code>enterLocalPassiveMode()</code></a>.
  This is because FTPClient sends a PASV command to the server only
  just before opening a data connection, and not when you call
  <a href="../../../../../org/apache/commons/net/ftp/FTPClient.html#enterLocalPassiveMode()"><code>enterLocalPassiveMode()</code></a>.</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>The data port of the passive server.  If not in passive
+<dl><dt><span class="strong">Returns:</span></dt><dd>The data LPort of the passive server.  If not in passive
          mode, undefined.</dd></dl>
 </li>
 </ul>
@@ -2032,8 +2032,8 @@ protected&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/ne
 <h4>setActivePortRange</h4>
 <pre>public&nbsp;void&nbsp;setActivePortRange(int&nbsp;minPort,
                       int&nbsp;maxPort)</pre>
-<div class="block">Set the client side port range in active mode.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>minPort</code> - The lowest available port (inclusive).</dd><dd><code>maxPort</code> - The highest available port (inclusive).</dd><dt><span class="strong">Since:</span></dt>
+<div class="block">Set the client side LPort range in active mode.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>minPort</code> - The lowest available LPort (inclusive).</dd><dd><code>maxPort</code> - The highest available LPort (inclusive).</dd><dt><span class="strong">Since:</span></dt>
   <dd>2.2</dd></dl>
 </li>
 </ul>
@@ -3661,7 +3661,7 @@ protected&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/ne
  <pre>
     FTPClient f=FTPClient();
     f.connect(server);
-    f.login(username, password);
+    f.login(LUsername, LPassword);
     FTPListParseEngine engine = f.initiateListParsing(directory);
 
     while (engine.hasNext()) {
@@ -4006,7 +4006,7 @@ protected&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/ne
  E.g. if FTP server has a static PASV address (external network)
  and the client is coming from another internal network.
  In that case the data connection after PASV command would fail,
- while EPSV would make the client succeed by taking just the port.</div>
+ while EPSV would make the client succeed by taking just the LPort.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>selected</code> - value to set.</dd><dt><span class="strong">Since:</span></dt>
   <dd>2.2</dd></dl>
 </li>

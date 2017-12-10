@@ -231,7 +231,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
 <tr class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/DatagramSocketClient.html#getLocalPort()">getLocalPort</a></strong>()</code>
-<div class="block">Returns the port number of the open socket on the local host used
+<div class="block">Returns the LPort number of the open socket on the local host used
  for the connection.</div>
 </td>
 </tr>
@@ -250,21 +250,21 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/DatagramSocketClient.html#open()">open</a></strong>()</code>
-<div class="block">Opens a DatagramSocket on the local host at the first available port.</div>
+<div class="block">Opens a DatagramSocket on the local host at the first available LPort.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/DatagramSocketClient.html#open(int)">open</a></strong>(int&nbsp;port)</code>
-<div class="block">Opens a DatagramSocket on the local host at a specified port.</div>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/DatagramSocketClient.html#open(int)">open</a></strong>(int&nbsp;LPort)</code>
+<div class="block">Opens a DatagramSocket on the local host at a specified LPort.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/DatagramSocketClient.html#open(int,%20java.net.InetAddress)">open</a></strong>(int&nbsp;port,
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/DatagramSocketClient.html#open(int,%20java.net.InetAddress)">open</a></strong>(int&nbsp;LPort,
     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;laddr)</code>
 <div class="block">Opens a DatagramSocket at the specified address on the local host
- at a specified port.</div>
+ at a specified LPort.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -389,7 +389,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
 <h4>open</h4>
 <pre>public&nbsp;void&nbsp;open()
           throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></pre>
-<div class="block">Opens a DatagramSocket on the local host at the first available port.
+<div class="block">Opens a DatagramSocket on the local host at the first available LPort.
  Also sets the timeout on the socket to the default timeout set
  by <a href="../../../../org/apache/commons/net/DatagramSocketClient.html#setDefaultTimeout(int)"><code>setDefaultTimeout() </code></a>.
  <p>
@@ -406,15 +406,15 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
 <ul class="blockList">
 <li class="blockList">
 <h4>open</h4>
-<pre>public&nbsp;void&nbsp;open(int&nbsp;port)
+<pre>public&nbsp;void&nbsp;open(int&nbsp;LPort)
           throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></pre>
-<div class="block">Opens a DatagramSocket on the local host at a specified port.
+<div class="block">Opens a DatagramSocket on the local host at a specified LPort.
  Also sets the timeout on the socket to the default timeout set
  by <a href="../../../../org/apache/commons/net/DatagramSocketClient.html#setDefaultTimeout(int)"><code>setDefaultTimeout() </code></a>.
  <p>
  _isOpen_ is set to true after calling this method and _socket_
  is set to the newly opened socket.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>port</code> - The port to use for the socket.</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>LPort</code> - The LPort to use for the socket.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></code> - If the socket could not be opened or the
    timeout could not be set.</dd></dl>
@@ -426,17 +426,17 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
 <ul class="blockList">
 <li class="blockList">
 <h4>open</h4>
-<pre>public&nbsp;void&nbsp;open(int&nbsp;port,
+<pre>public&nbsp;void&nbsp;open(int&nbsp;LPort,
         <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;laddr)
           throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></pre>
 <div class="block">Opens a DatagramSocket at the specified address on the local host
- at a specified port.
+ at a specified LPort.
  Also sets the timeout on the socket to the default timeout set
  by <a href="../../../../org/apache/commons/net/DatagramSocketClient.html#setDefaultTimeout(int)"><code>setDefaultTimeout() </code></a>.
  <p>
  _isOpen_ is set to true after calling this method and _socket_
  is set to the newly opened socket.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>port</code> - The port to use for the socket.</dd><dd><code>laddr</code> - The local address to use.</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>LPort</code> - The LPort to use for the socket.</dd><dd><code>laddr</code> - The local address to use.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></code> - If the socket could not be opened or the
    timeout could not be set.</dd></dl>
@@ -536,10 +536,10 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
 <li class="blockList">
 <h4>getLocalPort</h4>
 <pre>public&nbsp;int&nbsp;getLocalPort()</pre>
-<div class="block">Returns the port number of the open socket on the local host used
+<div class="block">Returns the LPort number of the open socket on the local host used
  for the connection.  If you call this method when the client socket
  is not open, a NullPointerException is thrown.</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>The port number of the open socket on the local host used
+<dl><dt><span class="strong">Returns:</span></dt><dd>The LPort number of the open socket on the local host used
          for the connection.</dd></dl>
 </li>
 </ul>

@@ -193,7 +193,7 @@ extends <a href="../../../../../org/apache/commons/net/SocketClient.html" title=
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/nntp/NNTP.html#DEFAULT_PORT">DEFAULT_PORT</a></strong></code>
-<div class="block">The default NNTP port.</div>
+<div class="block">The default NNTP LPort.</div>
 </td>
 </tr>
 </table>
@@ -273,14 +273,14 @@ extends <a href="../../../../../org/apache/commons/net/SocketClient.html" title=
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/nntp/NNTP.html#authinfoPass(java.lang.String)">authinfoPass</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password)</code>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/nntp/NNTP.html#authinfoPass(java.lang.String)">authinfoPass</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LPassword)</code>
 <div class="block">A convenience method to send the AUTHINFO PASS command to the server,
  receive the reply, and return the reply code.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/nntp/NNTP.html#authinfoUser(java.lang.String)">authinfoUser</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username)</code>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/nntp/NNTP.html#authinfoUser(java.lang.String)">authinfoUser</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LUsername)</code>
 <div class="block">A convenience method to send the AUTHINFO USER command to the server,
   receive the reply, and return the reply code.</div>
 </td>
@@ -572,7 +572,7 @@ extends <a href="../../../../../org/apache/commons/net/SocketClient.html" title=
 <li class="blockList">
 <h4>DEFAULT_PORT</h4>
 <pre>public static final&nbsp;int DEFAULT_PORT</pre>
-<div class="block">The default NNTP port.  Its value is 119 according to RFC 977.</div>
+<div class="block">The default NNTP LPort.  Its value is 119 according to RFC 977.</div>
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.commons.net.nntp.NNTP.DEFAULT_PORT">Constant Field Values</a></dd></dl>
 </li>
 </ul>
@@ -626,7 +626,7 @@ extends <a href="../../../../../org/apache/commons/net/SocketClient.html" title=
 <li class="blockList">
 <h4>NNTP</h4>
 <pre>public&nbsp;NNTP()</pre>
-<div class="block">The default NNTP constructor.  Sets the default port to
+<div class="block">The default NNTP constructor.  Sets the default LPort to
  <code>DEFAULT_PORT</code> and initializes internal data structures
  for saving NNTP reply information.</div>
 </li>
@@ -1357,12 +1357,12 @@ extends <a href="../../../../../org/apache/commons/net/SocketClient.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>authinfoUser</h4>
-<pre>public&nbsp;int&nbsp;authinfoUser(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username)
+<pre>public&nbsp;int&nbsp;authinfoUser(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LUsername)
                  throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block">A convenience method to send the AUTHINFO USER command to the server,
   receive the reply, and return the reply code. (See RFC 2980)
  <p></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>username</code> - A valid username.</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>LUsername</code> - A valid LUsername.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The reply code received from the server. The server should
           return a 381 or 281 for this command.</dd>
 <dt><span class="strong">Throws:</span></dt>
@@ -1380,14 +1380,14 @@ extends <a href="../../../../../org/apache/commons/net/SocketClient.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>authinfoPass</h4>
-<pre>public&nbsp;int&nbsp;authinfoPass(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password)
+<pre>public&nbsp;int&nbsp;authinfoPass(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LPassword)
                  throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block">A convenience method to send the AUTHINFO PASS command to the server,
  receive the reply, and return the reply code.  If this step is
  required, it should immediately follow the AUTHINFO USER command
  (See RFC 2980)
  <p></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>password</code> - a valid password.</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>LPassword</code> - a valid LPassword.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The reply code received from the server. The server should
          return a 281 or 502 for this command.</dd>
 <dt><span class="strong">Throws:</span></dt>

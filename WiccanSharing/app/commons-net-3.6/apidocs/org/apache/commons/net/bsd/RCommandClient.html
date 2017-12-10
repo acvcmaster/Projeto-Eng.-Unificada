@@ -116,12 +116,12 @@ extends <a href="../../../../../org/apache/commons/net/bsd/RExecClient.html" tit
  from which it is derived, and implements the rcmd() facility that
  first appeared in 4.2BSD Unix.  rcmd() is the facility used by the rsh
  (rshell) and other commands to execute a command on another machine
- from a trusted host without issuing a password.  The trust relationship
+ from a trusted host without issuing a LPassword.  The trust relationship
  between two machines is established by the contents of a machine's
  /etc/hosts.equiv file and a user's .rhosts file.  These files specify
  from which hosts and accounts on those hosts rcmd() requests will be
  accepted.  The only additional measure for establishing trust is that
- all client connections must originate from a port between 512 and 1023.
+ all client connections must originate from a LPort between 512 and 1023.
  Consequently, there is an upper limit to the number of rcmd connections
  that can be running simultaneously.   The required ports are reserved
  ports on Unix systems, and can only be bound by a
@@ -136,7 +136,7 @@ extends <a href="../../../../../org/apache/commons/net/bsd/RExecClient.html" tit
  As with virtually all of the client classes in org.apache.commons.net, this
  class derives from SocketClient.  But it overrides most of its connection
  methods so that the local Socket will originate from an acceptable
- rshell port.  The way to use RCommandClient is to first connect
+ rshell LPort.  The way to use RCommandClient is to first connect
  to the server, call the <a href="../../../../../org/apache/commons/net/bsd/RCommandClient.html#rcommand(java.lang.String,%20java.lang.String,%20java.lang.String,%20boolean)"><code>rcommand() </code></a> method,
  and then
  fetch the connection's input, output, and optionally error streams.
@@ -185,19 +185,19 @@ extends <a href="../../../../../org/apache/commons/net/bsd/RExecClient.html" tit
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/bsd/RCommandClient.html#DEFAULT_PORT">DEFAULT_PORT</a></strong></code>
-<div class="block">The default rshell port.</div>
+<div class="block">The default rshell LPort.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/bsd/RCommandClient.html#MAX_CLIENT_PORT">MAX_CLIENT_PORT</a></strong></code>
-<div class="block">The largest port number an rcmd client may use.</div>
+<div class="block">The largest LPort number an rcmd client may use.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/bsd/RCommandClient.html#MIN_CLIENT_PORT">MIN_CLIENT_PORT</a></strong></code>
-<div class="block">The smallest port number an rcmd client may use.</div>
+<div class="block">The smallest LPort number an rcmd client may use.</div>
 </td>
 </tr>
 </table>
@@ -251,59 +251,59 @@ extends <a href="../../../../../org/apache/commons/net/bsd/RExecClient.html" tit
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/bsd/RCommandClient.html#connect(java.net.InetAddress,%20int)">connect</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host,
-       int&nbsp;port)</code>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the current host at a port in a range acceptable
+       int&nbsp;LPort)</code>
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the current host at a LPort in a range acceptable
  to the BSD rshell daemon.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/bsd/RCommandClient.html#connect(java.net.InetAddress,%20int,%20java.net.InetAddress)">connect</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host,
-       int&nbsp;port,
+       int&nbsp;LPort,
        <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;localAddr)</code>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the specified local address using a port in a range
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the specified local address using a LPort in a range
  acceptable to the BSD rshell daemon.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/bsd/RCommandClient.html#connect(java.net.InetAddress,%20int,%20java.net.InetAddress,%20int)">connect</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host,
-       int&nbsp;port,
+       int&nbsp;LPort,
        <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;localAddr,
        int&nbsp;localPort)</code>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the specified local address and port.</div>
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the specified local address and LPort.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/bsd/RCommandClient.html#connect(java.lang.String,%20int)">connect</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostname,
-       int&nbsp;port)</code>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the current host at a port in a range acceptable
+       int&nbsp;LPort)</code>
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the current host at a LPort in a range acceptable
  to the BSD rshell daemon.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/bsd/RCommandClient.html#connect(java.lang.String,%20int,%20java.net.InetAddress)">connect</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostname,
-       int&nbsp;port,
+       int&nbsp;LPort,
        <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;localAddr)</code>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the specified local address using a port in a range
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the specified local address using a LPort in a range
  acceptable to the BSD rshell daemon.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/bsd/RCommandClient.html#connect(java.lang.String,%20int,%20java.net.InetAddress,%20int)">connect</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostname,
-       int&nbsp;port,
+       int&nbsp;LPort,
        <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;localAddr,
        int&nbsp;localPort)</code>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the specified local address and port.</div>
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the specified local address and LPort.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -368,7 +368,7 @@ extends <a href="../../../../../org/apache/commons/net/bsd/RExecClient.html" tit
 <li class="blockList">
 <h4>DEFAULT_PORT</h4>
 <pre>public static final&nbsp;int DEFAULT_PORT</pre>
-<div class="block">The default rshell port.  Set to 514 in BSD Unix.</div>
+<div class="block">The default rshell LPort.  Set to 514 in BSD Unix.</div>
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.commons.net.bsd.RCommandClient.DEFAULT_PORT">Constant Field Values</a></dd></dl>
 </li>
 </ul>
@@ -379,7 +379,7 @@ extends <a href="../../../../../org/apache/commons/net/bsd/RExecClient.html" tit
 <li class="blockList">
 <h4>MIN_CLIENT_PORT</h4>
 <pre>public static final&nbsp;int MIN_CLIENT_PORT</pre>
-<div class="block">The smallest port number an rcmd client may use.  By BSD convention
+<div class="block">The smallest LPort number an rcmd client may use.  By BSD convention
  this number is 512.</div>
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.commons.net.bsd.RCommandClient.MIN_CLIENT_PORT">Constant Field Values</a></dd></dl>
 </li>
@@ -391,7 +391,7 @@ extends <a href="../../../../../org/apache/commons/net/bsd/RExecClient.html" tit
 <li class="blockList">
 <h4>MAX_CLIENT_PORT</h4>
 <pre>public static final&nbsp;int MAX_CLIENT_PORT</pre>
-<div class="block">The largest port number an rcmd client may use.  By BSD convention
+<div class="block">The largest LPort number an rcmd client may use.  By BSD convention
  this number is 1023.</div>
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.commons.net.bsd.RCommandClient.MAX_CLIENT_PORT">Constant Field Values</a></dd></dl>
 </li>
@@ -412,7 +412,7 @@ extends <a href="../../../../../org/apache/commons/net/bsd/RExecClient.html" tit
 <h4>RCommandClient</h4>
 <pre>public&nbsp;RCommandClient()</pre>
 <div class="block">The default RCommandClient constructor.  Initializes the
- default port to <code> DEFAULT_PORT </code>.</div>
+ default LPort to <code> DEFAULT_PORT </code>.</div>
 </li>
 </ul>
 </li>
@@ -430,17 +430,17 @@ extends <a href="../../../../../org/apache/commons/net/bsd/RExecClient.html" tit
 <li class="blockList">
 <h4>connect</h4>
 <pre>public&nbsp;void&nbsp;connect(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host,
-           int&nbsp;port,
+           int&nbsp;LPort,
            <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;localAddr)
              throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a>,
                     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/BindException.html?is-external=true" title="class or interface in java.net">BindException</a>,
                     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the specified local address using a port in a range
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the specified local address using a LPort in a range
  acceptable to the BSD rshell daemon.
  Before returning, <a href="../../../../../org/apache/commons/net/SocketClient.html#_connectAction_()"><code>_connectAction_() </code></a>
  is called to perform connection initialization actions.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>host</code> - The remote host.</dd><dd><code>port</code> - The port to connect to on the remote host.</dd><dd><code>localAddr</code> - The local address to use.</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>host</code> - The remote host.</dd><dd><code>LPort</code> - The LPort to connect to on the remote host.</dd><dd><code>localAddr</code> - The local address to use.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></code> - If the socket timeout could not be set.</dd>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/BindException.html?is-external=true" title="class or interface in java.net">BindException</a></code> - If all acceptable rshell ports are in use.</dd>
@@ -456,18 +456,18 @@ extends <a href="../../../../../org/apache/commons/net/bsd/RExecClient.html" tit
 <li class="blockList">
 <h4>connect</h4>
 <pre>public&nbsp;void&nbsp;connect(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host,
-           int&nbsp;port)
+           int&nbsp;LPort)
              throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a>,
                     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the current host at a port in a range acceptable
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the current host at a LPort in a range acceptable
  to the BSD rshell daemon.
  Before returning, <a href="../../../../../org/apache/commons/net/SocketClient.html#_connectAction_()"><code>_connectAction_() </code></a>
  is called to perform connection initialization actions.</div>
 <dl>
 <dt><strong>Overrides:</strong></dt>
 <dd><code><a href="../../../../../org/apache/commons/net/SocketClient.html#connect(java.net.InetAddress,%20int)">connect</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/commons/net/SocketClient.html" title="class in org.apache.commons.net">SocketClient</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>host</code> - The remote host.</dd><dd><code>port</code> - The port to connect to on the remote host.</dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>host</code> - The remote host.</dd><dd><code>LPort</code> - The LPort to connect to on the remote host.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></code> - If the socket timeout could not be set.</dd>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/BindException.html?is-external=true" title="class or interface in java.net">BindException</a></code> - If all acceptable rshell ports are in use.</dd>
@@ -483,19 +483,19 @@ extends <a href="../../../../../org/apache/commons/net/bsd/RExecClient.html" tit
 <li class="blockList">
 <h4>connect</h4>
 <pre>public&nbsp;void&nbsp;connect(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostname,
-           int&nbsp;port)
+           int&nbsp;LPort)
              throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a>,
                     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
                     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/UnknownHostException.html?is-external=true" title="class or interface in java.net">UnknownHostException</a></pre>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the current host at a port in a range acceptable
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the current host at a LPort in a range acceptable
  to the BSD rshell daemon.
  Before returning, <a href="../../../../../org/apache/commons/net/SocketClient.html#_connectAction_()"><code>_connectAction_() </code></a>
  is called to perform connection initialization actions.</div>
 <dl>
 <dt><strong>Overrides:</strong></dt>
 <dd><code><a href="../../../../../org/apache/commons/net/SocketClient.html#connect(java.lang.String,%20int)">connect</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/commons/net/SocketClient.html" title="class in org.apache.commons.net">SocketClient</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>hostname</code> - The name of the remote host.</dd><dd><code>port</code> - The port to connect to on the remote host.</dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>hostname</code> - The name of the remote host.</dd><dd><code>LPort</code> - The LPort to connect to on the remote host.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></code> - If the socket timeout could not be set.</dd>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/BindException.html?is-external=true" title="class or interface in java.net">BindException</a></code> - If all acceptable rshell ports are in use.</dd>
@@ -512,16 +512,16 @@ extends <a href="../../../../../org/apache/commons/net/bsd/RExecClient.html" tit
 <li class="blockList">
 <h4>connect</h4>
 <pre>public&nbsp;void&nbsp;connect(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostname,
-           int&nbsp;port,
+           int&nbsp;LPort,
            <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;localAddr)
              throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a>,
                     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the specified local address using a port in a range
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the specified local address using a LPort in a range
  acceptable to the BSD rshell daemon.
  Before returning, <a href="../../../../../org/apache/commons/net/SocketClient.html#_connectAction_()"><code>_connectAction_() </code></a>
  is called to perform connection initialization actions.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>hostname</code> - The remote host.</dd><dd><code>port</code> - The port to connect to on the remote host.</dd><dd><code>localAddr</code> - The local address to use.</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>hostname</code> - The remote host.</dd><dd><code>LPort</code> - The LPort to connect to on the remote host.</dd><dd><code>localAddr</code> - The local address to use.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></code> - If the socket timeout could not be set.</dd>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/BindException.html?is-external=true" title="class or interface in java.net">BindException</a></code> - If all acceptable rshell ports are in use.</dd>
@@ -537,15 +537,15 @@ extends <a href="../../../../../org/apache/commons/net/bsd/RExecClient.html" tit
 <li class="blockList">
 <h4>connect</h4>
 <pre>public&nbsp;void&nbsp;connect(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host,
-           int&nbsp;port,
+           int&nbsp;LPort,
            <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;localAddr,
            int&nbsp;localPort)
              throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a>,
                     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
                     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the specified local address and port. The
- local port must lie between <code> MIN_CLIENT_PORT </code> and
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the specified local address and LPort. The
+ local LPort must lie between <code> MIN_CLIENT_PORT </code> and
  <code> MAX_CLIENT_PORT </code> or an IllegalArgumentException will
  be thrown.
  Before returning, <a href="../../../../../org/apache/commons/net/SocketClient.html#_connectAction_()"><code>_connectAction_() </code></a>
@@ -553,13 +553,13 @@ extends <a href="../../../../../org/apache/commons/net/bsd/RExecClient.html" tit
 <dl>
 <dt><strong>Overrides:</strong></dt>
 <dd><code><a href="../../../../../org/apache/commons/net/SocketClient.html#connect(java.net.InetAddress,%20int,%20java.net.InetAddress,%20int)">connect</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/commons/net/SocketClient.html" title="class in org.apache.commons.net">SocketClient</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>host</code> - The remote host.</dd><dd><code>port</code> - The port to connect to on the remote host.</dd><dd><code>localAddr</code> - The local address to use.</dd><dd><code>localPort</code> - The local port to use.</dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>host</code> - The remote host.</dd><dd><code>LPort</code> - The LPort to connect to on the remote host.</dd><dd><code>localAddr</code> - The local address to use.</dd><dd><code>localPort</code> - The local LPort to use.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></code> - If the socket timeout could not be set.</dd>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - If the socket could not be opened.  In most
   cases you will only want to catch IOException since SocketException is
   derived from it.</dd>
-<dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - If an invalid local port number
+<dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - If an invalid local LPort number
             is specified.</dd></dl>
 </li>
 </ul>
@@ -570,16 +570,16 @@ extends <a href="../../../../../org/apache/commons/net/bsd/RExecClient.html" tit
 <li class="blockList">
 <h4>connect</h4>
 <pre>public&nbsp;void&nbsp;connect(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostname,
-           int&nbsp;port,
+           int&nbsp;LPort,
            <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;localAddr,
            int&nbsp;localPort)
              throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a>,
                     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
                     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a>,
                     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/UnknownHostException.html?is-external=true" title="class or interface in java.net">UnknownHostException</a></pre>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the specified local address and port. The
- local port must lie between <code> MIN_CLIENT_PORT </code> and
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the specified local address and LPort. The
+ local LPort must lie between <code> MIN_CLIENT_PORT </code> and
  <code> MAX_CLIENT_PORT </code> or an IllegalArgumentException will
  be thrown.
  Before returning, <a href="../../../../../org/apache/commons/net/SocketClient.html#_connectAction_()"><code>_connectAction_() </code></a>
@@ -587,14 +587,14 @@ extends <a href="../../../../../org/apache/commons/net/bsd/RExecClient.html" tit
 <dl>
 <dt><strong>Overrides:</strong></dt>
 <dd><code><a href="../../../../../org/apache/commons/net/SocketClient.html#connect(java.lang.String,%20int,%20java.net.InetAddress,%20int)">connect</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/apache/commons/net/SocketClient.html" title="class in org.apache.commons.net">SocketClient</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>hostname</code> - The name of the remote host.</dd><dd><code>port</code> - The port to connect to on the remote host.</dd><dd><code>localAddr</code> - The local address to use.</dd><dd><code>localPort</code> - The local port to use.</dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>hostname</code> - The name of the remote host.</dd><dd><code>LPort</code> - The LPort to connect to on the remote host.</dd><dd><code>localAddr</code> - The local address to use.</dd><dd><code>localPort</code> - The local LPort to use.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></code> - If the socket timeout could not be set.</dd>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - If the socket could not be opened.  In most
   cases you will only want to catch IOException since SocketException is
   derived from it.</dd>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/UnknownHostException.html?is-external=true" title="class or interface in java.net">UnknownHostException</a></code> - If the hostname cannot be resolved.</dd>
-<dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - If an invalid local port number
+<dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - If an invalid local LPort number
             is specified.</dd></dl>
 </li>
 </ul>
@@ -622,7 +622,7 @@ extends <a href="../../../../../org/apache/commons/net/bsd/RExecClient.html" tit
  If a separate error stream is requested, the remote server will
  connect to a local socket opened by RCommandClient, providing an
  independent stream through which standard error will be transmitted.
- The local socket must originate from a secure port (512 - 1023),
+ The local socket must originate from a secure LPort (512 - 1023),
  and rcommand() ensures that this will be so.
  RCommandClient will also do a simple security check when it accepts a
  connection for this error stream.  If the connection does not originate

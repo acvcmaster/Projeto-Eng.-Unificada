@@ -152,9 +152,9 @@ extends <a href="../../../../../org/apache/commons/net/tftp/TFTPPacket.html" tit
 </tr>
 <tr class="altColor">
 <td class="colOne"><code><strong><a href="../../../../../org/apache/commons/net/tftp/TFTPAckPacket.html#TFTPAckPacket(java.net.InetAddress,%20int,%20int)">TFTPAckPacket</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;destination,
-             int&nbsp;port,
+             int&nbsp;LPort,
              int&nbsp;blockNumber)</code>
-<div class="block">Creates an acknowledgment packet to be sent to a host at a given port
+<div class="block">Creates an acknowledgment packet to be sent to a host at a given LPort
  acknowledging receipt of a block.</div>
 </td>
 </tr>
@@ -234,11 +234,11 @@ extends <a href="../../../../../org/apache/commons/net/tftp/TFTPPacket.html" tit
 <li class="blockList">
 <h4>TFTPAckPacket</h4>
 <pre>public&nbsp;TFTPAckPacket(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;destination,
-             int&nbsp;port,
+             int&nbsp;LPort,
              int&nbsp;blockNumber)</pre>
-<div class="block">Creates an acknowledgment packet to be sent to a host at a given port
+<div class="block">Creates an acknowledgment packet to be sent to a host at a given LPort
  acknowledging receipt of a block.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>destination</code> - The host to which the packet is going to be sent.</dd><dd><code>port</code> - The port to which the packet is going to be sent.</dd><dd><code>blockNumber</code> - The block number being acknowledged.</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>destination</code> - The host to which the packet is going to be sent.</dd><dd><code>LPort</code> - The LPort to which the packet is going to be sent.</dd><dd><code>blockNumber</code> - The block number being acknowledged.</dd></dl>
 </li>
 </ul>
 </li>

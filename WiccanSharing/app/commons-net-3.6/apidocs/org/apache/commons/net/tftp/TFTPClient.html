@@ -233,7 +233,7 @@ extends <a href="../../../../../org/apache/commons/net/tftp/TFTP.html" title="cl
            int&nbsp;mode,
            <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/OutputStream.html?is-external=true" title="class or interface in java.io">OutputStream</a>&nbsp;output,
            <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host,
-           int&nbsp;port)</code>
+           int&nbsp;LPort)</code>
 <div class="block">Requests a named file from a remote host, writes the
  file to an OutputStream, closes the connection, and returns the number
  of bytes read.</div>
@@ -254,7 +254,7 @@ extends <a href="../../../../../org/apache/commons/net/tftp/TFTP.html" title="cl
            int&nbsp;mode,
            <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/OutputStream.html?is-external=true" title="class or interface in java.io">OutputStream</a>&nbsp;output,
            <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostname,
-           int&nbsp;port)</code>
+           int&nbsp;LPort)</code>
 <div class="block">Requests a named file from a remote host, writes the
  file to an OutputStream, closes the connection, and returns the number
  of bytes read.</div>
@@ -275,7 +275,7 @@ extends <a href="../../../../../org/apache/commons/net/tftp/TFTP.html" title="cl
         int&nbsp;mode,
         <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;input,
         <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host,
-        int&nbsp;port)</code>
+        int&nbsp;LPort)</code>
 <div class="block">Requests to send a file to a remote host, reads the file from an
  InputStream, sends the file to the remote host, and closes the
  connection.</div>
@@ -296,7 +296,7 @@ extends <a href="../../../../../org/apache/commons/net/tftp/TFTP.html" title="cl
         int&nbsp;mode,
         <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;input,
         <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostname,
-        int&nbsp;port)</code>
+        int&nbsp;LPort)</code>
 <div class="block">Requests to send a file to a remote host, reads the file from an
  InputStream, sends the file to the remote host, and closes the
  connection.</div>
@@ -445,7 +445,7 @@ extends <a href="../../../../../org/apache/commons/net/tftp/TFTP.html" title="cl
               int&nbsp;mode,
               <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/OutputStream.html?is-external=true" title="class or interface in java.io">OutputStream</a>&nbsp;output,
               <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host,
-              int&nbsp;port)
+              int&nbsp;LPort)
                 throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block">Requests a named file from a remote host, writes the
  file to an OutputStream, closes the connection, and returns the number
@@ -453,7 +453,7 @@ extends <a href="../../../../../org/apache/commons/net/tftp/TFTP.html" title="cl
  <a href="../../../../../org/apache/commons/net/DatagramSocketClient.html#open()"><code>open()</code></a> before
  invoking this method.  This method will not close the OutputStream
  containing the file; you must close it after the method invocation.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>filename</code> - The name of the file to receive.</dd><dd><code>mode</code> - The TFTP mode of the transfer (one of the MODE constants).</dd><dd><code>output</code> - The OutputStream to which the file should be written.</dd><dd><code>host</code> - The remote host serving the file.</dd><dd><code>port</code> - The port number of the remote TFTP server.</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>filename</code> - The name of the file to receive.</dd><dd><code>mode</code> - The TFTP mode of the transfer (one of the MODE constants).</dd><dd><code>output</code> - The OutputStream to which the file should be written.</dd><dd><code>host</code> - The remote host serving the file.</dd><dd><code>LPort</code> - The LPort number of the remote TFTP server.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>number of bytes read</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - If an I/O error occurs.  The nature of the
@@ -470,7 +470,7 @@ extends <a href="../../../../../org/apache/commons/net/tftp/TFTP.html" title="cl
               int&nbsp;mode,
               <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/OutputStream.html?is-external=true" title="class or interface in java.io">OutputStream</a>&nbsp;output,
               <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostname,
-              int&nbsp;port)
+              int&nbsp;LPort)
                 throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/UnknownHostException.html?is-external=true" title="class or interface in java.net">UnknownHostException</a>,
                        <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block">Requests a named file from a remote host, writes the
@@ -479,7 +479,7 @@ extends <a href="../../../../../org/apache/commons/net/tftp/TFTP.html" title="cl
  <a href="../../../../../org/apache/commons/net/DatagramSocketClient.html#open()"><code>open()</code></a> before
  invoking this method.  This method will not close the OutputStream
  containing the file; you must close it after the method invocation.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>filename</code> - The name of the file to receive.</dd><dd><code>mode</code> - The TFTP mode of the transfer (one of the MODE constants).</dd><dd><code>output</code> - The OutputStream to which the file should be written.</dd><dd><code>hostname</code> - The name of the remote host serving the file.</dd><dd><code>port</code> - The port number of the remote TFTP server.</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>filename</code> - The name of the file to receive.</dd><dd><code>mode</code> - The TFTP mode of the transfer (one of the MODE constants).</dd><dd><code>output</code> - The OutputStream to which the file should be written.</dd><dd><code>hostname</code> - The name of the remote host serving the file.</dd><dd><code>LPort</code> - The LPort number of the remote TFTP server.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>number of bytes read</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - If an I/O error occurs.  The nature of the
@@ -537,7 +537,7 @@ extends <a href="../../../../../org/apache/commons/net/tftp/TFTP.html" title="cl
             int&nbsp;mode,
             <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;input,
             <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host,
-            int&nbsp;port)
+            int&nbsp;LPort)
               throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block">Requests to send a file to a remote host, reads the file from an
  InputStream, sends the file to the remote host, and closes the
@@ -546,7 +546,7 @@ extends <a href="../../../../../org/apache/commons/net/tftp/TFTP.html" title="cl
  invoking this method.  This method will not close the InputStream
  containing the file; you must close it after the method invocation.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>filename</code> - The name the remote server should use when creating
-        the file on its file system.</dd><dd><code>mode</code> - The TFTP mode of the transfer (one of the MODE constants).</dd><dd><code>input</code> - the input stream containing the data to be sent</dd><dd><code>host</code> - The remote host receiving the file.</dd><dd><code>port</code> - The port number of the remote TFTP server.</dd>
+        the file on its file system.</dd><dd><code>mode</code> - The TFTP mode of the transfer (one of the MODE constants).</dd><dd><code>input</code> - the input stream containing the data to be sent</dd><dd><code>host</code> - The remote host receiving the file.</dd><dd><code>LPort</code> - The LPort number of the remote TFTP server.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - If an I/O error occurs.  The nature of the
             error will be reported in the message.</dd></dl>
@@ -562,7 +562,7 @@ extends <a href="../../../../../org/apache/commons/net/tftp/TFTP.html" title="cl
             int&nbsp;mode,
             <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;input,
             <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostname,
-            int&nbsp;port)
+            int&nbsp;LPort)
               throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/UnknownHostException.html?is-external=true" title="class or interface in java.net">UnknownHostException</a>,
                      <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block">Requests to send a file to a remote host, reads the file from an
@@ -572,7 +572,7 @@ extends <a href="../../../../../org/apache/commons/net/tftp/TFTP.html" title="cl
  invoking this method.  This method will not close the InputStream
  containing the file; you must close it after the method invocation.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>filename</code> - The name the remote server should use when creating
-        the file on its file system.</dd><dd><code>mode</code> - The TFTP mode of the transfer (one of the MODE constants).</dd><dd><code>input</code> - the input stream containing the data to be sent</dd><dd><code>hostname</code> - The name of the remote host receiving the file.</dd><dd><code>port</code> - The port number of the remote TFTP server.</dd>
+        the file on its file system.</dd><dd><code>mode</code> - The TFTP mode of the transfer (one of the MODE constants).</dd><dd><code>input</code> - the input stream containing the data to be sent</dd><dd><code>hostname</code> - The name of the remote host receiving the file.</dd><dd><code>LPort</code> - The LPort number of the remote TFTP server.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - If an I/O error occurs.  The nature of the
             error will be reported in the message.</dd>

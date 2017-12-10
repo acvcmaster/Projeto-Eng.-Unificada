@@ -118,14 +118,14 @@ extends <a href="../../../../../org/apache/commons/net/bsd/RCommandClient.html" 
  in RCommandClient to implement the functionality of the rlogin command that
  first appeared in 4.2BSD Unix.  rlogin is a command used to login to
  a remote machine from a trusted host, sometimes without issuing a
- password.  The trust relationship is the same as described in
+ LPassword.  The trust relationship is the same as described in
  the documentation for
  <a href="../../../../../org/apache/commons/net/bsd/RCommandClient.html" title="class in org.apache.commons.net.bsd"><code>RCommandClient</code></a>.
  <p>
  As with virtually all of the client classes in org.apache.commons.net, this
  class derives from SocketClient.  But it relies on the connection
  methods defined  in RcommandClient which ensure that the local Socket
- will originate from an acceptable rshell port.  The way to use
+ will originate from an acceptable rshell LPort.  The way to use
  RLoginClient is to first connect
  to the server, call the <a href="../../../../../org/apache/commons/net/bsd/RLoginClient.html#rlogin(java.lang.String,%20java.lang.String,%20java.lang.String,%20int)"><code>rlogin() </code></a> method,
  and then
@@ -172,7 +172,7 @@ extends <a href="../../../../../org/apache/commons/net/bsd/RCommandClient.html" 
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/bsd/RLoginClient.html#DEFAULT_PORT">DEFAULT_PORT</a></strong></code>
-<div class="block">The default rlogin port.</div>
+<div class="block">The default rlogin LPort.</div>
 </td>
 </tr>
 </table>
@@ -298,7 +298,7 @@ extends <a href="../../../../../org/apache/commons/net/bsd/RCommandClient.html" 
 <li class="blockList">
 <h4>DEFAULT_PORT</h4>
 <pre>public static final&nbsp;int DEFAULT_PORT</pre>
-<div class="block">The default rlogin port.  Set to 513 in BSD Unix and according
+<div class="block">The default rlogin LPort.  Set to 513 in BSD Unix and according
  to RFC 1282.</div>
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.commons.net.bsd.RLoginClient.DEFAULT_PORT">Constant Field Values</a></dd></dl>
 </li>
@@ -319,7 +319,7 @@ extends <a href="../../../../../org/apache/commons/net/bsd/RCommandClient.html" 
 <h4>RLoginClient</h4>
 <pre>public&nbsp;RLoginClient()</pre>
 <div class="block">The default RLoginClient constructor.  Initializes the
- default port to <code> DEFAULT_PORT </code>.</div>
+ default LPort to <code> DEFAULT_PORT </code>.</div>
 </li>
 </ul>
 </li>
@@ -353,9 +353,9 @@ extends <a href="../../../../../org/apache/commons/net/bsd/RCommandClient.html" 
  end of file will terminate the remote login shell in most cases.
  <p>
  If user authentication fails, the rlogind daemon will request that
- a password be entered interactively.  You will be able to read the
+ a LPassword be entered interactively.  You will be able to read the
  prompt from the output stream of the RLoginClient and write the
- password to the input stream of the RLoginClient.</div>
+ LPassword to the input stream of the RLoginClient.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>localUsername</code> - The user account on the local machine that is
         trying to login to the remote host.</dd><dd><code>remoteUsername</code> - The account name on the server that is
         being logged in to.</dd><dd><code>terminalType</code> - The name of the user's terminal (e.g., "vt100",

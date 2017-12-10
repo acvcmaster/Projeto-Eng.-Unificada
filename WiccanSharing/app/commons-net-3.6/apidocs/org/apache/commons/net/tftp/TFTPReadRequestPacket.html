@@ -158,11 +158,11 @@ extends <a href="../../../../../org/apache/commons/net/tftp/TFTPRequestPacket.ht
 </tr>
 <tr class="altColor">
 <td class="colOne"><code><strong><a href="../../../../../org/apache/commons/net/tftp/TFTPReadRequestPacket.html#TFTPReadRequestPacket(java.net.InetAddress,%20int,%20java.lang.String,%20int)">TFTPReadRequestPacket</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;destination,
-                     int&nbsp;port,
+                     int&nbsp;LPort,
                      <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filename,
                      int&nbsp;mode)</code>
 <div class="block">Creates a read request packet to be sent to a host at a
- given port with a filename and transfer mode request.</div>
+ given LPort with a filename and transfer mode request.</div>
 </td>
 </tr>
 </table>
@@ -229,12 +229,12 @@ extends <a href="../../../../../org/apache/commons/net/tftp/TFTPRequestPacket.ht
 <li class="blockList">
 <h4>TFTPReadRequestPacket</h4>
 <pre>public&nbsp;TFTPReadRequestPacket(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;destination,
-                     int&nbsp;port,
+                     int&nbsp;LPort,
                      <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filename,
                      int&nbsp;mode)</pre>
 <div class="block">Creates a read request packet to be sent to a host at a
- given port with a filename and transfer mode request.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>destination</code> - The host to which the packet is going to be sent.</dd><dd><code>port</code> - The port to which the packet is going to be sent.</dd><dd><code>filename</code> - The requested filename.</dd><dd><code>mode</code> - The requested transfer mode.  This should be on of the TFTP
+ given LPort with a filename and transfer mode request.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>destination</code> - The host to which the packet is going to be sent.</dd><dd><code>LPort</code> - The LPort to which the packet is going to be sent.</dd><dd><code>filename</code> - The requested filename.</dd><dd><code>mode</code> - The requested transfer mode.  This should be on of the TFTP
         class MODE constants (e.g., TFTP.NETASCII_MODE).</dd></dl>
 </li>
 </ul>

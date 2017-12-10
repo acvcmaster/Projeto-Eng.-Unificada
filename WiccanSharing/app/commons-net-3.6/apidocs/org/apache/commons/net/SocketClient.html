@@ -140,7 +140,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
 <tr class="altColor">
 <td class="colFirst"><code>protected int</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/SocketClient.html#_defaultPort_">_defaultPort_</a></strong></code>
-<div class="block">The default port the client should connect to.</div>
+<div class="block">The default LPort the client should connect to.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -247,51 +247,51 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/SocketClient.html#connect(java.net.InetAddress)">connect</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host)</code>
-<div class="block">Opens a Socket connected to a remote host at the current default port
- and originating from the current host at a system assigned port.</div>
+<div class="block">Opens a Socket connected to a remote host at the current default LPort
+ and originating from the current host at a system assigned LPort.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/SocketClient.html#connect(java.net.InetAddress,%20int)">connect</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host,
-       int&nbsp;port)</code>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the current host at a system assigned port.</div>
+       int&nbsp;LPort)</code>
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the current host at a system assigned LPort.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/SocketClient.html#connect(java.net.InetAddress,%20int,%20java.net.InetAddress,%20int)">connect</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host,
-       int&nbsp;port,
+       int&nbsp;LPort,
        <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;localAddr,
        int&nbsp;localPort)</code>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the specified local address and port.</div>
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the specified local address and LPort.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/SocketClient.html#connect(java.lang.String)">connect</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostname)</code>
 <div class="block">Opens a Socket connected to a remote host at the current default
- port and originating from the current host at a system assigned port.</div>
+ LPort and originating from the current host at a system assigned LPort.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/SocketClient.html#connect(java.lang.String,%20int)">connect</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostname,
-       int&nbsp;port)</code>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the current host at a system assigned port.</div>
+       int&nbsp;LPort)</code>
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the current host at a system assigned LPort.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/SocketClient.html#connect(java.lang.String,%20int,%20java.net.InetAddress,%20int)">connect</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostname,
-       int&nbsp;port,
+       int&nbsp;LPort,
        <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;localAddr,
        int&nbsp;localPort)</code>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the specified local address and port.</div>
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the specified local address and LPort.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -350,7 +350,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
 <tr class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/SocketClient.html#getDefaultPort()">getDefaultPort</a></strong>()</code>
-<div class="block">Returns the current value of the default port (stored in
+<div class="block">Returns the current value of the default LPort (stored in
  <a href="../../../../org/apache/commons/net/SocketClient.html#_defaultPort_"><code>_defaultPort_ </code></a>).</div>
 </td>
 </tr>
@@ -376,7 +376,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
 <tr class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/SocketClient.html#getLocalPort()">getLocalPort</a></strong>()</code>
-<div class="block">Returns the port number of the open socket on the local host used
+<div class="block">Returns the LPort number of the open socket on the local host used
  for the connection.</div>
 </td>
 </tr>
@@ -399,7 +399,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
 <tr class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/SocketClient.html#getRemotePort()">getRemotePort</a></strong>()</code>
-<div class="block">Returns the port number of the remote host to which the client is
+<div class="block">Returns the LPort number of the remote host to which the client is
  connected.</div>
 </td>
 </tr>
@@ -467,8 +467,8 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/SocketClient.html#setDefaultPort(int)">setDefaultPort</a></strong>(int&nbsp;port)</code>
-<div class="block">Sets the default port the SocketClient should connect to when a port
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/SocketClient.html#setDefaultPort(int)">setDefaultPort</a></strong>(int&nbsp;LPort)</code>
+<div class="block">Sets the default LPort the SocketClient should connect to when a LPort
  is not specified.</div>
 </td>
 </tr>
@@ -614,7 +614,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
 <li class="blockList">
 <h4>_defaultPort_</h4>
 <pre>protected&nbsp;int _defaultPort_</pre>
-<div class="block">The default port the client should connect to.</div>
+<div class="block">The default LPort the client should connect to.</div>
 </li>
 </ul>
 <a name="_input_">
@@ -729,15 +729,15 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
 <li class="blockList">
 <h4>connect</h4>
 <pre>public&nbsp;void&nbsp;connect(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host,
-           int&nbsp;port)
+           int&nbsp;LPort)
              throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a>,
                     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the current host at a system assigned port.
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the current host at a system assigned LPort.
  Before returning, <a href="../../../../org/apache/commons/net/SocketClient.html#_connectAction_()"><code>_connectAction_() </code></a>
  is called to perform connection initialization actions.
  <p></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>host</code> - The remote host.</dd><dd><code>port</code> - The port to connect to on the remote host.</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>host</code> - The remote host.</dd><dd><code>LPort</code> - The LPort to connect to on the remote host.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></code> - If the socket timeout could not be set.</dd>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - If the socket could not be opened.  In most
@@ -752,15 +752,15 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
 <li class="blockList">
 <h4>connect</h4>
 <pre>public&nbsp;void&nbsp;connect(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostname,
-           int&nbsp;port)
+           int&nbsp;LPort)
              throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a>,
                     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the current host at a system assigned port.
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the current host at a system assigned LPort.
  Before returning, <a href="../../../../org/apache/commons/net/SocketClient.html#_connectAction_()"><code>_connectAction_() </code></a>
  is called to perform connection initialization actions.
  <p></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>hostname</code> - The name of the remote host.</dd><dd><code>port</code> - The port to connect to on the remote host.</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>hostname</code> - The name of the remote host.</dd><dd><code>LPort</code> - The LPort to connect to on the remote host.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></code> - If the socket timeout could not be set.</dd>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - If the socket could not be opened.  In most
@@ -776,17 +776,17 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
 <li class="blockList">
 <h4>connect</h4>
 <pre>public&nbsp;void&nbsp;connect(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host,
-           int&nbsp;port,
+           int&nbsp;LPort,
            <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;localAddr,
            int&nbsp;localPort)
              throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a>,
                     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the specified local address and port.
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the specified local address and LPort.
  Before returning, <a href="../../../../org/apache/commons/net/SocketClient.html#_connectAction_()"><code>_connectAction_() </code></a>
  is called to perform connection initialization actions.
  <p></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>host</code> - The remote host.</dd><dd><code>port</code> - The port to connect to on the remote host.</dd><dd><code>localAddr</code> - The local address to use.</dd><dd><code>localPort</code> - The local port to use.</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>host</code> - The remote host.</dd><dd><code>LPort</code> - The LPort to connect to on the remote host.</dd><dd><code>localAddr</code> - The local address to use.</dd><dd><code>localPort</code> - The local LPort to use.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></code> - If the socket timeout could not be set.</dd>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - If the socket could not be opened.  In most
@@ -801,17 +801,17 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
 <li class="blockList">
 <h4>connect</h4>
 <pre>public&nbsp;void&nbsp;connect(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hostname,
-           int&nbsp;port,
+           int&nbsp;LPort,
            <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;localAddr,
            int&nbsp;localPort)
              throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a>,
                     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">Opens a Socket connected to a remote host at the specified port and
- originating from the specified local address and port.
+<div class="block">Opens a Socket connected to a remote host at the specified LPort and
+ originating from the specified local address and LPort.
  Before returning, <a href="../../../../org/apache/commons/net/SocketClient.html#_connectAction_()"><code>_connectAction_() </code></a>
  is called to perform connection initialization actions.
  <p></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>hostname</code> - The name of the remote host.</dd><dd><code>port</code> - The port to connect to on the remote host.</dd><dd><code>localAddr</code> - The local address to use.</dd><dd><code>localPort</code> - The local port to use.</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>hostname</code> - The name of the remote host.</dd><dd><code>LPort</code> - The LPort to connect to on the remote host.</dd><dd><code>localAddr</code> - The local address to use.</dd><dd><code>localPort</code> - The local LPort to use.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></code> - If the socket timeout could not be set.</dd>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - If the socket could not be opened.  In most
@@ -829,8 +829,8 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
 <pre>public&nbsp;void&nbsp;connect(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host)
              throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a>,
                     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">Opens a Socket connected to a remote host at the current default port
- and originating from the current host at a system assigned port.
+<div class="block">Opens a Socket connected to a remote host at the current default LPort
+ and originating from the current host at a system assigned LPort.
  Before returning, <a href="../../../../org/apache/commons/net/SocketClient.html#_connectAction_()"><code>_connectAction_() </code></a>
  is called to perform connection initialization actions.
  <p></div>
@@ -852,7 +852,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
              throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a>,
                     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block">Opens a Socket connected to a remote host at the current default
- port and originating from the current host at a system assigned port.
+ LPort and originating from the current host at a system assigned LPort.
  Before returning, <a href="../../../../org/apache/commons/net/SocketClient.html#_connectAction_()"><code>_connectAction_() </code></a>
  is called to perform connection initialization actions.
  <p></div>
@@ -919,13 +919,13 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
 <ul class="blockList">
 <li class="blockList">
 <h4>setDefaultPort</h4>
-<pre>public&nbsp;void&nbsp;setDefaultPort(int&nbsp;port)</pre>
-<div class="block">Sets the default port the SocketClient should connect to when a port
+<pre>public&nbsp;void&nbsp;setDefaultPort(int&nbsp;LPort)</pre>
+<div class="block">Sets the default LPort the SocketClient should connect to when a LPort
  is not specified.  The <a href="../../../../org/apache/commons/net/SocketClient.html#_defaultPort_"><code>_defaultPort_ </code></a>
- variable stores this value.  If never set, the default port is equal
+ variable stores this value.  If never set, the default LPort is equal
  to zero.
  <p></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>port</code> - The default port to set.</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>LPort</code> - The default LPort to set.</dd></dl>
 </li>
 </ul>
 <a name="getDefaultPort()">
@@ -935,10 +935,10 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
 <li class="blockList">
 <h4>getDefaultPort</h4>
 <pre>public&nbsp;int&nbsp;getDefaultPort()</pre>
-<div class="block">Returns the current value of the default port (stored in
+<div class="block">Returns the current value of the default LPort (stored in
  <a href="../../../../org/apache/commons/net/SocketClient.html#_defaultPort_"><code>_defaultPort_ </code></a>).
  <p></div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>The current value of the default port.</dd></dl>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The current value of the default LPort.</dd></dl>
 </li>
 </ul>
 <a name="setDefaultTimeout(int)">
@@ -1179,11 +1179,11 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
 <li class="blockList">
 <h4>getLocalPort</h4>
 <pre>public&nbsp;int&nbsp;getLocalPort()</pre>
-<div class="block">Returns the port number of the open socket on the local host used
+<div class="block">Returns the LPort number of the open socket on the local host used
  for the connection.
  Delegates to <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/Socket.html?is-external=true#getLocalPort()" title="class or interface in java.net"><code>Socket.getLocalPort()</code></a>
  <p></div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>The port number of the open socket on the local host used
+<dl><dt><span class="strong">Returns:</span></dt><dd>The LPort number of the open socket on the local host used
          for the connection.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</a></code> - if the socket is not currently open</dd></dl>
@@ -1211,11 +1211,11 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
 <li class="blockList">
 <h4>getRemotePort</h4>
 <pre>public&nbsp;int&nbsp;getRemotePort()</pre>
-<div class="block">Returns the port number of the remote host to which the client is
+<div class="block">Returns the LPort number of the remote host to which the client is
  connected.
  Delegates to <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/Socket.html?is-external=true#getPort()" title="class or interface in java.net"><code>Socket.getPort()</code></a>
  <p></div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>The port number of the remote host to which the client is
+<dl><dt><span class="strong">Returns:</span></dt><dd>The LPort number of the remote host to which the client is
          connected.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang">NullPointerException</a></code> - if the socket is not currently open</dd></dl>

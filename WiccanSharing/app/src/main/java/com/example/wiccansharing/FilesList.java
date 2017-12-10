@@ -20,11 +20,14 @@ import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -132,6 +135,24 @@ public class FilesList extends AppCompatActivity {
         }
     }
 
+    public void onClickNewFolder(View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(getString(R.string.app_name));
+        builder.setMessage(getString(R.string.create_folder_name));
+        final EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_TEXT);
+        builder.setView(input);
+        builder.setPositiveButton(getString(R.string.dialog_ok), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                NewFolderTask newFolderTask = new NewFolderTask(input.getText().toString());
+                newFolderTask.execute();
+            }
+        });
+        builder.setCancelable(true);
+        builder.show();
+    }
+
     public class FileFetchTask extends AsyncTask<Void, Void, FTPFile[]> {
 
         @Override
@@ -222,7 +243,7 @@ public class FilesList extends AppCompatActivity {
             fileDescription.setText(null);
             if (!isDirectory) {
                 fileTypeIcon.setImageResource(resourceID != 0 ? resourceID : R.drawable._blank);
-                fileDescription.setText(String.format(getString(R.string.file_size_format), size / 1000));
+                fileDescription.setText(String.format(getString(R.string.file_size_format), (size / 1000) == 0 ? 1 : size / 1000));
                 downloadButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -241,6 +262,27 @@ public class FilesList extends AppCompatActivity {
                 fileTypeIcon.setImageResource(R.drawable.folder);
                 downloadButton.setVisibility(View.INVISIBLE);
             }
+
+            rowView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    // delete file or folder
+                    AlertDialog.Builder dlgAlert = new AlertDialog.Builder(view.getContext());
+                    dlgAlert.setMessage(getString(isDirectory ? R.string.message_delete_folder : R.string.message_delete_file));
+                    dlgAlert.setTitle(getString(R.string.app_name));
+                    dlgAlert.setPositiveButton(getString(R.string.dialog_yes), new AlertDialog.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            FileDeleteTask fileDeleteTask = new FileDeleteTask(fileNames[position], isDirectory);
+                            fileDeleteTask.execute();
+                        }
+                    });
+                    dlgAlert.setNegativeButton(getString(R.string.dialog_no), null);
+                    dlgAlert.setCancelable(true);
+                    dlgAlert.create().show();
+                    return true;
+                }
+            });
+
             rowView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -299,23 +341,30 @@ public class FilesList extends AppCompatActivity {
     public class FileOpenTask extends AsyncTask<Void, Void, Boolean> {
         private final String remoteFilePath;
         private volatile FileOutputStream downloadedFile;
+        private String filesDir;
 
         FileOpenTask(String remoteFilePath) {
             this.remoteFilePath = remoteFilePath;
         }
 
         @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            filesDir = getBaseContext().getFilesDir().toString();
+        }
+
+        @Override
         protected Boolean doInBackground(Void... voids) {
             try {
                 String fileName = new File(remoteFilePath).getName();
-                File tmpFolder = new File(String.format("%s/%s", getBaseContext().getFilesDir(), getString(R.string.tmp_folder)));
+                File tmpFolder = new File(String.format("%s/%s", filesDir, getString(R.string.tmp_folder)));
                 if (!tmpFolder.exists())
                     tmpFolder.mkdir();
                 else if (!tmpFolder.isDirectory()) {
                     tmpFolder.delete();
                     tmpFolder.mkdir();
                 }
-                downloadedFile = new FileOutputStream(String.format("%s/%s/%s", getBaseContext().getFilesDir(), getString(R.string.tmp_folder), fileName));
+                downloadedFile = new FileOutputStream(String.format("%s/%s/%s", filesDir, getString(R.string.tmp_folder), fileName));
                 ftpClient.retrieveFile(remoteFilePath, downloadedFile);
             } catch (Exception e) {
                 return false;
@@ -325,6 +374,7 @@ public class FilesList extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Boolean exit_status) {
+
             Context AppContext = getBaseContext();
             FileFetchTask fileFetchTask = new FileFetchTask();
             fileFetchTask.execute();
@@ -333,7 +383,7 @@ public class FilesList extends AppCompatActivity {
                 return;
             }
             File tmpFile = new File(String.format("%s/%s/%s",
-                    AppContext.getFilesDir(), getString(R.string.tmp_folder), new File(remoteFilePath).getName()));
+                    filesDir, getString(R.string.tmp_folder), new File(remoteFilePath).getName()));
 
             if (!tmpFile.exists()) {
                 Toast.makeText(AppContext, getString(R.string.file_open_err_tmp), Toast.LENGTH_LONG).show();
@@ -359,11 +409,76 @@ public class FilesList extends AppCompatActivity {
             viewFile.setDataAndType(fileUri, mimeType);
             viewFile.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_GRANT_READ_URI_PERMISSION);
             try {
-                Intent vfChooser = Intent.createChooser(viewFile, getString(R.string.app_select));
-                AppContext.startActivity(vfChooser);
+                AppContext.startActivity(viewFile);
             } catch (ActivityNotFoundException e) {
                 Toast.makeText(AppContext, getString(R.string.no_suitable_app), Toast.LENGTH_LONG).show();
             }
+        }
+    }
+
+    public class FileDeleteTask extends AsyncTask<Void, Void, Boolean> {
+        String fileName;
+        boolean isDirectory;
+
+        public FileDeleteTask(String fileName, boolean isDirectory) {
+            this.fileName = fileName;
+            this.isDirectory = isDirectory;
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... voids) {
+            try {
+                if (!isDirectory)
+                    ftpClient.deleteFile(ftpPath + fileName);
+                else
+                    ftpClient.removeDirectory(ftpPath + fileName);
+                return true;
+            } catch (Exception e) {
+                return false;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(Boolean exit_status) {
+            if (!exit_status) {
+                Toast.makeText(getBaseContext(),
+                        String.format(getString(isDirectory ? R.string.delete_folder_err : R.string.delete_file_err,
+                                fileName)), Toast.LENGTH_LONG).show();
+                CloseConnectionTask closeConnectionTask = new CloseConnectionTask();
+                closeConnectionTask.execute();
+                return;
+            }
+            FileFetchTask fileFetchTask = new FileFetchTask();
+            fileFetchTask.execute();
+        }
+    }
+
+    public class NewFolderTask extends AsyncTask<Void, Void, Boolean> {
+        String folderName;
+
+        public NewFolderTask(String folderName) {
+            this.folderName = folderName;
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... voids) {
+            try {
+                ftpClient.makeDirectory(ftpPath + folderName);
+                return true;
+            } catch (Exception e) {
+                return false;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(Boolean exit_status) {
+            Context AppContext = getBaseContext();
+            if (!exit_status) {
+                Toast.makeText(AppContext, String.format(getString(R.string.create_folder_err), ftpPath + folderName), Toast.LENGTH_LONG).show();
+                return;
+            }
+            FileFetchTask fileFetchTask = new FileFetchTask();
+            fileFetchTask.execute();
         }
     }
 

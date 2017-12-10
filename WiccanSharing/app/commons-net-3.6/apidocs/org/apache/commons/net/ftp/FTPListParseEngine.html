@@ -127,7 +127,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
  <pre>
     FTPClient f=FTPClient();
     f.connect(server);
-    f.login(username, password);
+    f.login(LUsername, LPassword);
     FTPListParseEngine engine = f.initiateListParsing(directory);
 
     while (engine.hasNext()) {

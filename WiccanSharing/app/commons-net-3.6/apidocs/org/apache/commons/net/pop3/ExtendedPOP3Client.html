@@ -205,10 +205,10 @@ extends <a href="../../../../../org/apache/commons/net/pop3/POP3SClient.html" ti
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/pop3/ExtendedPOP3Client.html#auth(org.apache.commons.net.pop3.ExtendedPOP3Client.AUTH_METHOD,%20java.lang.String,%20java.lang.String)">auth</a></strong>(<a href="../../../../../org/apache/commons/net/pop3/ExtendedPOP3Client.AUTH_METHOD.html" title="enum in org.apache.commons.net.pop3">ExtendedPOP3Client.AUTH_METHOD</a>&nbsp;method,
-    <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
-    <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password)</code>
+    <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LUsername,
+    <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LPassword)</code>
 <div class="block">Authenticate to the POP3 server by sending the AUTH command with the
- selected mechanism, using the given username and the given password.</div>
+ selected mechanism, using the given LUsername and the given LPassword.</div>
 </td>
 </tr>
 </table>
@@ -290,16 +290,16 @@ extends <a href="../../../../../org/apache/commons/net/pop3/POP3SClient.html" ti
 <li class="blockList">
 <h4>auth</h4>
 <pre>public&nbsp;boolean&nbsp;auth(<a href="../../../../../org/apache/commons/net/pop3/ExtendedPOP3Client.AUTH_METHOD.html" title="enum in org.apache.commons.net.pop3">ExtendedPOP3Client.AUTH_METHOD</a>&nbsp;method,
-           <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
-           <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password)
+           <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LUsername,
+           <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LPassword)
              throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
                     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/security/NoSuchAlgorithmException.html?is-external=true" title="class or interface in java.security">NoSuchAlgorithmException</a>,
                     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/security/InvalidKeyException.html?is-external=true" title="class or interface in java.security">InvalidKeyException</a>,
                     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/security/spec/InvalidKeySpecException.html?is-external=true" title="class or interface in java.security.spec">InvalidKeySpecException</a></pre>
 <div class="block">Authenticate to the POP3 server by sending the AUTH command with the
- selected mechanism, using the given username and the given password.
+ selected mechanism, using the given LUsername and the given LPassword.
  <p></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>method</code> - the <a href="../../../../../org/apache/commons/net/pop3/ExtendedPOP3Client.AUTH_METHOD.html" title="enum in org.apache.commons.net.pop3"><code>ExtendedPOP3Client.AUTH_METHOD</code></a> to use</dd><dd><code>username</code> - the user name</dd><dd><code>password</code> - the password</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>method</code> - the <a href="../../../../../org/apache/commons/net/pop3/ExtendedPOP3Client.AUTH_METHOD.html" title="enum in org.apache.commons.net.pop3"><code>ExtendedPOP3Client.AUTH_METHOD</code></a> to use</dd><dd><code>LUsername</code> - the user name</dd><dd><code>LPassword</code> - the LPassword</dd>
 <dt><span class="strong">Returns:</span></dt><dd>True if successfully completed, false if not.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - If an I/O error occurs while either sending a
@@ -307,9 +307,9 @@ extends <a href="../../../../../org/apache/commons/net/pop3/POP3SClient.html" ti
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/security/NoSuchAlgorithmException.html?is-external=true" title="class or interface in java.security">NoSuchAlgorithmException</a></code> - If the CRAM hash algorithm
       cannot be instantiated by the Java runtime system.</dd>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/security/InvalidKeyException.html?is-external=true" title="class or interface in java.security">InvalidKeyException</a></code> - If the CRAM hash algorithm
-      failed to use the given password.</dd>
+      failed to use the given LPassword.</dd>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/security/spec/InvalidKeySpecException.html?is-external=true" title="class or interface in java.security.spec">InvalidKeySpecException</a></code> - If the CRAM hash algorithm
-      failed to use the given password.</dd></dl>
+      failed to use the given LPassword.</dd></dl>
 </li>
 </ul>
 </li>

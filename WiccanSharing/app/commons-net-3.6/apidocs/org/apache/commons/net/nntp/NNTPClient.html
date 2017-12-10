@@ -215,8 +215,8 @@ extends <a href="../../../../../org/apache/commons/net/nntp/NNTP.html" title="cl
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/nntp/NNTPClient.html#authenticate(java.lang.String,%20java.lang.String)">authenticate</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
-            <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password)</code>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/nntp/NNTPClient.html#authenticate(java.lang.String,%20java.lang.String)">authenticate</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LUsername,
+            <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LPassword)</code>
 <div class="block">Log into a news server by sending the AUTHINFO USER/AUTHINFO
  PASS command sequence.</div>
 </td>
@@ -1871,14 +1871,14 @@ extends <a href="../../../../../org/apache/commons/net/nntp/NNTP.html" title="cl
 <ul class="blockList">
 <li class="blockList">
 <h4>authenticate</h4>
-<pre>public&nbsp;boolean&nbsp;authenticate(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
-                   <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password)
+<pre>public&nbsp;boolean&nbsp;authenticate(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LUsername,
+                   <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LPassword)
                      throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block">Log into a news server by sending the AUTHINFO USER/AUTHINFO
  PASS command sequence. This is usually sent in response to a
  480 reply code from the NNTP server.
  <p></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>username</code> - a valid username</dd><dd><code>password</code> - the corresponding password</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>LUsername</code> - a valid LUsername</dd><dd><code>LPassword</code> - the corresponding LPassword</dd>
 <dt><span class="strong">Returns:</span></dt><dd>True for successful login, false for a failure</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - on error</dd></dl>

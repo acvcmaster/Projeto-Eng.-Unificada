@@ -108,7 +108,7 @@
 extends <a href="../../../../../org/apache/commons/net/DatagramSocketClient.html" title="class in org.apache.commons.net">DatagramSocketClient</a></pre>
 <div class="block">The DiscardUDPClient class is a UDP implementation of a client for the
  Discard protocol described in RFC 863.  To use the class,
- just open a local UDP port
+ just open a local UDP LPort
  with <a href="../../../../../org/apache/commons/net/DatagramSocketClient.html#open()"><code>open </code></a>
  and call <a href="../../../../../org/apache/commons/net/discard/DiscardUDPClient.html#send(byte[],%20int,%20java.net.InetAddress,%20int)"><code>send </code></a> to send datagrams to the server
  After you're done sending discard data, call
@@ -136,7 +136,7 @@ extends <a href="../../../../../org/apache/commons/net/DatagramSocketClient.html
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/discard/DiscardUDPClient.html#DEFAULT_PORT">DEFAULT_PORT</a></strong></code>
-<div class="block">The default discard port.</div>
+<div class="block">The default discard LPort.</div>
 </td>
 </tr>
 </table>
@@ -200,8 +200,8 @@ extends <a href="../../../../../org/apache/commons/net/DatagramSocketClient.html
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/discard/DiscardUDPClient.html#send(byte[],%20int,%20java.net.InetAddress,%20int)">send</a></strong>(byte[]&nbsp;data,
     int&nbsp;length,
     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host,
-    int&nbsp;port)</code>
-<div class="block">Sends the specified data to the specified server at the specified port.</div>
+    int&nbsp;LPort)</code>
+<div class="block">Sends the specified data to the specified server at the specified LPort.</div>
 </td>
 </tr>
 </table>
@@ -240,7 +240,7 @@ extends <a href="../../../../../org/apache/commons/net/DatagramSocketClient.html
 <li class="blockList">
 <h4>DEFAULT_PORT</h4>
 <pre>public static final&nbsp;int DEFAULT_PORT</pre>
-<div class="block">The default discard port.  It is set to 9 according to RFC 863.</div>
+<div class="block">The default discard LPort.  It is set to 9 according to RFC 863.</div>
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.commons.net.discard.DiscardUDPClient.DEFAULT_PORT">Constant Field Values</a></dd></dl>
 </li>
 </ul>
@@ -278,11 +278,11 @@ extends <a href="../../../../../org/apache/commons/net/DatagramSocketClient.html
 <pre>public&nbsp;void&nbsp;send(byte[]&nbsp;data,
         int&nbsp;length,
         <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host,
-        int&nbsp;port)
+        int&nbsp;LPort)
           throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">Sends the specified data to the specified server at the specified port.</div>
+<div class="block">Sends the specified data to the specified server at the specified LPort.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>data</code> - The discard data to send.</dd><dd><code>length</code> - The length of the data to send.  Should be less than
-    or equal to the length of the data byte array.</dd><dd><code>host</code> - The address of the server.</dd><dd><code>port</code> - The service port.</dd>
+    or equal to the length of the data byte array.</dd><dd><code>host</code> - The address of the server.</dd><dd><code>LPort</code> - The service LPort.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - If an error occurs during the datagram send
             operation.</dd></dl>

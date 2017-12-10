@@ -105,8 +105,8 @@ extends <a href="../../../../../org/apache/commons/net/SocketClient.html" title=
 <div class="block">The CharGenTCPClient class is a TCP implementation of a client for the
  character generator protocol described in RFC 864.  It can also be
  used for Systat (RFC 866), Quote of the Day (RFC 865), and netstat
- (port 15).  All of these protocols involve connecting to the appropriate
- port, and reading data from an input stream.  The chargen protocol
+ (LPort 15).  All of these protocols involve connecting to the appropriate
+ LPort, and reading data from an input stream.  The chargen protocol
  actually sends data until the receiving end closes the connection.  All
  of the others send only a fixed amount of data and then close the
  connection.
@@ -140,31 +140,31 @@ extends <a href="../../../../../org/apache/commons/net/SocketClient.html" title=
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/chargen/CharGenTCPClient.html#CHARGEN_PORT">CHARGEN_PORT</a></strong></code>
-<div class="block">The character generator port value of 19 according to RFC 864.</div>
+<div class="block">The character generator LPort value of 19 according to RFC 864.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/chargen/CharGenTCPClient.html#DEFAULT_PORT">DEFAULT_PORT</a></strong></code>
-<div class="block">The default chargen port.</div>
+<div class="block">The default chargen LPort.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/chargen/CharGenTCPClient.html#NETSTAT_PORT">NETSTAT_PORT</a></strong></code>
-<div class="block">The netstat port value of 19.</div>
+<div class="block">The netstat LPort value of 19.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/chargen/CharGenTCPClient.html#QUOTE_OF_DAY_PORT">QUOTE_OF_DAY_PORT</a></strong></code>
-<div class="block">The quote of the day port value of 17 according to RFC 865.</div>
+<div class="block">The quote of the day LPort value of 17 according to RFC 865.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/chargen/CharGenTCPClient.html#SYSTAT_PORT">SYSTAT_PORT</a></strong></code>
-<div class="block">The systat port value of 11 according to RFC 866.</div>
+<div class="block">The systat LPort value of 11 according to RFC 866.</div>
 </td>
 </tr>
 </table>
@@ -251,7 +251,7 @@ extends <a href="../../../../../org/apache/commons/net/SocketClient.html" title=
 <li class="blockList">
 <h4>SYSTAT_PORT</h4>
 <pre>public static final&nbsp;int SYSTAT_PORT</pre>
-<div class="block">The systat port value of 11 according to RFC 866.</div>
+<div class="block">The systat LPort value of 11 according to RFC 866.</div>
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.commons.net.chargen.CharGenTCPClient.SYSTAT_PORT">Constant Field Values</a></dd></dl>
 </li>
 </ul>
@@ -262,7 +262,7 @@ extends <a href="../../../../../org/apache/commons/net/SocketClient.html" title=
 <li class="blockList">
 <h4>NETSTAT_PORT</h4>
 <pre>public static final&nbsp;int NETSTAT_PORT</pre>
-<div class="block">The netstat port value of 19.</div>
+<div class="block">The netstat LPort value of 19.</div>
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.commons.net.chargen.CharGenTCPClient.NETSTAT_PORT">Constant Field Values</a></dd></dl>
 </li>
 </ul>
@@ -273,7 +273,7 @@ extends <a href="../../../../../org/apache/commons/net/SocketClient.html" title=
 <li class="blockList">
 <h4>QUOTE_OF_DAY_PORT</h4>
 <pre>public static final&nbsp;int QUOTE_OF_DAY_PORT</pre>
-<div class="block">The quote of the day port value of 17 according to RFC 865.</div>
+<div class="block">The quote of the day LPort value of 17 according to RFC 865.</div>
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.commons.net.chargen.CharGenTCPClient.QUOTE_OF_DAY_PORT">Constant Field Values</a></dd></dl>
 </li>
 </ul>
@@ -284,7 +284,7 @@ extends <a href="../../../../../org/apache/commons/net/SocketClient.html" title=
 <li class="blockList">
 <h4>CHARGEN_PORT</h4>
 <pre>public static final&nbsp;int CHARGEN_PORT</pre>
-<div class="block">The character generator port value of 19 according to RFC 864.</div>
+<div class="block">The character generator LPort value of 19 according to RFC 864.</div>
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.commons.net.chargen.CharGenTCPClient.CHARGEN_PORT">Constant Field Values</a></dd></dl>
 </li>
 </ul>
@@ -295,7 +295,7 @@ extends <a href="../../../../../org/apache/commons/net/SocketClient.html" title=
 <li class="blockList">
 <h4>DEFAULT_PORT</h4>
 <pre>public static final&nbsp;int DEFAULT_PORT</pre>
-<div class="block">The default chargen port.  It is set to 19 according to RFC 864.</div>
+<div class="block">The default chargen LPort.  It is set to 19 according to RFC 864.</div>
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.commons.net.chargen.CharGenTCPClient.DEFAULT_PORT">Constant Field Values</a></dd></dl>
 </li>
 </ul>
@@ -315,7 +315,7 @@ extends <a href="../../../../../org/apache/commons/net/SocketClient.html" title=
 <h4>CharGenTCPClient</h4>
 <pre>public&nbsp;CharGenTCPClient()</pre>
 <div class="block">The default constructor for CharGenTCPClient.  It merely sets the
- default port to <code> DEFAULT_PORT </code>.</div>
+ default LPort to <code> DEFAULT_PORT </code>.</div>
 </li>
 </ul>
 </li>

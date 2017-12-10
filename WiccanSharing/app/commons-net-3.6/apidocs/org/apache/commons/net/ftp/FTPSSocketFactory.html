@@ -142,7 +142,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/javax/net/Sock
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/ServerSocket.html?is-external=true" title="class or interface in java.net">ServerSocket</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/ftp/FTPSSocketFactory.html#createServerSocket(int)">createServerSocket</a></strong>(int&nbsp;port)</code>
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/ftp/FTPSSocketFactory.html#createServerSocket(int)">createServerSocket</a></strong>(int&nbsp;LPort)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;
 <div class="block"><i>(2.2) use <a href="../../../../../org/apache/commons/net/ftp/FTPSServerSocketFactory.html#createServerSocket(int)"><code>instead</code></a></i></div>
 </div>
@@ -150,7 +150,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/javax/net/Sock
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/ServerSocket.html?is-external=true" title="class or interface in java.net">ServerSocket</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/ftp/FTPSSocketFactory.html#createServerSocket(int,%20int)">createServerSocket</a></strong>(int&nbsp;port,
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/ftp/FTPSSocketFactory.html#createServerSocket(int,%20int)">createServerSocket</a></strong>(int&nbsp;LPort,
                   int&nbsp;backlog)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;
 <div class="block"><i>(2.2) use <a href="../../../../../org/apache/commons/net/ftp/FTPSServerSocketFactory.html#createServerSocket(int,%20int)"><code>instead</code></a></i></div>
@@ -159,7 +159,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/javax/net/Sock
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/ServerSocket.html?is-external=true" title="class or interface in java.net">ServerSocket</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/ftp/FTPSSocketFactory.html#createServerSocket(int,%20int,%20java.net.InetAddress)">createServerSocket</a></strong>(int&nbsp;port,
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/ftp/FTPSSocketFactory.html#createServerSocket(int,%20int,%20java.net.InetAddress)">createServerSocket</a></strong>(int&nbsp;LPort,
                   int&nbsp;backlog,
                   <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;ifAddress)</code>
 <div class="block"><strong>Deprecated.</strong>&nbsp;
@@ -174,24 +174,24 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/javax/net/Sock
 <tr class="altColor">
 <td class="colFirst"><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/Socket.html?is-external=true" title="class or interface in java.net">Socket</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/ftp/FTPSSocketFactory.html#createSocket(java.net.InetAddress,%20int)">createSocket</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;address,
-            int&nbsp;port)</code>&nbsp;</td>
+            int&nbsp;LPort)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/Socket.html?is-external=true" title="class or interface in java.net">Socket</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/ftp/FTPSSocketFactory.html#createSocket(java.net.InetAddress,%20int,%20java.net.InetAddress,%20int)">createSocket</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;address,
-            int&nbsp;port,
+            int&nbsp;LPort,
             <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;localAddress,
             int&nbsp;localPort)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/Socket.html?is-external=true" title="class or interface in java.net">Socket</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/ftp/FTPSSocketFactory.html#createSocket(java.lang.String,%20int)">createSocket</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;address,
-            int&nbsp;port)</code>&nbsp;</td>
+            int&nbsp;LPort)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/Socket.html?is-external=true" title="class or interface in java.net">Socket</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/ftp/FTPSSocketFactory.html#createSocket(java.lang.String,%20int,%20java.net.InetAddress,%20int)">createSocket</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;address,
-            int&nbsp;port,
+            int&nbsp;LPort,
             <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;localAddress,
             int&nbsp;localPort)</code>&nbsp;</td>
 </tr>
@@ -271,7 +271,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/javax/net/Sock
 <li class="blockList">
 <h4>createSocket</h4>
 <pre>public&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/Socket.html?is-external=true" title="class or interface in java.net">Socket</a>&nbsp;createSocket(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;address,
-                  int&nbsp;port)
+                  int&nbsp;LPort)
                     throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/UnknownHostException.html?is-external=true" title="class or interface in java.net">UnknownHostException</a>,
                            <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <dl>
@@ -289,7 +289,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/javax/net/Sock
 <li class="blockList">
 <h4>createSocket</h4>
 <pre>public&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/Socket.html?is-external=true" title="class or interface in java.net">Socket</a>&nbsp;createSocket(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;address,
-                  int&nbsp;port)
+                  int&nbsp;LPort)
                     throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <dl>
 <dt><strong>Specified by:</strong></dt>
@@ -305,7 +305,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/javax/net/Sock
 <li class="blockList">
 <h4>createSocket</h4>
 <pre>public&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/Socket.html?is-external=true" title="class or interface in java.net">Socket</a>&nbsp;createSocket(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;address,
-                  int&nbsp;port,
+                  int&nbsp;LPort,
                   <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;localAddress,
                   int&nbsp;localPort)
                     throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/UnknownHostException.html?is-external=true" title="class or interface in java.net">UnknownHostException</a>,
@@ -325,7 +325,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/javax/net/Sock
 <li class="blockList">
 <h4>createSocket</h4>
 <pre>public&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/Socket.html?is-external=true" title="class or interface in java.net">Socket</a>&nbsp;createSocket(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;address,
-                  int&nbsp;port,
+                  int&nbsp;LPort,
                   <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;localAddress,
                   int&nbsp;localPort)
                     throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
@@ -343,10 +343,10 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/javax/net/Sock
 <li class="blockList">
 <h4>createServerSocket</h4>
 <pre><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/ServerSocket.html?is-external=true" title="class or interface in java.net">ServerSocket</a>&nbsp;createServerSocket(int&nbsp;port)
+public&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/ServerSocket.html?is-external=true" title="class or interface in java.net">ServerSocket</a>&nbsp;createServerSocket(int&nbsp;LPort)
                                 throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>(2.2) use <a href="../../../../../org/apache/commons/net/ftp/FTPSServerSocketFactory.html#createServerSocket(int)"><code>instead</code></a></i></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>port</code> - the port</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>LPort</code> - the LPort</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the socket</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - on error</dd></dl>
@@ -359,11 +359,11 @@ public&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/S
 <li class="blockList">
 <h4>createServerSocket</h4>
 <pre><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/ServerSocket.html?is-external=true" title="class or interface in java.net">ServerSocket</a>&nbsp;createServerSocket(int&nbsp;port,
+public&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/ServerSocket.html?is-external=true" title="class or interface in java.net">ServerSocket</a>&nbsp;createServerSocket(int&nbsp;LPort,
                                          int&nbsp;backlog)
                                 throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>(2.2) use <a href="../../../../../org/apache/commons/net/ftp/FTPSServerSocketFactory.html#createServerSocket(int,%20int)"><code>instead</code></a></i></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>port</code> - the port</dd><dd><code>backlog</code> - the backlog</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>LPort</code> - the LPort</dd><dd><code>backlog</code> - the backlog</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the socket</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - on error</dd></dl>
@@ -376,12 +376,12 @@ public&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/S
 <li class="blockList">
 <h4>createServerSocket</h4>
 <pre><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/ServerSocket.html?is-external=true" title="class or interface in java.net">ServerSocket</a>&nbsp;createServerSocket(int&nbsp;port,
+public&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/ServerSocket.html?is-external=true" title="class or interface in java.net">ServerSocket</a>&nbsp;createServerSocket(int&nbsp;LPort,
                                          int&nbsp;backlog,
                                          <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;ifAddress)
                                 throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>(2.2) use <a href="../../../../../org/apache/commons/net/ftp/FTPSServerSocketFactory.html#createServerSocket(int,%20int,%20java.net.InetAddress)"><code>instead</code></a></i></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>port</code> - the port</dd><dd><code>backlog</code> - the backlog</dd><dd><code>ifAddress</code> - the interface</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>LPort</code> - the LPort</dd><dd><code>backlog</code> - the backlog</dd><dd><code>ifAddress</code> - the interface</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the socket</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - on error</dd></dl>

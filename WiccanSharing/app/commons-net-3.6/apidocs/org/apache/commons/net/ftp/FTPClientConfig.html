@@ -136,7 +136,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
     conf.setServerLanguageCode("fr");
     f.configure(conf);
     f.connect(server);
-    f.login(username, password);
+    f.login(LUsername, LPassword);
     FTPFile[] files = listFiles(directory);
  </pre>
  <p>
@@ -152,7 +152,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
     conf.setTimeZoneId("Europe/Copenhagen");
     f.configure(conf);
     f.connect(server);
-    f.login(username, password);
+    f.login(LUsername, LPassword);
     FTPListParseEngine engine =
        f.initiateListParsing("com.whatever.YourOwnParser", directory);
 
@@ -173,7 +173,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
         "jan|feb|mar|apr|maí|jún|júl|ágú|sep|okt|nóv|des");
     f.configure(conf);
     f.connect(server);
-    f.login(username, password);
+    f.login(LUsername, LPassword);
     FTPFile[] files = listFiles(directory);
  </pre>
  <p>
@@ -186,7 +186,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
     conf.setTimeZoneId("America/Denver");
     f.configure(conf);
     f.connect(server);
-    f.login(username, password);
+    f.login(LUsername, LPassword);
     FTPFile[] files = listFiles(directory);
  </pre>
  Unpaged (whole list) access on a Windows-NT server in a different time zone
@@ -197,7 +197,7 @@ extends <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/Obje
     conf.setTimeZoneId("America/Denver");
     f.configure(conf);
     f.connect(server);
-    f.login(username, password);
+    f.login(LUsername, LPassword);
     FTPFile[] files = listFiles(directory);
  </pre></div>
 <dl><dt><span class="strong">Since:</span></dt>

@@ -148,21 +148,21 @@ implements <a href="../../../../org/apache/commons/net/DatagramSocketFactory.htm
 <tr class="altColor">
 <td class="colFirst"><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/DatagramSocket.html?is-external=true" title="class or interface in java.net">DatagramSocket</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/DefaultDatagramSocketFactory.html#createDatagramSocket()">createDatagramSocket</a></strong>()</code>
-<div class="block">Creates a DatagramSocket on the local host at the first available port.</div>
+<div class="block">Creates a DatagramSocket on the local host at the first available LPort.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/DatagramSocket.html?is-external=true" title="class or interface in java.net">DatagramSocket</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/DefaultDatagramSocketFactory.html#createDatagramSocket(int)">createDatagramSocket</a></strong>(int&nbsp;port)</code>
-<div class="block">Creates a DatagramSocket on the local host at a specified port.</div>
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/DefaultDatagramSocketFactory.html#createDatagramSocket(int)">createDatagramSocket</a></strong>(int&nbsp;LPort)</code>
+<div class="block">Creates a DatagramSocket on the local host at a specified LPort.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/DatagramSocket.html?is-external=true" title="class or interface in java.net">DatagramSocket</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/DefaultDatagramSocketFactory.html#createDatagramSocket(int,%20java.net.InetAddress)">createDatagramSocket</a></strong>(int&nbsp;port,
+<td class="colLast"><code><strong><a href="../../../../org/apache/commons/net/DefaultDatagramSocketFactory.html#createDatagramSocket(int,%20java.net.InetAddress)">createDatagramSocket</a></strong>(int&nbsp;LPort,
                     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;laddr)</code>
 <div class="block">Creates a DatagramSocket at the specified address on the local host
- at a specified port.</div>
+ at a specified LPort.</div>
 </td>
 </tr>
 </table>
@@ -212,7 +212,7 @@ implements <a href="../../../../org/apache/commons/net/DatagramSocketFactory.htm
 <h4>createDatagramSocket</h4>
 <pre>public&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/DatagramSocket.html?is-external=true" title="class or interface in java.net">DatagramSocket</a>&nbsp;createDatagramSocket()
                                     throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></pre>
-<div class="block">Creates a DatagramSocket on the local host at the first available port.</div>
+<div class="block">Creates a DatagramSocket on the local host at the first available LPort.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../../../org/apache/commons/net/DatagramSocketFactory.html#createDatagramSocket()">createDatagramSocket</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/commons/net/DatagramSocketFactory.html" title="interface in org.apache.commons.net">DatagramSocketFactory</a></code></dd>
@@ -227,13 +227,13 @@ implements <a href="../../../../org/apache/commons/net/DatagramSocketFactory.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>createDatagramSocket</h4>
-<pre>public&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/DatagramSocket.html?is-external=true" title="class or interface in java.net">DatagramSocket</a>&nbsp;createDatagramSocket(int&nbsp;port)
+<pre>public&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/DatagramSocket.html?is-external=true" title="class or interface in java.net">DatagramSocket</a>&nbsp;createDatagramSocket(int&nbsp;LPort)
                                     throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></pre>
-<div class="block">Creates a DatagramSocket on the local host at a specified port.</div>
+<div class="block">Creates a DatagramSocket on the local host at a specified LPort.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../../../org/apache/commons/net/DatagramSocketFactory.html#createDatagramSocket(int)">createDatagramSocket</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/commons/net/DatagramSocketFactory.html" title="interface in org.apache.commons.net">DatagramSocketFactory</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>port</code> - The port to use for the socket.</dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>LPort</code> - The LPort to use for the socket.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>a new DatagramSocket</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></code> - If the socket could not be created.</dd></dl>
@@ -245,15 +245,15 @@ implements <a href="../../../../org/apache/commons/net/DatagramSocketFactory.htm
 <ul class="blockListLast">
 <li class="blockList">
 <h4>createDatagramSocket</h4>
-<pre>public&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/DatagramSocket.html?is-external=true" title="class or interface in java.net">DatagramSocket</a>&nbsp;createDatagramSocket(int&nbsp;port,
+<pre>public&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/DatagramSocket.html?is-external=true" title="class or interface in java.net">DatagramSocket</a>&nbsp;createDatagramSocket(int&nbsp;LPort,
                                   <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;laddr)
                                     throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></pre>
 <div class="block">Creates a DatagramSocket at the specified address on the local host
- at a specified port.</div>
+ at a specified LPort.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../../../org/apache/commons/net/DatagramSocketFactory.html#createDatagramSocket(int,%20java.net.InetAddress)">createDatagramSocket</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/apache/commons/net/DatagramSocketFactory.html" title="interface in org.apache.commons.net">DatagramSocketFactory</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>port</code> - The port to use for the socket.</dd><dd><code>laddr</code> - The local address to use.</dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>LPort</code> - The LPort to use for the socket.</dd><dd><code>laddr</code> - The local address to use.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>a new DatagramSocket</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/SocketException.html?is-external=true" title="class or interface in java.net">SocketException</a></code> - If the socket could not be created.</dd></dl>

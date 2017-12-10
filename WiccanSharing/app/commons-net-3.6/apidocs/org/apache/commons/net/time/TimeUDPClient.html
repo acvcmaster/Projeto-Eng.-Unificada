@@ -137,7 +137,7 @@ extends <a href="../../../../../org/apache/commons/net/DatagramSocketClient.html
 <tr class="altColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/time/TimeUDPClient.html#DEFAULT_PORT">DEFAULT_PORT</a></strong></code>
-<div class="block">The default time port.</div>
+<div class="block">The default time LPort.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -195,7 +195,7 @@ extends <a href="../../../../../org/apache/commons/net/DatagramSocketClient.html
 <tr class="rowColor">
 <td class="colFirst"><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/time/TimeUDPClient.html#getDate(java.net.InetAddress,%20int)">getDate</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host,
-       int&nbsp;port)</code>
+       int&nbsp;LPort)</code>
 <div class="block">Retrieves the time from the server and returns a Java Date
  containing the time converted to the local timezone.</div>
 </td>
@@ -209,8 +209,8 @@ extends <a href="../../../../../org/apache/commons/net/DatagramSocketClient.html
 <tr class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/time/TimeUDPClient.html#getTime(java.net.InetAddress,%20int)">getTime</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host,
-       int&nbsp;port)</code>
-<div class="block">Retrieves the time from the specified server and port and
+       int&nbsp;LPort)</code>
+<div class="block">Retrieves the time from the specified server and LPort and
  returns it.</div>
 </td>
 </tr>
@@ -250,7 +250,7 @@ extends <a href="../../../../../org/apache/commons/net/DatagramSocketClient.html
 <li class="blockList">
 <h4>DEFAULT_PORT</h4>
 <pre>public static final&nbsp;int DEFAULT_PORT</pre>
-<div class="block">The default time port.  It is set to 37 according to RFC 868.</div>
+<div class="block">The default time LPort.  It is set to 37 according to RFC 868.</div>
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.commons.net.time.TimeUDPClient.DEFAULT_PORT">Constant Field Values</a></dd></dl>
 </li>
 </ul>
@@ -299,15 +299,15 @@ extends <a href="../../../../../org/apache/commons/net/DatagramSocketClient.html
 <li class="blockList">
 <h4>getTime</h4>
 <pre>public&nbsp;long&nbsp;getTime(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host,
-           int&nbsp;port)
+           int&nbsp;LPort)
              throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">Retrieves the time from the specified server and port and
+<div class="block">Retrieves the time from the specified server and LPort and
  returns it. The time is the number of seconds since
  00:00 (midnight) 1 January 1900 GMT, as specified by RFC 868.
  This method reads the raw 32-bit big-endian
  unsigned integer from the server, converts it to a Java long, and
  returns the value.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>host</code> - The address of the server.</dd><dd><code>port</code> - The port of the service.</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>host</code> - The address of the server.</dd><dd><code>LPort</code> - The LPort of the service.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The time value retrieved from the server.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - If an error occurs while retrieving the time.</dd></dl>
@@ -335,11 +335,11 @@ extends <a href="../../../../../org/apache/commons/net/DatagramSocketClient.html
 <li class="blockList">
 <h4>getDate</h4>
 <pre>public&nbsp;<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/util/Date.html?is-external=true" title="class or interface in java.util">Date</a>&nbsp;getDate(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;host,
-           int&nbsp;port)
+           int&nbsp;LPort)
              throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block">Retrieves the time from the server and returns a Java Date
  containing the time converted to the local timezone.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>host</code> - The address of the server.</dd><dd><code>port</code> - The port of the service.</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>host</code> - The address of the server.</dd><dd><code>LPort</code> - The LPort of the service.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>A Date value containing the time retrieved from the server
      converted to the local timezone.</dd>
 <dt><span class="strong">Throws:</span></dt>

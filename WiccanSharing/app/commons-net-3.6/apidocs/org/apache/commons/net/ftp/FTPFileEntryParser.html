@@ -112,7 +112,7 @@
  <pre>
     FTPClient f=FTPClient();
     f.connect(server);
-    f.login(username, password);
+    f.login(LUsername, LPassword);
     FTPFile[] files = f.listFiles("subfolder");
  </pre>
 
@@ -125,7 +125,7 @@
  <pre>
     FTPClient f=FTPClient();
     f.connect(server);
-    f.login(username, password);
+    f.login(LUsername, LPassword);
     FTPFile[] files = f.listFiles(
       "org.apache.commons.net.ftp.parser.EnterpriseUnixFTPFileEntryParser",
       ".");
@@ -138,7 +138,7 @@
  <pre>
     FTPClient f=FTPClient();
     f.connect(server);
-    f.login(username, password);
+    f.login(LUsername, LPassword);
     FTPFile[] files = f.listFiles("VMS", "subfolder/foo.java");
  </pre>
 

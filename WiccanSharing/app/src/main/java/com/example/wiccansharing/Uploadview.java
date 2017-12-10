@@ -1,5 +1,6 @@
 package com.example.wiccansharing;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -14,6 +15,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.InputStream;
 import java.net.URI;
 
 public class Uploadview extends AppCompatActivity {
@@ -35,7 +37,7 @@ public class Uploadview extends AppCompatActivity {
                 if(resultCode == RESULT_OK)
                 {
                     EditText editText = findViewById(R.id.editText2);
-                    // get data..
+                    editText.setText(data.getData().toString());
                     return;
                 }
                 break;
@@ -67,25 +69,36 @@ public class Uploadview extends AppCompatActivity {
     }
 
     public class UploadTask extends AsyncTask<Void, Void, Boolean> {
-        String file;
+        String fileUriString;
+        String fileName;
 
-        public UploadTask(String file) {
-            this.file = file;
+        public UploadTask(String fileUriString) {
+            this.fileUriString = fileUriString;
         }
 
         @Override
         protected Boolean doInBackground(Void... voids) {
-            return false;
+            try {
+                Uri fileUri = Uri.parse(fileUriString);
+                File sFile = new File(fileUri.getPath());
+                fileName = sFile.getName();
+                InputStream uploadStream = getBaseContext().getContentResolver().openInputStream(fileUri);
+                FilesList.ftpClient.storeFile(FilesList.ftpPath + fileName, uploadStream);
+                return true;
+            }
+            catch (Exception e) {
+                return false;
+            }
         }
 
         @Override
         protected void onPostExecute(Boolean exit_status) {
             Context AppContext = getBaseContext();
             if (!exit_status) {
-                Toast.makeText(AppContext, String.format(getString(R.string.upload_fail), file), Toast.LENGTH_LONG).show();
+                Toast.makeText(AppContext, String.format(getString(R.string.upload_fail), fileName), Toast.LENGTH_LONG).show();
                 return;
             }
-            Toast.makeText(AppContext, String.format(getString(R.string.upload_succeeded), file), Toast.LENGTH_SHORT).show();
+            Toast.makeText(AppContext, String.format(getString(R.string.upload_succeeded), fileName), Toast.LENGTH_SHORT).show();
             finish();
         }
     }

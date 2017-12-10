@@ -167,7 +167,7 @@ extends <a href="../../../../../org/apache/commons/net/SocketClient.html" title=
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/bsd/RExecClient.html#DEFAULT_PORT">DEFAULT_PORT</a></strong></code>
-<div class="block">The default rexec port.</div>
+<div class="block">The default rexec LPort.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -253,16 +253,16 @@ extends <a href="../../../../../org/apache/commons/net/SocketClient.html" title=
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/bsd/RExecClient.html#rexec(java.lang.String,%20java.lang.String,%20java.lang.String)">rexec</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
-     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password,
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/bsd/RExecClient.html#rexec(java.lang.String,%20java.lang.String,%20java.lang.String)">rexec</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LUsername,
+     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LPassword,
      <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;command)</code>
-<div class="block">Same as <code> rexec(username, password, command, false); </code></div>
+<div class="block">Same as <code> rexec(LUsername, LPassword, command, false); </code></div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/bsd/RExecClient.html#rexec(java.lang.String,%20java.lang.String,%20java.lang.String,%20boolean)">rexec</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
-     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password,
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/bsd/RExecClient.html#rexec(java.lang.String,%20java.lang.String,%20java.lang.String,%20boolean)">rexec</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LUsername,
+     <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LPassword,
      <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;command,
      boolean&nbsp;separateErrorStream)</code>
 <div class="block">Remotely executes a command through the rexecd daemon on the server
@@ -325,7 +325,7 @@ extends <a href="../../../../../org/apache/commons/net/SocketClient.html" title=
 <li class="blockList">
 <h4>DEFAULT_PORT</h4>
 <pre>public static final&nbsp;int DEFAULT_PORT</pre>
-<div class="block">The default rexec port.  Set to 512 in BSD Unix.</div>
+<div class="block">The default rexec LPort.  Set to 512 in BSD Unix.</div>
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#org.apache.commons.net.bsd.RExecClient.DEFAULT_PORT">Constant Field Values</a></dd></dl>
 </li>
 </ul>
@@ -358,7 +358,7 @@ extends <a href="../../../../../org/apache/commons/net/SocketClient.html" title=
 <h4>RExecClient</h4>
 <pre>public&nbsp;RExecClient()</pre>
 <div class="block">The default RExecClient constructor.  Initializes the
- default port to <code> DEFAULT_PORT </code>.</div>
+ default LPort to <code> DEFAULT_PORT </code>.</div>
 </li>
 </ul>
 </li>
@@ -419,8 +419,8 @@ extends <a href="../../../../../org/apache/commons/net/SocketClient.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>rexec</h4>
-<pre>public&nbsp;void&nbsp;rexec(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
-         <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password,
+<pre>public&nbsp;void&nbsp;rexec(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LUsername,
+         <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LPassword,
          <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;command,
          boolean&nbsp;separateErrorStream)
            throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
@@ -444,8 +444,8 @@ extends <a href="../../../../../org/apache/commons/net/SocketClient.html" title=
  an attacker monitoring the rexec() negotiation.  You may disable this
  behavior with <a href="../../../../../org/apache/commons/net/bsd/RExecClient.html#setRemoteVerificationEnabled(boolean)"><code>setRemoteVerificationEnabled()</code></a>
  .</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>username</code> - The account name on the server through which to execute
-                  the command.</dd><dd><code>password</code> - The plain text password of the user account.</dd><dd><code>command</code> - The command, including any arguments, to execute.</dd><dd><code>separateErrorStream</code> - True if you would like the standard error
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>LUsername</code> - The account name on the server through which to execute
+                  the command.</dd><dd><code>LPassword</code> - The plain text LPassword of the user account.</dd><dd><code>command</code> - The command, including any arguments, to execute.</dd><dd><code>separateErrorStream</code> - True if you would like the standard error
         to be transmitted through a different stream than standard output.
         False if not.</dd>
 <dt><span class="strong">Throws:</span></dt>
@@ -459,12 +459,12 @@ extends <a href="../../../../../org/apache/commons/net/SocketClient.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>rexec</h4>
-<pre>public&nbsp;void&nbsp;rexec(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username,
-         <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;password,
+<pre>public&nbsp;void&nbsp;rexec(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LUsername,
+         <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LPassword,
          <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;command)
            throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">Same as <code> rexec(username, password, command, false); </code></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>username</code> - the user name</dd><dd><code>password</code> - the password</dd><dd><code>command</code> - the command to run</dd>
+<div class="block">Same as <code> rexec(LUsername, LPassword, command, false); </code></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>LUsername</code> - the user name</dd><dd><code>LPassword</code> - the LPassword</dd><dd><code>command</code> - the command to run</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code> - if an error occurs</dd></dl>
 </li>

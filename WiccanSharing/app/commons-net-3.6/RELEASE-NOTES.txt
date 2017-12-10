@@ -23,7 +23,7 @@ Changes to functionality:
  This will only happen if the FTP server is not compliant with RFC 3659.
 
 Notable additions:
-* The POP3Mail examples can now get password from console, stdin or an environment variable.
+* The POP3Mail examples can now get LPassword from console, stdin or an environment variable.
 * TFTPClient code has been rewritten to improve error handling and retries.
 
 Changes in this version include:
@@ -31,7 +31,7 @@ Changes in this version include:
 Fixed Bugs:
 o NET-613:  TFTPClient assumes that lastBlock == 0 only once
 o NET-320:  Allow TFTPServer.java to bind to a specific network adapter Thanks to Kevin Bulebush.
-o NET-414:  Apache Commons TFTP does not reject request replies that originate from a control port. Thanks to Chuck Wolber.
+o NET-414:  Apache Commons TFTP does not reject request replies that originate from a control LPort. Thanks to Chuck Wolber.
 o NET-477:  TFTP sendFile retry broken Thanks to John Walton.
 o NET-596:  NullPointerException when disconnecting TelnetClient twice with JDK 7 Thanks to Vincent Bories-Azeau.
 o NET-602:  Failure to parse times from SYST_L8 systems that report as "WINDOWS Type: L8" Thanks to Ross Braithwaite.
@@ -41,13 +41,13 @@ o NET-610:  FTPClient.mlistFile incorrectly handles MLST reply Thanks to Sergey 
 o NET-611:  FTP does not validate command reply syntax fully
 o NET-609:  DefaultUnixFTPFileEntryParserFactory Issue (leading spaces removal configuration) Thanks to Tqup3.
 o NET-597:  FTP fails to parse listings for Solaris 10 FTPd in Japanese Thanks to Hiroki Taniura.
-o NET-593:  HostnameVerifier is called with ip addess instead of the provided hostname Thanks to Jörg Weule.
+o NET-593:  HostnameVerifier is called with ip addess instead of the provided hostname Thanks to Jï¿½rg Weule.
 o NET-594:  TelnetClient._closeOutputStream unhandled exception from FilterOutputStream.close Thanks to Brad Worrral.
 o NET-592:  plainSocket in FTPSClient is never closed Thanks to Mark Ford.
 
 Changes:
 o NET-612:  Allow TFTP socket IO tracing
-o           POP3Mail example: support host port; allow reading password from Console/stdin/environment
+o           POP3Mail example: support host LPort; allow reading LPassword from Console/stdin/environment
 o NET-599:  Add shorthand FTPClientConfig constructor
 
 

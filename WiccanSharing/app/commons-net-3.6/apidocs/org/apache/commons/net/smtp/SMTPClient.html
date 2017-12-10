@@ -384,8 +384,8 @@ extends <a href="../../../../../org/apache/commons/net/smtp/SMTP.html" title="cl
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/smtp/SMTPClient.html#verify(java.lang.String)">verify</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username)</code>
-<div class="block">Verify that a username or email address is valid, i.e., that mail
+<td class="colLast"><code><strong><a href="../../../../../org/apache/commons/net/smtp/SMTPClient.html#verify(java.lang.String)">verify</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LUsername)</code>
+<div class="block">Verify that a LUsername or email address is valid, i.e., that mail
  can be delivered to that mailbox on the server.</div>
 </td>
 </tr>
@@ -821,13 +821,13 @@ extends <a href="../../../../../org/apache/commons/net/smtp/SMTP.html" title="cl
 <ul class="blockList">
 <li class="blockList">
 <h4>verify</h4>
-<pre>public&nbsp;boolean&nbsp;verify(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;username)
+<pre>public&nbsp;boolean&nbsp;verify(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;LUsername)
                throws <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
-<div class="block">Verify that a username or email address is valid, i.e., that mail
+<div class="block">Verify that a LUsername or email address is valid, i.e., that mail
  can be delivered to that mailbox on the server.
  <p></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>username</code> - The username or email address to validate.</dd>
-<dt><span class="strong">Returns:</span></dt><dd>True if the username is valid, false if not.</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>LUsername</code> - The LUsername or email address to validate.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>True if the LUsername is valid, false if not.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../../../org/apache/commons/net/smtp/SMTPConnectionClosedException.html" title="class in org.apache.commons.net.smtp">SMTPConnectionClosedException</a></code> - If the SMTP server prematurely closes the connection as a result
       of the client being idle or some other reason causing the server

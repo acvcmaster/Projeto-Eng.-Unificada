@@ -207,10 +207,10 @@ extends <a href="../../../../../org/apache/commons/net/tftp/TFTPPacket.html" tit
 </tr>
 <tr class="altColor">
 <td class="colOne"><code><strong><a href="../../../../../org/apache/commons/net/tftp/TFTPErrorPacket.html#TFTPErrorPacket(java.net.InetAddress,%20int,%20int,%20java.lang.String)">TFTPErrorPacket</a></strong>(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;destination,
-               int&nbsp;port,
+               int&nbsp;LPort,
                int&nbsp;error,
                <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;message)</code>
-<div class="block">Creates an error packet to be sent to a host at a given port
+<div class="block">Creates an error packet to be sent to a host at a given LPort
  with an error code and error message.</div>
 </td>
 </tr>
@@ -386,12 +386,12 @@ extends <a href="../../../../../org/apache/commons/net/tftp/TFTPPacket.html" tit
 <li class="blockList">
 <h4>TFTPErrorPacket</h4>
 <pre>public&nbsp;TFTPErrorPacket(<a href="http://download.oracle.com/javase/1.6.0/docs/api/java/net/InetAddress.html?is-external=true" title="class or interface in java.net">InetAddress</a>&nbsp;destination,
-               int&nbsp;port,
+               int&nbsp;LPort,
                int&nbsp;error,
                <a href="http://download.oracle.com/javase/1.6.0/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;message)</pre>
-<div class="block">Creates an error packet to be sent to a host at a given port
+<div class="block">Creates an error packet to be sent to a host at a given LPort
  with an error code and error message.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>destination</code> - The host to which the packet is going to be sent.</dd><dd><code>port</code> - The port to which the packet is going to be sent.</dd><dd><code>error</code> - The error code of the packet.</dd><dd><code>message</code> - The error message of the packet.</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>destination</code> - The host to which the packet is going to be sent.</dd><dd><code>LPort</code> - The LPort to which the packet is going to be sent.</dd><dd><code>error</code> - The error code of the packet.</dd><dd><code>message</code> - The error message of the packet.</dd></dl>
 </li>
 </ul>
 </li>
