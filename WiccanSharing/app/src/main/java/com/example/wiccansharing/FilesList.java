@@ -28,6 +28,7 @@ import java.util.Locale;
 
 public class FilesList extends AppCompatActivity {
     public static FTPClient ftpClient = null;
+    public static String ftpPath = "/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,7 @@ public class FilesList extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_fileslist);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
+        ftpPath = "/";
     }
 
     @Override
@@ -69,38 +71,36 @@ public class FilesList extends AppCompatActivity {
     }
 
     public void onClickUpload(View view) {
-        showFileChooser();
+        Intent intent = new Intent(this, Uploadview.class);
+        startActivity(intent);
     }
 
     public void onBackPressed() {
         // Mostrar diálogo
-        AlertDialog.Builder dlgAlert = new AlertDialog.Builder(this);
-        dlgAlert.setMessage(getString(R.string.leave_warning));
-        dlgAlert.setTitle(getString(R.string.app_name));
-        dlgAlert.setPositiveButton(getString(R.string.dialog_yes), new AlertDialog.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                // Voltar
-                CloseConnectionTask closeConnectionTask = new CloseConnectionTask();
-                closeConnectionTask.execute();
-            }
-        });
-        dlgAlert.setNegativeButton(getString(R.string.dialog_no), null);
-        dlgAlert.setCancelable(true);
-        dlgAlert.create().show();
+        if(ftpPath == "/") {
+            AlertDialog.Builder dlgAlert = new AlertDialog.Builder(this);
+            dlgAlert.setMessage(getString(R.string.leave_warning));
+            dlgAlert.setTitle(getString(R.string.app_name));
+            dlgAlert.setPositiveButton(getString(R.string.dialog_yes), new AlertDialog.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    // Voltar
+                    CloseConnectionTask closeConnectionTask = new CloseConnectionTask();
+                    closeConnectionTask.execute();
+                }
+            });
+            dlgAlert.setNegativeButton(getString(R.string.dialog_no), null);
+            dlgAlert.setCancelable(true);
+            dlgAlert.create().show();
+        }
+        else
+        {
+            // Navigate to parent
+        }
     }
 
-    private void showFileChooser() {
+    public void onClickDownload(View view)
+    {
 
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("*/*");      //all files
-        intent.addCategory(Intent.CATEGORY_OPENABLE);
-
-        try {
-            startActivityForResult(Intent.createChooser(intent, "Select a File to Upload"), 20); // FILE_SELECT_CODE ???
-        } catch (android.content.ActivityNotFoundException ex) {
-            // Potentially direct the user to the Market with a Dialog
-            Toast.makeText(this, "Please install a File Manager.", Toast.LENGTH_SHORT).show();
-        }
     }
 
     public class FileFetchTask extends AsyncTask<Void, Void, FTPFile[]> {
@@ -108,7 +108,7 @@ public class FilesList extends AppCompatActivity {
         @Override
         protected FTPFile[] doInBackground(Void... params) {
             try {
-                return ftpClient.listFiles();
+                return ftpClient.listFiles(FilesList.ftpPath);
             } catch (Exception e) {
                 return null;
             }
@@ -182,7 +182,7 @@ public class FilesList extends AppCompatActivity {
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(final int position, View convertView, ViewGroup parent) {
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View rowView = inflater.inflate(R.layout.filelist_rowlayout, parent, false);
@@ -195,13 +195,33 @@ public class FilesList extends AppCompatActivity {
             fileName.setText(fileNames[position]);
             String[] fileData = fileDescriptions[position].split(",");
             int size = Integer.parseInt(fileData[0]);
-            boolean isDirectory = Boolean.parseBoolean(fileData[1]);
+            final boolean isDirectory = Boolean.parseBoolean(fileData[1]);
             fileDescription.setText(null);
             if (!isDirectory) {
                 fileTypeIcon.setImageResource(resourceID != 0 ? resourceID : R.drawable._blank);
                 fileDescription.setText(String.format(getString(R.string.file_size_format), size / 1000));
-            } else
+            } else {
                 fileTypeIcon.setImageResource(R.drawable.folder);
+                ImageView downloadButton = rowView.findViewById(R.id.download_button);
+                downloadButton.setVisibility(View.INVISIBLE);
+            }
+            rowView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // Navigate inwards it's a folder / download if it's a file
+                    String fileName = fileNames[position];
+                    if(isDirectory)
+                    {
+                        ftpPath += fileName + "/";
+                        FileFetchTask fileFetchTask = new FileFetchTask();
+                        fileFetchTask.execute();
+                    }
+                    else
+                    {
+                        // download file
+                    }
+                }
+            });
             return rowView;
         }
     }

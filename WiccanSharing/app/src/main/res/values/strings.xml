@@ -26,4 +26,9 @@
     <string name="disconnect_fail">Could not disconnect from the FTP server. An unknown error occured.</string>
     <string name="file_worker_fail">Could not fetch file list. The server may have gone off-line. Exiting to login screen.</string>
     <string name="file_size_format">"Size : %d KB</string>
+    <string name="file_get_dialog">Please select a file to upload.</string>
+    <string name="manager_not_found_err">Error : file manager not found. Fill in the path for the file on the text box above.</string>
+    <string name="upload_fail">An unknown error occurred while trying to upload the file \'%s\'.</string>
+    <string name="upload_succeeded">File \'%s\' was successfully uploaded to the server.</string>
+    <string name="upload_no_file_selected">No file was selected to upload.</string>
 </resources>

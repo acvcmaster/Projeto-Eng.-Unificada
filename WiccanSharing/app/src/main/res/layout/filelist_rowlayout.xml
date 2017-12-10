@@ -46,6 +46,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="275dip"
         android:visibility="visible"
+        android:onClick="onClickDownload"
         android:src="@drawable/downloadbutton" />
 
 
