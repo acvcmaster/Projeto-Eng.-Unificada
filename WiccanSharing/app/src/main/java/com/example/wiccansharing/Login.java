@@ -1,9 +1,15 @@
 package com.example.wiccansharing;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
+import android.os.PersistableBundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +21,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 
 public class Login extends AppCompatActivity {
@@ -55,6 +62,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void onClickLogin(View view) {
+
         Context context = view.getContext();
         CheckBox checkBox = findViewById(R.id.SaveUsernameBOX);
         TextView IP_TextBox = findViewById(R.id.IP);
@@ -101,10 +109,25 @@ public class Login extends AppCompatActivity {
         attemptConnection.execute();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    0);
+        }
+    }
+
     private boolean configsE(Context context) {
         File settings = new File(context.getFilesDir() + "/" + getString(R.string.settings_file));
         return settings.exists();
     }
+
     private void loadConfigs(Context context) {
         FileInputStream inputStream;
         try {
@@ -117,6 +140,7 @@ public class Login extends AppCompatActivity {
             Toast.makeText(context, getString(R.string.login_info_load_err), Toast.LENGTH_LONG).show();
         }
     }
+
     private void saveConfigs(Context context, String contents) {
         FileOutputStream outputStream;
         try {
@@ -127,6 +151,7 @@ public class Login extends AppCompatActivity {
             Toast.makeText(context, getString(R.string.login_info_save_err), Toast.LENGTH_LONG).show();
         }
     }
+
     public class BackgroundConnectTask extends AsyncTask<Void, Void, Boolean> {
 
         private final String Hostname;
@@ -146,16 +171,15 @@ public class Login extends AppCompatActivity {
         @Override
         protected Boolean doInBackground(Void... params) {
 
-            for(int i = 0; i < MAX_LOGIN_ATTEMPTS;)
-            {
-                try
-                {
+            for (int i = 0; i < MAX_LOGIN_ATTEMPTS; ) {
+                try {
                     Thread.sleep(400);
                     ftpClient = new FTPClient();
                     ftpClient.connect(Hostname, Port);
+                    ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
+                    //ftpClient.enterLocalPassiveMode();
                     return true;
-                }
-                catch (Exception e){
+                } catch (Exception e) {
                     i++;
                 }
             }
@@ -174,16 +198,17 @@ public class Login extends AppCompatActivity {
             if (!exit_status) {
                 Toast.makeText(AppContext, String.format(getString(R.string.ftp_socket_error), IPAddr), Toast.LENGTH_LONG).show();
                 showProgress(false);
-            }
-            else {
+            } else {
                 BackgroundLoginTask attemptLogin = new BackgroundLoginTask(AppContext, Username, Password);
                 attemptLogin.execute();
             }
         }
+
         protected void onCancelled() {
             showProgress(false);
         }
     }
+
     public class BackgroundLoginTask extends AsyncTask<Void, Void, Boolean> {
 
         private final String Username;
@@ -210,8 +235,7 @@ public class Login extends AppCompatActivity {
             showProgress(false);
             if (!exit_status) {
                 Toast.makeText(AppContext, String.format(getString(R.string.login_username_invalid), IPAddr), Toast.LENGTH_LONG).show();
-            }
-            else {
+            } else {
                 // continuar (prox. activity)
                 Intent intent = new Intent(AppContext, FilesList.class);
                 FilesList.ftpClient = ftpClient;
@@ -219,6 +243,7 @@ public class Login extends AppCompatActivity {
                 finish();
             }
         }
+
         protected void onCancelled() {
             showProgress(false);
         }
@@ -240,6 +265,7 @@ public class Login extends AppCompatActivity {
         matcher = pattern.matcher(IP);
         return matcher.matches();
     }
+
     /*
         User names can consist of lowercase and capitals
         User names can consist of alphanumeric characters
@@ -253,8 +279,8 @@ public class Login extends AppCompatActivity {
         matcher = pattern.matcher(user);
         return matcher.matches() && user.length() <= 20;
     }
-    private void showProgress(Boolean visible)
-    {
+
+    private void showProgress(Boolean visible) {
         ProgressBar loginProgress = findViewById(R.id.loginProgress);
         loginProgress.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
     }

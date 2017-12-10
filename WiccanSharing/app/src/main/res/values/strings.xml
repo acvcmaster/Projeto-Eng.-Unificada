@@ -27,8 +27,18 @@
     <string name="file_worker_fail">Could not fetch file list. The server may have gone off-line. Exiting to login screen.</string>
     <string name="file_size_format">"Size : %d KB</string>
     <string name="file_get_dialog">Please select a file to upload.</string>
+    <string name="directory_get_dialog">Please select a directory to download to.</string>
+    <string name="file_path_format">Current path : %s</string>
+    <string name="file_download_err">Unknown error : could not download file \'%s\' to local folder \'%s\'. Read/Write permissions not granted?</string>
+    <string name="file_open_err">Network error : could not open file \'%s\'.</string>
+    <string name="file_open_err_uri">Cannot open file : failed to generate Uri.</string>
+    <string name="file_open_err_tmp">Failed to open! Temporary file not found.</string>
+    <string name="file_download_success">Download successful!</string>
     <string name="manager_not_found_err">Error : file manager not found. Fill in the path for the file on the text box above.</string>
     <string name="upload_fail">An unknown error occurred while trying to upload the file \'%s\'.</string>
     <string name="upload_succeeded">File \'%s\' was successfully uploaded to the server.</string>
     <string name="upload_no_file_selected">No file was selected to upload.</string>
+    <string name="tmp_folder">tmp/</string>
+    <string name="app_select">Select an app :</string>
+    <string name="no_suitable_app">No suitable app was found to open this file.</string>
 </resources>

@@ -3,12 +3,18 @@ package com.example.wiccansharing;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.AsyncTask;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.io.File;
+import java.net.URI;
 
 public class Uploadview extends AppCompatActivity {
 
@@ -29,7 +35,7 @@ public class Uploadview extends AppCompatActivity {
                 if(resultCode == RESULT_OK)
                 {
                     EditText editText = findViewById(R.id.editText2);
-                    editText.setText(data.getData().getPath());
+                    // get data..
                     return;
                 }
                 break;

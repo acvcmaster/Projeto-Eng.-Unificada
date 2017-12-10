@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import java.io.File;
+
 
 public class LogoDisplay extends AppCompatActivity {
     @Override
@@ -24,6 +26,10 @@ public class LogoDisplay extends AppCompatActivity {
     }
     protected void onHandlerDone()
     {
+        // clear tmp files
+        File tmpDir = new File(getCacheDir() + "/" + getString(R.string.tmp_folder));
+        if(tmpDir.exists())
+            tmpDir.delete();
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);
         finish();
